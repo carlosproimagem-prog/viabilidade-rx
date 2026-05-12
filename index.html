@@ -21,7 +21,6 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   
-  /* Uso da fonte 'Inter' para todo o documento */
   body { 
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
     background: var(--fundo); 
@@ -43,20 +42,6 @@
     text-align: center;
   }
   
-  /* Área para colocar a logo se você salvar uma imagem "logo-proimagem.png" na mesma pasta */
-  /* .header-container::before {
-    content: '';
-    display: block;
-    width: 200px;
-    height: 80px;
-    margin-bottom: 1rem;
-    background-image: url('logo-proimagem.png'); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  } */
-  
-  /* Placeholder visual do logo usando CSS, já que não temos o arquivo de imagem no mesmo diretório */
   .logo-placeholder {
     width: 220px;
     margin-bottom: 1.5rem;
@@ -64,42 +49,34 @@
   }
 
   h1 { font-size: 20px; font-weight: 700; color: #1a1a1a; }
-  h1 strong { color: var(--primaria-laranja); } /* Destaque no nome da clínica */
+  h1 strong { color: var(--primaria-laranja); }
   .subtitle { font-size: 13px; color: var(--cinza-texto); margin-top: 4px; max-width: 600px; }
 
-  /* Estilização Premium dos Painéis (Cards) com Sombras */
+  /* Estilização dos Cards */
   .card { 
     background: #fff; 
     border: 1px solid rgba(0,0,0,0.03); 
     border-radius: 16px; 
-    /* Adicionando profundidade com sombra suave */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04); 
     transition: box-shadow 0.2s ease;
   }
-  .card:hover { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06); }
 
-  /* Área de Seleção de Procedimentos */
+  /* Área de Seleção */
   .proc-wrap { margin-bottom: 1.5rem; }
   .proc-label { font-size: 12px; color: var(--cinza-texto); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
   .proc-btns { display: flex; flex-wrap: wrap; gap: 8px; }
   
-  /* Botões mais modernos */
   .pb { 
     background: #f1f3f5; 
     border: 1px solid transparent; 
-    border-radius: 99px; /* Botões pílula */
+    border-radius: 99px; 
     padding: 7px 16px; 
     font-size: 12px; 
     cursor: pointer; 
     color: #495057; 
     font-weight: 500;
-    white-space: nowrap; 
-    font-family: inherit; 
     transition: all .2s ease; 
   }
-  .pb:hover { background: #e9ecef; }
-  
-  /* Botão Ativo com o Laranja PROIMAGEM */
   .pb.act { 
     background: var(--primaria-laranja); 
     color: #fff; 
@@ -107,17 +84,14 @@
     box-shadow: 0 4px 10px rgba(236, 123, 45, 0.3);
   }
 
-  /* Layout principal */
   .layout { display: grid; grid-template-columns: 310px minmax(0,1fr); gap: 20px; margin-bottom: 20px; align-items: start; }
   
-  /* Painel de Inputs */
   .input-card { padding: 20px; }
   .input-card h2 { font-size: 14px; font-weight: 600; margin-bottom: 16px; color: var(--primaria-azul); }
   .cr { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f1f3f5; }
   .cr:last-of-type { border-bottom: none; }
   .cr label { flex: 1; font-size: 13px; color: #495057; }
   
-  /* Inputs mais modernos e com foco mais visível */
   .cr input { 
     width: 100px; 
     text-align: right; 
@@ -127,128 +101,55 @@
     font-size: 14px; 
     font-family: inherit; 
     background: #f8f9fa; 
-    color: #1a1a1a;
     transition: all .2s ease; 
   }
   .cr input:focus { 
     outline: none; 
     border-color: var(--primaria-laranja); 
     background: #fff;
-    /* Halo de foco laranja */
     box-shadow: 0 0 0 4px rgba(236, 123, 45, 0.15);
   }
 
-  /* Linha do Custo Total */
   .total-row { display: flex; flex-direction: column; padding: 16px 0 0; border-top: 2px solid #f1f3f5; margin-top: 10px; text-align: center; }
   .total-label { font-size: 13px; font-weight: 500; color: var(--cinza-texto); margin-bottom: 4px; }
   #l-tot { font-size: 32px; font-weight: 800; color: var(--primaria-laranja); letter-spacing: -1px; }
   
-  .ref-box { margin-top: 16px; padding: 12px; background: #fff9f4; border: 1px dashed rgba(236, 123, 45, 0.3); border-radius: 10px; text-align: left; }
-  .ref-box p:first-child { font-size: 11px; color: var(--primaria-laranja); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
-  #l-ref { font-size: 11px; color: #666; line-height: 1.6; }
-
-  /* Contadores em boxes coloridas */
   .counters { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
-  .counter { border-radius: 10px; padding: 12px; text-align: center; border: 1px solid transparent; }
-  .c-ok { background: #eaf5ee; border-color: #d1eadb; }
-  .c-no { background: #fdeaea; border-color: #f9d6d6; }
+  .counter { border-radius: 10px; padding: 12px; text-align: center; }
+  .c-ok { background: #eaf5ee; color: var(--cor-viável); }
+  .c-no { background: #fdeaea; color: var(--cor-inviável); }
   .counter p:first-child { font-size: 11px; font-weight: 500; margin-bottom: 2px; }
   .counter p:last-child { font-size: 26px; font-weight: 800; }
-  .c-ok p { color: var(--cor-viável); }
-  .c-no p { color: var(--cor-inviável); }
 
   /* Painel do Gráfico */
   .chart-card { padding: 20px; }
   .chart-card h2 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--primaria-azul); }
-  .legend { display: flex; gap: 16px; margin-bottom: 12px; font-size: 11px; color: var(--cinza-texto); flex-wrap: wrap; font-weight: 500; }
-  .legend span { display: flex; align-items: center; gap: 6px; }
+  .legend { display: flex; gap: 16px; margin-bottom: 12px; font-size: 11px; color: var(--cinza-texto); font-weight: 500; }
   .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
-  #cw { position: relative; width: 100%; }
 
-  /* Tabela de Detalhes */
+  /* Tabela */
   .table-card { overflow: hidden; margin-bottom: 1.5rem;}
-  .table-header { padding: 16px 20px; border-bottom: 1px solid #f1f3f5; display: flex; justify-content: space-between; align-items: center; background: #fcfdfe; }
-  .table-header p:first-child { font-size: 14px; font-weight: 600; color: var(--primaria-azul); }
-  .table-header p:last-child { font-size: 12px; color: var(--cinza-texto); font-weight: 500; }
-  .table-wrap { overflow-x: auto; }
-  
-  table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; min-width: 550px; }
-  colgroup col:nth-child(1) { width: 33%; }
-  colgroup col:nth-child(2) { width: 17%; }
-  colgroup col:nth-child(3) { width: 17%; }
-  colgroup col:nth-child(4) { width: 16%; }
-  colgroup col:nth-child(5) { width: 17%; }
-  
-  thead tr { background: #fcfdfe; }
-  th { padding: 10px 20px; text-align: left; font-weight: 600; color: var(--cinza-texto); font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
-  th:not(:first-child) { text-align: right; }
-  th:last-child { text-align: center; }
-  
-  tbody tr { border-bottom: 1px solid #f1f3f5; transition: background .15s; }
-  tbody tr:hover { background: #fbfcfc; }
-  tbody tr:last-of-type { border-bottom: none; }
-  td { padding: 12px 20px; color: #495057;}
-  td:first-child { font-weight: 500; color: #1a1a1a; }
-  td:not(:first-child) { text-align: right; }
-  td:last-child { text-align: center; }
-  
-  /* Badges de situação arredondados */
-  .badge { font-size: 11px; padding: 4px 12px; border-radius: 99px; font-weight: 600; display: inline-block; text-transform: uppercase; letter-spacing: 0.3px;}
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { padding: 10px 20px; text-align: left; background: #fcfdfe; color: var(--cinza-texto); font-size: 11px; text-transform: uppercase; }
+  td { padding: 12px 20px; border-bottom: 1px solid #f1f3f5; }
+  .badge { font-size: 11px; padding: 4px 12px; border-radius: 99px; font-weight: 600; }
   .b-ok { background: #eaf5ee; color: var(--cor-viável); }
-  .b-wa { background: #fef3e2; color: #a16207; }
   .b-no { background: #fdeaea; color: var(--cor-inviável); }
 
-  /* Nota de Atenção usando o Laranja */
-  .note { margin-top: 1rem; padding: 16px 20px; background: #fff9f4; border: 1px solid rgba(236, 123, 45, 0.2); border-radius: 12px; font-size: 13px; color: var(--primaria-laranja); line-height: 1.6; display: flex; gap: 12px; }
-  .note strong { font-weight: 700; color: var(--primaria-laranja); }
-  .note-icon { font-size: 18px; line-height: 1; }
-
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .layout { grid-template-columns: 1fr; }
-    body { padding: 1rem; }
-    h1 { font-size: 18px; }
-    .header-container { margin-bottom: 1.5rem; }
-  }
+  @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <div class="header-container">
-  <svg class="logo-placeholder" viewBox="0 0 178 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-112.923,-283)">
-        <g id="PROIMAGEM-Isolada" transform="matrix(0.392661,0,0,0.392661,112.923,283)">
-            <path id="Sphere_Globe" d="M226.73,0C101.503,0 0,101.503 0,226.73C0,351.957 101.503,453.46 226.73,453.46C351.957,453.46 453.46,351.957 453.46,226.73C453.46,101.503 351.957,0 226.73,0ZM226.73,26.686C337.123,26.686 426.774,116.336 426.774,226.73C426.774,337.123 337.123,426.774 226.73,426.774C116.336,426.774 26.686,337.123 26.686,226.73C26.686,116.336 116.336,26.686 226.73,26.686Z" style="fill:rgb(20,85,159);"/>
-            <path id="Human_Silhouette" d="M226.73,93.414C244.606,93.414 259.083,107.891 259.083,125.767C259.083,143.643 244.606,158.119 226.73,158.119C208.854,158.119 194.377,143.643 194.377,125.767C194.377,107.891 208.854,93.414 226.73,93.414ZM267.33,184.288L339.734,166.185L327.994,222.181C325.263,235.212 316.302,246.068 304.38,251.341L259.083,271.378L259.083,360.016L226.73,360.016L194.377,360.016L194.377,271.378L149.08,251.341C137.158,246.068 128.197,235.212 125.466,222.181L113.726,166.185L186.13,184.288C197.947,187.243 210.379,188.75 226.73,188.75C243.08,188.75 255.513,187.243 267.33,184.288Z" style="fill:white;"/>
-            <g id="PROIMAGEM-Texto" transform="matrix(2.54673,0,0,2.54673,0,0)">
-                <path d="M0,534.821L60.02,534.821L60.02,539.066L3.921,539.066L3.921,563.843L0,563.843L0,534.821Z" style="fill:rgb(236,123,45);"/>
-                <path d="M12.937,534.821L36.331,534.821C43.199,534.821 47.962,538.745 47.962,544.757C47.962,550.768 43.199,554.692 36.331,554.692L16.858,554.692L16.858,563.843L12.937,563.843L12.937,534.821ZM36.331,550.817C41.319,550.817 44.04,548.337 44.04,544.757C44.04,541.176 41.319,538.696 36.331,538.696L16.858,538.696L16.858,550.817L36.331,550.817Z" style="fill:rgb(236,123,45);"/>
-                <path d="M51.93,534.821L73.91,534.821C81.936,534.821 86.635,538.835 86.635,545.72C86.635,550.111 84.77,553.228 81.332,554.912L87.893,563.843L83.35,563.843L77.019,555.222L55.852,555.222L55.852,563.843L51.93,563.843L51.93,534.821ZM73.91,551.347C80.082,551.347 82.712,549.006 82.712,545.72C82.712,542.434 80.082,540.093 73.91,540.093L55.852,540.093L55.852,551.347L73.91,551.347Z" style="fill:rgb(236,123,45);"/>
-                <path d="M129.362,534.821C142.179,534.821 150.329,541.189 150.329,549.332L150.329,563.843L146.408,563.843L146.408,549.332C146.408,543.141 140.407,539.066 129.362,539.066C118.317,539.066 112.316,543.141 112.316,549.332L112.316,563.843L108.394,563.843L108.394,549.332C108.394,541.189 116.544,534.821 129.362,534.821Z" style="fill:rgb(115,117,122);"/>
-                <path d="M167.319,534.821L173.084,534.821L193.308,563.843L189.03,563.843L170.202,536.866L151.374,563.843L147.096,563.843L167.319,534.821Z" style="fill:rgb(115,117,122);"/>
-                <path d="M211.776,534.821C221.758,534.821 228.026,539.691 228.026,546.732C228.026,550.536 226.684,553.13 223.829,555.084C226.684,557.038 228.026,559.632 228.026,563.436C228.026,570.477 221.758,575.347 211.776,575.347L192.483,575.347L192.483,534.821L211.776,534.821ZM211.776,571.222C219.64,571.222 224.105,567.893 224.105,563.436C224.105,558.979 219.64,555.649 211.776,555.649L196.405,555.649L196.405,571.222L211.776,571.222ZM211.776,551.524C219.64,551.524 224.105,548.195 224.105,543.737C224.105,539.28 219.64,535.95 211.776,535.95L196.405,535.95L196.405,551.524L211.776,551.524Z" style="fill:rgb(115,117,122);"/>
-                <path d="M229.412,534.821L251.393,534.821L251.393,539.066L233.334,539.066L233.334,547.939L247.472,547.939L247.472,552.184L233.334,552.184L233.334,563.843L229.412,563.843L229.412,534.821Z" style="fill:rgb(115,117,122);"/>
-                <g transform="matrix(1.5794,0,0,1.5794,84.1848,154.51)">
-                    <path d="M109.919,292.053L109.919,292.839L106.848,292.839L106.848,293.771L109.43,293.771L109.43,294.557L106.848,294.557L106.848,296.257L109.919,296.257L109.919,297.042L106.166,297.042L106.166,292.053L109.919,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M117.844,297.042L116.635,295.39L115.427,297.042L114.619,297.042L116.196,294.887L114.686,292.831L115.494,292.831L116.635,294.384L117.776,292.831L118.584,292.831L117.074,294.887L118.652,297.042L117.844,297.042Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M123.676,292.053L125.753,292.053L127.368,297.042L126.699,297.042L126.236,295.611L124.316,295.611L123.852,297.042L123.183,297.042L124.798,292.053L123.676,292.053ZM125.753,292.053L124.97,292.053L124.526,294.978L126.023,294.978L125.753,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M130.347,292.053L131.769,292.053L132.883,293.755L133.997,292.053L135.419,292.053L135.419,297.042L134.738,297.042L134.738,293.003L133.303,295.195L132.463,295.195L131.028,293.003L131.028,297.042L130.347,297.042L130.347,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M141.745,292.053L141.745,292.839L138.674,292.839L138.674,293.771L141.256,293.771L141.256,294.557L138.674,294.557L138.674,296.257L141.745,296.257L141.745,297.042L137.992,297.042L137.992,292.053L141.745,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M145.474,296.398L145.72,296.398L145.72,296.673L145.474,296.673L145.474,296.398Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M152.001,292.053L153.309,292.053C155.071,292.053 156.126,293.181 156.126,294.548C156.126,295.914 155.071,297.042 153.309,297.042L152.001,297.042L152.001,292.053L152.001,292.053ZM153.309,296.257C154.675,296.257C155.445,295.631 155.445,294.548 153.309,294.548C151.173,294.548 151.173,296.257 153.309,296.257Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M165.736,292.053L167.813,292.053L169.428,297.042L168.759,297.042L168.296,295.611L166.376,295.611L165.912,297.042L165.243,297.042L166.858,292.053L165.736,292.053ZM167.813,292.053L167.03,292.053L166.586,294.978L168.083,294.978L167.813,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M172.407,292.053L173.829,292.053L174.943,293.755L176.057,292.053L177.479,292.053L177.479,297.042L176.798,297.042L176.798,293.003L175.363,295.195L174.523,295.195L173.088,293.003L173.088,297.042L172.407,297.042L172.407,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M183.805,292.053L183.805,292.839L180.734,292.839L180.734,293.771L183.316,293.771L183.316,294.557L180.734,294.557L180.734,296.257L183.805,296.257L183.805,297.042L180.052,297.042L180.052,292.053L183.805,292.053Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M187.534,296.398L187.78,296.398L187.78,296.673L187.534,296.673L187.534,296.398Z" style="fill:rgb(26,26,26);"/>
-                    <path d="M194.061,292.053L195.369,292.053C197.131,292.053 198.186,293.181 198.186,294.548C198.186,295.914 197.131,297.042 195.369,297.042L194.061,297.042L194.061,292.053L194.061,292.053ZM195.369,296.257C196.735,296.257 197.505,295.631 197.505,294.548C195.369,294.548 195.369,296.257 195.369,296.257Z" style="fill:rgb(26,26,26);"/>
-                </g>
-            </g>
-        </g>
+  <svg class="logo-placeholder" viewBox="0 0 178 126" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(0.392661,0,0,0.392661,0,0)">
+        <path d="M226.73,0C101.503,0 0,101.503 0,226.73C0,351.957 101.503,453.46 226.73,453.46C351.957,453.46 453.46,351.957 453.46,226.73C453.46,101.503 351.957,0 226.73,0Z" style="fill:rgb(20,85,159);"/>
+        <path d="M226.73,93.414C244.606,93.414 259.083,107.891 259.083,125.767C259.083,143.643 244.606,158.119 226.73,158.119C208.854,158.119 194.377,143.643 194.377,125.767C194.377,107.891 208.854,93.414 226.73,93.414ZM267.33,184.288L339.734,166.185L327.994,222.181C325.263,235.212 316.302,246.068 304.38,251.341L259.083,271.378L259.083,360.016L226.73,360.016L194.377,360.016L194.377,271.378L149.08,251.341C137.158,246.068 128.197,235.212 125.466,222.181L113.726,166.185L186.13,184.288C197.947,187.243 210.379,188.75 226.73,188.75C243.08,188.75 255.513,187.243 267.33,184.288Z" style="fill:white;"/>
     </g>
-</svg>
-
+  </svg>
   <h1>Análise de Viabilidade <strong>· RX Contrastado</strong></h1>
-  <p class="subtitle">Insira os custos reais praticados para identificar o piso mínimo de negociação com cada convênio</p>
+  <p class="subtitle">Calculadora dinâmica de CMV com impostos e custos operacionais</p>
 </div>
 
 <div class="proc-wrap">
@@ -263,13 +164,11 @@
     <div class="cr"><label>Honorário médico</label><input type="number" id="i-hm" min="0" step="5" oninput="go()"></div>
     <div class="cr"><label>Custo operacional</label><input type="number" id="i-co" min="0" step="5" oninput="go()"></div>
     <div class="cr"><label>Filme / outros</label><input type="number" id="i-ot" min="0" step="5" oninput="go()"></div>
+    <div class="cr" style="background: #fff9f4;"><label><strong>Imposto (R$ fixo)</strong></label><input type="number" id="i-imp" min="0" step="1" value="0" oninput="go()"></div>
+    
     <div class="total-row">
-      <span class="total-label">Custo mínimo de viabilidade (CMV)</span>
+      <span class="total-label">Custo Mínimo de Viabilidade (CMV)</span>
       <span id="l-tot">R$ 0</span>
-    </div>
-    <div class="ref-box">
-      <p>⚠️ Referência atual do sistema</p>
-      <p id="l-ref"></p>
     </div>
     <div class="counters">
       <div class="counter c-ok"><p>Viáveis</p><p id="l-ok">-</p></div>
@@ -280,124 +179,56 @@
   <div class="card chart-card">
     <h2 id="cht-ttl"></h2>
     <div class="legend">
-      <span><span class="dot" style="background:#2a8a55;"></span>Redituável (Acima do custo)</span>
-      <span><span class="dot" style="background:#c73232;"></span>Deficitário (Abaixo do custo)</span>
-      <span><span style="display:inline-block;width:20px;border-top:2px dashed #EC7B2D;vertical-align:middle;"></span>&nbsp;Custo Mínimo (CMV)</span>
+      <span><span class="dot" style="background:#2a8a55;"></span>Redituável</span>
+      <span><span class="dot" style="background:#c73232;"></span>Deficitário</span>
+      <span><span style="display:inline-block;width:20px;border-top:2px dashed #EC7B2D;vertical-align:middle;"></span>&nbsp;CMV</span>
     </div>
-    <div id="cw" style="height:320px;"><canvas id="mc" aria-label="Gráfico comparativo de viabilidade por convênio"></canvas></div>
+    <div id="cw" style="height:320px;"><canvas id="mc"></canvas></div>
   </div>
 </div>
 
 <div class="card table-card">
-  <div class="table-header">
-    <p>Detalhe Comparativo por Convênio</p>
-    <p>Ordenado por valor pago (maior → menor)</p>
-  </div>
-  <div class="table-wrap">
-    <table>
-      <colgroup><col><col><col><col><col></colgroup>
-      <thead>
-        <tr>
-          <th>Convênio</th>
-          <th style="text-align:right;">Valor pago</th>
-          <th style="text-align:right;">CMV (Real)</th>
-          <th style="text-align:right;">Margem R$</th>
-          <th style="text-align:center;">Situação</th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
-  </div>
-</div>
-
-<div class="note">
-  <div class="note-icon">ℹ️</div>
-  <div><strong>Nota da Administração:</strong> Os valores pré-carregados no sistema (ref. planilha 339) servem apenas como ponto de partida histórica. É fundamental atualizar os campos com os custos reais atuais — especialmente contraste e honorários — para que a análise de viabilidade reflita o cenário presente. No caso da PETROBRAS para Urografia Excretora (R$ 119,32), o valor provavelmente não inclui o material, que deve ser cobrado ou fornecido à parte.</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Convênio</th>
+        <th style="text-align:right;">Valor pago</th>
+        <th style="text-align:right;">Margem R$</th>
+        <th style="text-align:center;">Situação</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
 </div>
 
 <script>
-// Mesmos dados e lógica do código original, sem alterações funcionais
+// Lista de Procedimentos e Convênios
 const procs=[
-  {name:'Histerossalpingografia',ref:{hm:70,co:42,filme:7,material:890},conv:[
-    ['ASSEC/CEHOP',997.52],['ASSEM',1003.00],['CAPESAUDE',992.32],['CASEMBRAPA',1017.79],
-    ['CASSE',1013.77],['CASSIND',687.23],['CODEVASF',1055.13],['FACHESF',998.90],
-    ['FUSEX',1030.00],['PARTICULAR Cartão',700],['PARTICULAR PIX',600],['PETROBRAS',1001.49],
-    ['PLAN ASSISTE',988.89],['SAÚDE CAIXA',1030.87],['SMS',859],['VALE',959.02]
-  ]},
-  {name:'Urografia Excretora',ref:{hm:70,co:42,filme:16,material:679},conv:[
-    ['ASSEC/CEHOP',792.68],['ASSEM',805.39],['CASEMBRAPA',819.52],['CASSE',882.54],
-    ['CASSI',504.24],['CASSIND',350.50],['CODEVASF',859.06],['FACHESF',800.93],
-    ['FUSEX',834.05],['PARTICULAR Cartão',350],['PARTICULAR PIX',320],['PETROBRAS',119.32],
-    ['PLAN ASSISTE',784.90],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25],['VALE',751.28]
-  ]},
-  {name:'Uretrocistografia Miccional',ref:{hm:70,co:42,filme:12,material:641},conv:[
-    ['ASSEC/CEHOP',752.92],['ASSEM',765.04],['CAPESAUDE',730.32],['CASEMBRAPA',756.62],
-    ['CASSE',850.22],['CASSIND',332.60],['CODEVASF',800.95],['FACHESF',760.79],
-    ['FUSEX',794.01],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',721.48],
-    ['POSTAL SAÚDE',761.34],['SAÚDE CAIXA',764.93],['VALE',724.62]
-  ]},
-  {name:'Uretrocistografia Retrógrada',ref:{hm:70,co:42,filme:12,material:345},conv:[
-    ['ASSEC/CEHOP',456.53],['ASSEM',468.65],['CAPESAUDE',440.72],['CASEMBRAPA',467.02],
-    ['CASSE',517.31],['CASSIND',326.07],['CODEVASF',511.35],['FACHESF',464.40],
-    ['FUSEX',497.62],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',431.88],
-    ['POSTAL SAÚDE',464.95],['SAÚDE CAIXA',475.33],['VALE',439.02]
-  ]},
-  {name:'Uretrocist. Miccional Criança',ref:{hm:95,co:45,filme:12,material:641},conv:[
-    ['ASSEM',793.59],['CASEMBRAPA',789.44],['CASSE',879.75],['CASSIND',347.38],
-    ['CODEVASF',831.22],['FACHESF',787.78],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
-    ['PLAN ASSISTE',744.18],['SAÚDE CAIXA',799.01],['VALE',755.48]
-  ]},
-  {name:'Uretrocist. Retrógrada Criança',ref:{hm:95,co:45,filme:12,material:345},conv:[
-    ['ASSEM',497.20],['CASEMBRAPA',499.84],['CASSE',546.83],['CASSIND',347.38],
-    ['CODEVASF',541.62],['FACHESF',491.39],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
-    ['PLAN ASSISTE',454.58],['SAÚDE CAIXA',509.41],['VALE',469.88]
-  ]},
-  {name:'Enema Opaco',ref:{hm:99,co:48,filme:22,material:166},conv:[
-    ['CASSE',335.55],['PARTICULAR Cartão',350],['PARTICULAR PIX',350]
-  ]},
-  {name:'RX Esôfago-Estômago-Duodeno',ref:{hm:99,co:39,filme:17,material:59},conv:[
-    ['ASSEC/CEHOP',300],['CASSE',214.88],['LIFE EMPRESARIAL',128.74],
-    ['PARTICULAR Cartão',350],['PARTICULAR PIX',350]
-  ]},
-  {name:'Esofagograma',ref:{hm:45,co:25,filme:7,material:30},conv:[
-    ['CASSE',106.43],['PARTICULAR Cartão',300],['PARTICULAR PIX',250]
-  ]},
-  {name:'RX Trânsito Intestinal',ref:{hm:72,co:39,filme:17,material:30},conv:[
-    ['ASSEC/CEHOP',300],['CASSE',158.90],['PARTICULAR Cartão',350],
-    ['PARTICULAR PIX',350],['PETROBRAS',155.85]
-  ]},
-  {name:'Fistulografia',ref:{hm:51,co:35,filme:9,material:305},conv:[
-    ['FUSEX',400.75],['PARTICULAR Cartão',350],['PARTICULAR PIX',300],
-    ['PETROBRAS',377.52],['VALE',362.59]
-  ]},
-  {name:'Sialografia',ref:{hm:80,co:41,filme:8,material:0},conv:[
-    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]
-  ]}
+  {name:'Histerossalpingografia',ref:{hm:70,co:42,filme:7,material:890},conv:[['ASSEC/CEHOP',997.52],['ASSEM',1003.00],['CAPESAUDE',992.32],['CASEMBRAPA',1017.79],['CASSE',1013.77],['CASSIND',687.23],['CODEVASF',1055.13],['FACHESF',998.90],['FUSEX',1030.00],['PARTICULAR PIX',600],['PETROBRAS',1001.49],['SAÚDE CAIXA',1030.87]]},
+  {name:'Urografia Excretora',ref:{hm:70,co:42,filme:16,material:679},conv:[['ASSEC/CEHOP',792.68],['ASSEM',805.39],['CASEMBRAPA',819.52],['CASSE',882.54],['CASSI',504.24],['CASSIND',350.50],['CODEVASF',859.06],['FACHESF',800.93],['PARTICULAR PIX',320],['PETROBRAS',119.32],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25]]},
+  {name:'Uretrocistografia Miccional',ref:{hm:70,co:42,filme:12,material:641},conv:[['ASSEC/CEHOP',752.92],['ASSEM',765.04],['CAPESAUDE',730.32],['CASEMBRAPA',756.62],['CASSE',850.22],['CASSIND',332.60],['CODEVASF',800.95],['FACHESF',760.79],['PARTICULAR PIX',350],['SAÚDE CAIXA',764.93]]},
+  {name:'Uretrocistografia Retrógrada',ref:{hm:70,co:42,filme:12,material:345},conv:[['ASSEC/CEHOP',456.53],['ASSEM',468.65],['CASSE',517.31],['CASSIND',326.07],['CODEVASF',511.35],['PARTICULAR PIX',350],['SAÚDE CAIXA',475.33]]},
+  {name:'Enema Opaco',ref:{hm:99,co:48,filme:22,material:166},conv:[['CASSE',335.55],['PARTICULAR PIX',350]]},
+  {name:'RX Esôfago-Estômago-Duodeno',ref:{hm:99,co:39,filme:17,material:59},conv:[['ASSEC/CEHOP',300],['CASSE',214.88],['PARTICULAR PIX',350]]}
 ];
 
 let cur=0, myChart=null;
 
-// Plugin para desenhar a linha de custo no gráfico
+// Plugin para desenhar a linha de custo
 const costPlugin={
   id:'costLine',
   afterDraw(chart){
     const tot=getTotal();
-    if(!tot) return;
     const {ctx,chartArea:{top,bottom},scales:{x}}=chart;
     const xp=x.getPixelForValue(tot);
     ctx.save();
     ctx.beginPath();
-    ctx.setLineDash([8,6]); // Linha dashed mais longa
-    ctx.strokeStyle='#EC7B2D'; // Laranja PROIMAGEM
-    ctx.lineWidth=2.5;
+    ctx.setLineDash([8,6]);
+    ctx.strokeStyle='#EC7B2D';
+    ctx.lineWidth=2;
     ctx.moveTo(xp,top);
     ctx.lineTo(xp,bottom);
     ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle='#EC7B2D';
-    ctx.font='600 11px Inter, sans-serif'; // Fonte Inter
-    ctx.textAlign='left';
-    ctx.fillText('Custo Mínimo (CMV)',xp+6,top+16);
     ctx.restore();
   }
 };
@@ -419,96 +250,56 @@ function sel(i){
   document.getElementById('i-hm').value=p.ref.hm;
   document.getElementById('i-co').value=p.ref.co;
   document.getElementById('i-ot').value=p.ref.filme;
-  document.getElementById('cht-ttl').textContent=p.name+' — Valores por convênio';
-  const rt=p.ref.hm+p.ref.co+p.ref.filme+p.ref.material;
-  document.getElementById('l-ref').innerHTML=
-    `Honorário: R$${p.ref.hm} &nbsp;|&nbsp; Operacional: R$${p.ref.co} &nbsp;|&nbsp; Filme: R$${p.ref.filme} &nbsp;|&nbsp; Material: R$${p.ref.material}<br>Custo Total Histórico: <strong>R$${rt.toFixed(2)}</strong>`;
+  document.getElementById('cht-ttl').textContent=p.name;
   go();
 }
 
+// ATUALIZADO: Inclui o campo 'i-imp' no cálculo
 function getTotal(){
-  return ['i-mat','i-hm','i-co','i-ot'].reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
+  return ['i-mat','i-hm','i-co','i-ot','i-imp'].reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
 }
 
 function go(){
   const p=procs[cur];
   const tot=getTotal();
   document.getElementById('l-tot').textContent='R$ '+tot.toFixed(2).replace('.', ',');
+  
   const sorted=[...p.conv].sort((a,b)=>b[1]-a[1]);
   const labels=sorted.map(([k])=>k);
   const vals=sorted.map(([,v])=>v);
   const colors=vals.map(v=>v>=tot?'#2a8a55':'#c73232');
-  const ok=vals.filter(v=>v>=tot).length;
-  document.getElementById('l-ok').textContent=ok;
-  document.getElementById('l-nk').textContent=vals.length-ok;
+  
+  document.getElementById('l-ok').textContent=vals.filter(v=>v>=tot).length;
+  document.getElementById('l-nk').textContent=vals.filter(v=>v<tot).length;
 
-  const h=Math.max(300,sorted.length*38+60);
-  document.getElementById('cw').style.height=h+'px';
-
-  const ctx=document.getElementById('mc').getContext('2d');
   if(myChart) myChart.destroy();
-  myChart=new Chart(ctx,{
+  myChart=new Chart(document.getElementById('mc'),{
     type:'bar',
     plugins:[costPlugin],
     data:{
       labels,
-      datasets:[{
-        label:'Valor pago pelo convênio',
-        data:vals,
-        backgroundColor:colors,
-        hoverBackgroundColor:(c)=>c.raw>=tot?'#37a369':'#d64141',
-        borderRadius:6, // Mais arredondado
-        indexAxis:'y',
-        barThickness:24,
-      }]
+      datasets:[{data:vals, backgroundColor:colors, borderRadius:6, indexAxis:'y'}]
     },
     options:{
-      indexAxis:'y',
-      responsive:true,
-      maintainAspectRatio:false,
-      plugins:{
-        legend:{display:false},
-        tooltip:{
-          backgroundColor: 'rgba(26, 26, 26, 0.9)',
-          padding: 12,
-          titleFont: {size: 13, family: 'Inter', weight: 600},
-          bodyFont: {size: 13, family: 'Inter'},
-          cornerRadius: 8,
-          callbacks:{
-            label:(c)=>{
-              const v=c.raw,m=v-tot,pct=tot>0?(m/tot*100).toFixed(1):0;
-              return [`Valor Pago: R$ ${v.toFixed(2).replace('.', ',')}`,`Margem: ${m>=0?'+':''}R$${m.toFixed(2).replace('.', ',')} (${m>=0?'+':''}${pct}%)`];
-            }
-          }
-        }
-      },
-      scales:{
-        x:{ticks:{callback:v=>'R$'+v.toFixed(0),font:{size:11, family: 'Inter'}},grid:{color:'rgba(0,0,0,0.04)'}},
-        y:{ticks:{font:{size:12, family: 'Inter', weight: 500}},grid:{display:false}}
-      }
+      indexAxis:'y', maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:'rgba(0,0,0,0.04)'}}, y:{grid:{display:false}}}
     }
   });
 
   const tb=document.getElementById('tbody');
   tb.innerHTML='';
   sorted.forEach(([name,val])=>{
-    const m=val-tot,pct=tot>0?(m/tot*100):0;
-    const mc=m>=0?'var(--cor-viável)':'var(--cor-inviável)';
-    const badge=m<0
-      ?'<span class="badge b-no">Deficitário</span>'
-      :pct<10 // Margem mudada para 10% para aviso
-        ?'<span class="badge b-wa">Alerta</span>'
-        :'<span class="badge b-ok">Redituável</span>';
+    const m=val-tot;
+    const badge=m>=0?'<span class="badge b-ok">Redituável</span>':'<span class="badge b-no">Deficitário</span>';
     tb.innerHTML+=`<tr>
       <td>${name}</td>
-      <td style="font-weight:600; color:#1a1a1a;">R$ ${val.toFixed(2).replace('.', ',')}</td>
-      <td style="color:#888;">R$ ${tot.toFixed(2).replace('.', ',')}</td>
-      <td style="color:${mc};font-weight:600;">${m>=0?'+':''}R$ ${Math.abs(m).toFixed(2).replace('.', ',')}</td>
-      <td>${badge}</td>
+      <td style="text-align:right; font-weight:600;">R$ ${val.toFixed(2).replace('.', ',')}</td>
+      <td style="text-align:right; color:${m>=0?'var(--cor-viável)':'var(--cor-inviável)'}; font-weight:600;">${m>=0?'+':''}R$ ${m.toFixed(2).replace('.', ',')}</td>
+      <td style="text-align:center;">${badge}</td>
     </tr>`;
   });
 }
-
 sel(0);
 </script>
 </body>
