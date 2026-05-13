@@ -8,69 +8,99 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 :root{
-  --navy:#12305e;--blue:#1e5fa8;--blue2:#2e7dd4;
-  --orange:#e8621a;--orange2:#f07c3a;
-  --ok:#1a7a41;--ok-bg:#e9f5ee;
-  --wa:#925500;--wa-bg:#fff3e0;
-  --no:#c72626;--no-bg:#fdeaea;
-  --bg:#f0f4fa;--card:#ffffff;--border:#dce5f0;
+  --navy:#12305e;--blue:#1e5fa8;--blue2:#2e7dd4;--blue-light:#e8eef7;
+  --orange:#e8621a;--orange2:#f07c3a;--orange-light:#fff2eb;
+  --ok:#1a7a41;--ok-bg:#e9f5ee;--ok-border:#aad8be;
+  --wa:#925500;--wa-bg:#fff3e0;--wa-border:#f5cc80;
+  --no:#c72626;--no-bg:#fdeaea;--no-border:#f5aaaa;
+  --bg:#f0f4fa;--card:#fff;--border:#dce5f0;
   --text:#1a2a40;--muted:#5a6e88;--light:#e8eef7;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:13px;}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:13px;}
 
 /* HEADER */
-.header{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 14px rgba(18,48,94,.4);flex-wrap:wrap;gap:12px;}
-.logo-name{font-size:24px;font-weight:700;letter-spacing:.5px;line-height:1;}
-.logo-name .pro{color:var(--orange);}
-.logo-name .img{color:#fff;}
+.hdr{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 14px rgba(18,48,94,.4);flex-wrap:wrap;gap:10px;}
+.logo-name{font-size:24px;font-weight:700;line-height:1;}
+.pro{color:var(--orange);} .img{color:#fff;}
 .logo-sub{font-size:9px;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:3px;}
-.header-title{text-align:right;}
-.header-title h1{font-size:14px;font-weight:600;color:#fff;}
-.header-title p{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+.hdr-r{text-align:right;}
+.hdr-r h1{font-size:14px;font-weight:600;color:#fff;}
+.hdr-r p{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
 
 /* CONTENT */
-.content{padding:24px 28px;max-width:1300px;margin:0 auto;}
+.wrap{padding:22px 28px;max-width:1320px;margin:0 auto;}
 
-/* PROCEDURE SELECTOR */
-.sec-label{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-.proc-btns{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;}
+/* PROC BUTTONS */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
+.proc-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
 .pb{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:6px 12px;font-size:11.5px;cursor:pointer;color:var(--muted);font-family:inherit;font-weight:500;white-space:nowrap;transition:all .15s;}
-.pb:hover{border-color:var(--blue2);color:var(--blue);background:var(--light);}
+.pb:hover{border-color:var(--blue2);color:var(--blue);background:var(--blue-light);}
 .pb.act{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
 
 /* LAYOUT */
-.layout{display:grid;grid-template-columns:295px minmax(0,1fr);gap:18px;margin-bottom:18px;align-items:start;}
+.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:18px;margin-bottom:18px;align-items:start;}
 
 /* CARD */
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(18,48,94,.07);overflow:hidden;}
-.card-head{background:linear-gradient(90deg,var(--navy),var(--blue));padding:12px 16px;display:flex;align-items:center;gap:8px;}
-.card-head h2{font-size:12px;font-weight:600;color:#fff;letter-spacing:.3px;flex:1;}
+.c-head{background:linear-gradient(90deg,var(--navy),var(--blue));padding:11px 16px;display:flex;align-items:center;gap:8px;}
+.c-head h2{font-size:12px;font-weight:600;color:#fff;letter-spacing:.3px;flex:1;}
+.c-body{padding:14px 16px;}
 
-/* INPUT */
-.card-body{padding:14px 16px;}
-.cr{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--light);}
+/* SECTION INSIDE PANEL */
+.panel-sec{margin-bottom:12px;}
+.panel-sec-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.panel-sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* INPUT ROW */
+.cr{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--light);}
 .cr:last-of-type{border-bottom:none;}
 .cr label{flex:1;font-size:12px;color:var(--muted);font-weight:500;}
-.cr input{width:90px;text-align:right;border:1.5px solid var(--border);border-radius:7px;padding:5px 9px;font-size:13px;font-family:inherit;font-weight:600;background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;}
+.cr input{width:88px;text-align:right;border:1.5px solid var(--border);border-radius:7px;padding:5px 9px;font-size:13px;font-family:inherit;font-weight:600;background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;}
 .cr input:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(46,125,212,.12);background:#fff;}
-.cr.new label{color:var(--orange);font-weight:700;}
-.cr.new input{border-color:rgba(232,98,26,.4);}
-.cr.new input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,98,26,.12);}
-.new-badge{font-size:9px;background:var(--orange);color:#fff;border-radius:4px;padding:1px 5px;font-weight:700;margin-left:4px;vertical-align:middle;}
 
-.total-block{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:10px;padding:14px;margin:14px 0 0;display:flex;align-items:center;justify-content:space-between;}
+/* TÉCNICO BLOCK */
+.tec-info{background:linear-gradient(135deg,var(--blue-light),#dde8f8);border-radius:8px;padding:10px 12px;margin-bottom:10px;border-left:3px solid var(--blue2);}
+.tec-info-title{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px;}
+.tec-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:10.5px;color:var(--muted);line-height:1.6;}
+.tec-grid strong{color:var(--text);}
+.tec-rate{margin-top:6px;font-size:12px;font-weight:700;color:var(--navy);text-align:center;background:#fff;border-radius:6px;padding:5px;border:1px solid var(--border);}
+
+.dur-row{display:flex;align-items:center;gap:8px;background:var(--bg);border-radius:8px;padding:8px 10px;border:1.5px solid var(--border);}
+.dur-row label{font-size:12px;color:var(--muted);font-weight:500;flex:1;}
+.dur-row input{width:60px;text-align:center;border:1.5px solid var(--border);border-radius:6px;padding:5px 6px;font-size:14px;font-family:inherit;font-weight:700;background:#fff;color:var(--text);}
+.dur-row input:focus{outline:none;border-color:var(--blue2);}
+.dur-row .dur-unit{font-size:11px;color:var(--muted);}
+.tec-custo-calc{margin-top:6px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);}
+.tec-custo-val{font-size:14px;font-weight:700;color:var(--navy);}
+
+/* IMPOSTO BLOCK */
+.tax-info{background:var(--orange-light);border-radius:8px;padding:10px 12px;border-left:3px solid var(--orange);}
+.tax-title{font-size:10px;font-weight:700;color:var(--orange);letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px;}
+.tax-rate-big{font-size:22px;font-weight:700;color:var(--orange);line-height:1;}
+.tax-desc{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.5;}
+.tax-formula{margin-top:8px;font-size:10.5px;color:var(--muted);background:#fff;border-radius:6px;padding:6px 8px;border:1px solid rgba(232,98,26,.2);line-height:1.7;}
+.tax-formula strong{color:var(--orange);}
+
+/* TOTAL BLOCK */
+.total-block{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:10px;padding:14px;margin-top:12px;}
+.total-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;}
 .total-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.8px;}
-#l-tot{font-size:24px;font-weight:700;color:var(--orange2);letter-spacing:-.5px;}
+#l-preco{font-size:24px;font-weight:700;color:var(--orange2);}
+.total-breakdown{display:grid;grid-template-columns:1fr 1fr;gap:5px;border-top:1px solid rgba(255,255,255,.15);padding-top:8px;}
+.tb-item{font-size:10.5px;color:rgba(255,255,255,.65);}
+.tb-item strong{color:#fff;display:block;font-size:12px;}
 
-.ref-box{margin-top:12px;padding:10px 12px;background:var(--light);border-radius:8px;border-left:3px solid var(--blue2);}
-.ref-title{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--blue);margin-bottom:4px;}
+/* REF BOX */
+.ref-box{margin-top:10px;padding:9px 12px;background:var(--blue-light);border-radius:8px;border-left:3px solid var(--blue2);}
+.ref-ttl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--blue);margin-bottom:3px;}
 #l-ref{font-size:11px;color:var(--muted);line-height:1.8;}
 
-.counters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+/* COUNTERS */
+.counters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
 .counter{border-radius:10px;padding:12px;text-align:center;}
-.c-ok{background:var(--ok-bg);border:1px solid #b8e0c8;}
-.c-no{background:var(--no-bg);border:1px solid #f5b8b8;}
+.c-ok{background:var(--ok-bg);border:1px solid var(--ok-border);}
+.c-no{background:var(--no-bg);border:1px solid var(--no-border);}
 .cnt-lbl{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;}
 .cnt-val{font-size:28px;font-weight:700;}
 .c-ok .cnt-lbl,.c-ok .cnt-val{color:var(--ok);}
@@ -78,90 +108,144 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 
 /* CHART */
 .chart-body{padding:14px 16px;}
-.legend{display:flex;gap:18px;margin-bottom:12px;font-size:11px;color:var(--muted);flex-wrap:wrap;}
-.legend-item{display:flex;align-items:center;gap:5px;}
-.dot{width:10px;height:10px;border-radius:3px;display:inline-block;}
+.legend{display:flex;gap:16px;margin-bottom:12px;font-size:11px;color:var(--muted);flex-wrap:wrap;}
+.li{display:flex;align-items:center;gap:5px;}
+.dot{width:10px;height:10px;border-radius:3px;}
 .dash-l{width:18px;border-top:2.5px dashed var(--orange);display:inline-block;}
 #cw{position:relative;width:100%;}
 
 /* TABLE */
-.table-header{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--navy),var(--blue));}
-.table-header p:first-child{font-size:12px;font-weight:600;color:#fff;}
-.table-header p:last-child{font-size:10px;color:rgba(255,255,255,.5);}
-.table-wrap{overflow-x:auto;}
-table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;min-width:520px;}
-colgroup col:nth-child(1){width:32%} colgroup col:nth-child(2){width:17%}
-colgroup col:nth-child(3){width:17%} colgroup col:nth-child(4){width:17%}
-colgroup col:nth-child(5){width:17%}
-thead tr{background:var(--light);}
-th{padding:8px 16px;text-align:left;font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;}
+.t-head{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--navy),var(--blue));}
+.t-head p:first-child{font-size:12px;font-weight:600;color:#fff;}
+.t-head p:last-child{font-size:10px;color:rgba(255,255,255,.5);}
+.t-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;min-width:560px;}
+colgroup col:nth-child(1){width:28%} colgroup col:nth-child(2){width:16%}
+colgroup col:nth-child(3){width:16%} colgroup col:nth-child(4){width:16%}
+colgroup col:nth-child(5){width:13%} colgroup col:nth-child(6){width:11%}
+thead tr{background:var(--blue-light);}
+th{padding:8px 14px;text-align:left;font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;}
 th:not(:first-child){text-align:right;} th:last-child{text-align:center;}
 tbody tr{border-bottom:1px solid var(--light);transition:background .1s;}
 tbody tr:hover{background:#f2f6ff;}
-td{padding:9px 16px;}
+td{padding:9px 14px;}
 td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
-.conv-name{font-weight:600;color:var(--navy);}
-.badge{font-size:10.5px;padding:3px 10px;border-radius:999px;font-weight:700;display:inline-block;}
-.b-ok{background:var(--ok-bg);color:var(--ok);border:1px solid #aad8be;}
-.b-wa{background:var(--wa-bg);color:var(--wa);border:1px solid #f5cc80;}
-.b-no{background:var(--no-bg);color:var(--no);border:1px solid #f5aaaa;}
+.cn{font-weight:600;color:var(--navy);}
+.badge{font-size:10.5px;padding:3px 9px;border-radius:999px;font-weight:700;display:inline-block;}
+.b-ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-border);}
+.b-wa{background:var(--wa-bg);color:var(--wa);border:1px solid var(--wa-border);}
+.b-no{background:var(--no-bg);color:var(--no);border:1px solid var(--no-border);}
 
 .note{margin-top:18px;padding:12px 16px;background:#fffbef;border:1px solid #f0d57a;border-left:4px solid var(--orange);border-radius:10px;font-size:11.5px;color:#7a5200;line-height:1.7;}
-.footer{margin-top:24px;padding:14px 28px;border-top:1px solid var(--border);text-align:center;font-size:10px;color:var(--muted);background:var(--card);}
+.footer{margin-top:22px;padding:14px 28px;border-top:1px solid var(--border);text-align:center;font-size:10px;color:var(--muted);background:var(--card);}
 
-@media(max-width:720px){
+@media(max-width:780px){
   .layout{grid-template-columns:1fr;}
-  .content{padding:16px;}
-  .header{padding:14px 16px;}
+  .wrap{padding:14px;}
+  .hdr{padding:12px 14px;}
 }
 </style>
 </head>
 <body>
 
-<header class="header">
+<header class="hdr">
   <div>
     <div class="logo-name"><span class="pro">PRO</span><span class="img">IMAGEM</span></div>
     <div class="logo-sub">Exames e Consultas</div>
   </div>
-  <div class="header-title">
+  <div class="hdr-r">
     <h1>Análise de Viabilidade Financeira</h1>
-    <p>Exames RX Contrastado · Custo mínimo vs. valores dos convênios</p>
+    <p>Exames RX Contrastado · Piso mínimo de negociação com convênios</p>
   </div>
 </header>
 
-<div class="content">
+<div class="wrap">
 
-  <p class="sec-label">Selecione o procedimento</p>
-  <div class="proc-btns" id="btns"></div>
+  <p class="sec-lbl">Selecione o procedimento</p>
+  <div class="proc-row" id="btns"></div>
 
   <div class="layout">
 
+    <!-- PAINEL DE CUSTOS -->
     <div class="card">
-      <div class="card-head"><h2>💰 Composição do Custo Real</h2></div>
-      <div class="card-body">
-        <div class="cr"><label>Contraste / medicamento</label><input type="number" id="i-mat" min="0" step="10" oninput="go()"></div>
-        <div class="cr"><label>Honorário médico</label><input type="number" id="i-hm" min="0" step="5" oninput="go()"></div>
-        <div class="cr"><label>Custo operacional</label><input type="number" id="i-co" min="0" step="5" oninput="go()"></div>
-        <div class="cr"><label>Filme / outros</label><input type="number" id="i-ot" min="0" step="5" oninput="go()"></div>
-        <div class="cr new">
-          <label>Imposto <span class="new-badge">NOVO</span></label>
-          <input type="number" id="i-imp" min="0" step="1" oninput="go()">
-        </div>
-        <div class="cr new">
-          <label>Técnico de RX (CLT) <span class="new-badge">NOVO</span></label>
-          <input type="number" id="i-tec" min="0" step="5" oninput="go()">
+      <div class="c-head"><h2>💰 Composição do Custo Real</h2></div>
+      <div class="c-body">
+
+        <!-- CUSTOS DIRETOS -->
+        <div class="panel-sec">
+          <div class="panel-sec-title">Custos Diretos</div>
+          <div class="cr"><label>Contraste / medicamento</label><input type="number" id="i-mat" min="0" step="10" oninput="go()"></div>
+          <div class="cr"><label>Honorário médico</label><input type="number" id="i-hm" min="0" step="5" oninput="go()"></div>
+          <div class="cr"><label>Custo operacional</label><input type="number" id="i-co" min="0" step="5" oninput="go()"></div>
+          <div class="cr" style="border-bottom:none;"><label>Filme / outros</label><input type="number" id="i-ot" min="0" step="5" oninput="go()"></div>
         </div>
 
+        <!-- TÉCNICO CLT -->
+        <div class="panel-sec">
+          <div class="panel-sec-title">Técnico de RX (CLT)</div>
+          <div class="tec-info">
+            <div class="tec-info-title">Custo real CLT calculado</div>
+            <div class="tec-grid">
+              <span>Salário base:</span><span><strong>R$ 4.538,80</strong></span>
+              <span>INSS patronal (20%):</span><span><strong>R$ 907,76</strong></span>
+              <span>FGTS (8%):</span><span><strong>R$ 363,10</strong></span>
+              <span>RAT/SAT (2%):</span><span><strong>R$ 90,78</strong></span>
+              <span>Terceiros (5,8%):</span><span><strong>R$ 263,25</strong></span>
+              <span>13º + Férias + 1/3:</span><span><strong>R$ 882,54</strong></span>
+              <span>FGTS s/ 13º e férias:</span><span><strong>R$ 70,60</strong></span>
+            </div>
+            <div class="tec-rate">Total mensal: R$ 7.116,84 &nbsp;|&nbsp; <strong>R$ 32,35 / hora</strong></div>
+          </div>
+          <div class="dur-row">
+            <label>Duração do exame</label>
+            <input type="number" id="i-dur" min="1" max="180" step="5" oninput="go()">
+            <span class="dur-unit">min</span>
+          </div>
+          <div class="tec-custo-calc">
+            <span>Custo do técnico no exame:</span>
+            <span class="tec-custo-val" id="l-tec">R$ 0,00</span>
+          </div>
+        </div>
+
+        <!-- TRIBUTAÇÃO -->
+        <div class="panel-sec">
+          <div class="panel-sec-title">Tributação</div>
+          <div class="tax-info">
+            <div class="tax-title">🔒 Lucro Presumido</div>
+            <div style="display:flex;align-items:baseline;gap:6px;">
+              <span class="tax-rate-big">13,50%</span>
+              <span style="font-size:11px;color:var(--muted);">sobre a receita bruta</span>
+            </div>
+            <div class="tax-desc">IRPJ + CSLL + PIS + COFINS aplicados sobre o valor recebido de cada convênio.</div>
+            <div class="tax-formula">
+              Preço mínimo = <strong>Custos diretos ÷ (1 − 13,5%)</strong><br>
+              = Custos diretos ÷ 0,865<br>
+              <em>O imposto é calculado individualmente por convênio.</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOTAL -->
         <div class="total-block">
-          <span class="total-label">Custo mínimo viável</span>
-          <span id="l-tot">R$ 0,00</span>
+          <div class="total-top">
+            <span class="total-label">Preço mínimo viável</span>
+            <span id="l-preco">R$ 0,00</span>
+          </div>
+          <div class="total-breakdown">
+            <div class="tb-item">Custos diretos<strong id="l-dir">R$ 0,00</strong></div>
+            <div class="tb-item">Técnico CLT<strong id="l-tec2">R$ 0,00</strong></div>
+            <div class="tb-item">Subtotal (sem impostos)<strong id="l-sub">R$ 0,00</strong></div>
+            <div class="tb-item">Imposto (13,5% da receita)<strong id="l-imp">R$ 0,00</strong></div>
+          </div>
         </div>
 
+        <!-- REF -->
         <div class="ref-box">
-          <div class="ref-title">Referência do sistema atual</div>
+          <div class="ref-ttl">Referência do sistema atual</div>
           <div id="l-ref"></div>
         </div>
 
+        <!-- COUNTERS -->
         <div class="counters">
           <div class="counter c-ok"><div class="cnt-lbl">Viáveis</div><div class="cnt-val" id="l-ok">—</div></div>
           <div class="counter c-no"><div class="cnt-lbl">Inviáveis</div><div class="cnt-val" id="l-nk">—</div></div>
@@ -169,35 +253,38 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
       </div>
     </div>
 
+    <!-- GRÁFICO -->
     <div class="card">
-      <div class="card-head"><h2 id="cht-ttl">📊 Selecione um procedimento</h2></div>
+      <div class="c-head"><h2 id="cht-ttl">📊 Selecione um procedimento</h2></div>
       <div class="chart-body">
         <div class="legend">
-          <span class="legend-item"><span class="dot" style="background:#2a8a55;"></span>Acima do custo mínimo</span>
-          <span class="legend-item"><span class="dot" style="background:#c73232;"></span>Abaixo do custo mínimo</span>
-          <span class="legend-item"><span class="dash-l"></span>&nbsp;Custo mínimo viável</span>
+          <span class="li"><span class="dot" style="background:#2a8a55;"></span>Acima do preço mínimo</span>
+          <span class="li"><span class="dot" style="background:#c73232;"></span>Abaixo do preço mínimo</span>
+          <span class="li"><span class="dash-l"></span>&nbsp;Preço mínimo viável</span>
         </div>
         <div id="cw" style="height:280px;">
-          <canvas id="mc" aria-label="Gráfico comparativo de valores dos convênios com linha de custo mínimo viável"></canvas>
+          <canvas id="mc" aria-label="Gráfico comparativo de valores dos convênios com linha de preço mínimo viável"></canvas>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- TABELA -->
   <div class="card">
-    <div class="table-header">
+    <div class="t-head">
       <p>Detalhe por convênio</p>
-      <p>Ordenado por valor pago (maior → menor)</p>
+      <p>Ordenado por valor pago (maior → menor) · Imposto calculado individualmente sobre cada valor</p>
     </div>
-    <div class="table-wrap">
+    <div class="t-wrap">
       <table>
-        <colgroup><col><col><col><col><col></colgroup>
+        <colgroup><col><col><col><col><col><col></colgroup>
         <thead>
           <tr>
             <th>Convênio</th>
             <th style="text-align:right;">Valor pago</th>
-            <th style="text-align:right;">Custo mínimo</th>
-            <th style="text-align:right;">Margem R$</th>
+            <th style="text-align:right;">−Imposto (13,5%)</th>
+            <th style="text-align:right;">Receita líquida</th>
+            <th style="text-align:right;">Custo direto</th>
             <th style="text-align:center;">Situação</th>
           </tr>
         </thead>
@@ -207,101 +294,94 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
   </div>
 
   <div class="note">
-    ⚠ <strong>Atenção:</strong> Os valores pré-carregados são referência do sistema atual (planilha 339). Atualize os campos com os custos reais praticados hoje — especialmente contraste, honorários, imposto e custo do técnico CLT. O PETROBRAS na Urografia Excretora (R$&nbsp;119,32) provavelmente não inclui o material, que pode ser fornecido separadamente pelo convênio.
+    ⚠ <strong>Atenção:</strong> Os valores pré-carregados são referência do sistema atual (planilha 339). Atualize os campos com os custos reais praticados hoje. A <strong>duração do exame</strong> é uma estimativa — ajuste conforme o tempo real de uso do técnico em cada procedimento. O PETROBRAS na Urografia Excretora (R$ 119,32) provavelmente não inclui o material, fornecido separadamente.
   </div>
 </div>
 
-<div class="footer">PROIMAGEM Exames e Consultas · Ferramenta interna de análise de viabilidade financeira · Os dados inseridos ficam apenas neste dispositivo.</div>
+<div class="footer">PROIMAGEM Exames e Consultas · Ferramenta interna de análise de viabilidade · Os dados inseridos ficam apenas neste dispositivo.</div>
 
 <script>
+const TAX  = 0.135;          // Lucro Presumido
+const HORA = 32.35;          // R$/h — técnico CLT (salário R$4.538,80 + encargos)
+const MIN  = HORA / 60;      // R$/min
+
 const procs=[
-  {name:'Histerossalpingografia',ref:{hm:70,co:42,filme:7,material:890,imp:0,tec:0},conv:[
+  {name:'Histerossalpingografia',  ref:{hm:70,co:42,filme:7,material:890},dur:35,conv:[
     ['ASSEC/CEHOP',997.52],['ASSEM',1003.00],['CAPESAUDE',992.32],['CASEMBRAPA',1017.79],
     ['CASSE',1013.77],['CASSIND',687.23],['CODEVASF',1055.13],['FACHESF',998.90],
     ['FUSEX',1030.00],['PARTICULAR Cartão',700],['PARTICULAR PIX',600],['PETROBRAS',1001.49],
-    ['PLAN ASSISTE',988.89],['SAÚDE CAIXA',1030.87],['SMS',859],['VALE',959.02]
-  ]},
-  {name:'Urografia Excretora',ref:{hm:70,co:42,filme:16,material:679,imp:0,tec:0},conv:[
+    ['PLAN ASSISTE',988.89],['SAÚDE CAIXA',1030.87],['SMS',859],['VALE',959.02]]},
+  {name:'Urografia Excretora',     ref:{hm:70,co:42,filme:16,material:679},dur:45,conv:[
     ['ASSEC/CEHOP',792.68],['ASSEM',805.39],['CASEMBRAPA',819.52],['CASSE',882.54],
     ['CASSI',504.24],['CASSIND',350.50],['CODEVASF',859.06],['FACHESF',800.93],
     ['FUSEX',834.05],['PARTICULAR Cartão',350],['PARTICULAR PIX',320],['PETROBRAS',119.32],
-    ['PLAN ASSISTE',784.90],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25],['VALE',751.28]
-  ]},
-  {name:'Uretrocistografia Miccional',ref:{hm:70,co:42,filme:12,material:641,imp:0,tec:0},conv:[
+    ['PLAN ASSISTE',784.90],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25],['VALE',751.28]]},
+  {name:'Uretrocistografia Miccional',ref:{hm:70,co:42,filme:12,material:641},dur:30,conv:[
     ['ASSEC/CEHOP',752.92],['ASSEM',765.04],['CAPESAUDE',730.32],['CASEMBRAPA',756.62],
     ['CASSE',850.22],['CASSIND',332.60],['CODEVASF',800.95],['FACHESF',760.79],
     ['FUSEX',794.01],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',721.48],
-    ['POSTAL SAÚDE',761.34],['SAÚDE CAIXA',764.93],['VALE',724.62]
-  ]},
-  {name:'Uretrocistografia Retrógrada',ref:{hm:70,co:42,filme:12,material:345,imp:0,tec:0},conv:[
+    ['POSTAL SAÚDE',761.34],['SAÚDE CAIXA',764.93],['VALE',724.62]]},
+  {name:'Uretrocistografia Retrógrada',ref:{hm:70,co:42,filme:12,material:345},dur:25,conv:[
     ['ASSEC/CEHOP',456.53],['ASSEM',468.65],['CAPESAUDE',440.72],['CASEMBRAPA',467.02],
     ['CASSE',517.31],['CASSIND',326.07],['CODEVASF',511.35],['FACHESF',464.40],
     ['FUSEX',497.62],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',431.88],
-    ['POSTAL SAÚDE',464.95],['SAÚDE CAIXA',475.33],['VALE',439.02]
-  ]},
-  {name:'Uretrocist. Miccional Criança',ref:{hm:95,co:45,filme:12,material:641,imp:0,tec:0},conv:[
+    ['POSTAL SAÚDE',464.95],['SAÚDE CAIXA',475.33],['VALE',439.02]]},
+  {name:'Uretrocist. Miccional Criança',ref:{hm:95,co:45,filme:12,material:641},dur:35,conv:[
     ['ASSEM',793.59],['CASEMBRAPA',789.44],['CASSE',879.75],['CASSIND',347.38],
     ['CODEVASF',831.22],['FACHESF',787.78],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
-    ['PLAN ASSISTE',744.18],['SAÚDE CAIXA',799.01],['VALE',755.48]
-  ]},
-  {name:'Uretrocist. Retrógrada Criança',ref:{hm:95,co:45,filme:12,material:345,imp:0,tec:0},conv:[
+    ['PLAN ASSISTE',744.18],['SAÚDE CAIXA',799.01],['VALE',755.48]]},
+  {name:'Uretrocist. Retrógrada Criança',ref:{hm:95,co:45,filme:12,material:345},dur:30,conv:[
     ['ASSEM',497.20],['CASEMBRAPA',499.84],['CASSE',546.83],['CASSIND',347.38],
     ['CODEVASF',541.62],['FACHESF',491.39],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
-    ['PLAN ASSISTE',454.58],['SAÚDE CAIXA',509.41],['VALE',469.88]
-  ]},
-  {name:'Enema Opaco',ref:{hm:99,co:48,filme:22,material:166,imp:0,tec:0},conv:[
-    ['CASSE',335.55],['PARTICULAR Cartão',350],['PARTICULAR PIX',350]
-  ]},
-  {name:'RX Esôfago-Estômago-Duodeno',ref:{hm:99,co:39,filme:17,material:59,imp:0,tec:0},conv:[
+    ['PLAN ASSISTE',454.58],['SAÚDE CAIXA',509.41],['VALE',469.88]]},
+  {name:'Enema Opaco',ref:{hm:99,co:48,filme:22,material:166},dur:40,conv:[
+    ['CASSE',335.55],['PARTICULAR Cartão',350],['PARTICULAR PIX',350]]},
+  {name:'RX Esôfago-Estômago-Duodeno',ref:{hm:99,co:39,filme:17,material:59},dur:25,conv:[
     ['ASSEC/CEHOP',300],['CASSE',214.88],['LIFE EMPRESARIAL',128.74],
-    ['PARTICULAR Cartão',350],['PARTICULAR PIX',350]
-  ]},
-  {name:'Esofagograma',ref:{hm:45,co:25,filme:7,material:30,imp:0,tec:0},conv:[
-    ['CASSE',106.43],['PARTICULAR Cartão',300],['PARTICULAR PIX',250]
-  ]},
-  {name:'RX Trânsito Intestinal',ref:{hm:72,co:39,filme:17,material:30,imp:0,tec:0},conv:[
+    ['PARTICULAR Cartão',350],['PARTICULAR PIX',350]]},
+  {name:'Esofagograma',ref:{hm:45,co:25,filme:7,material:30},dur:15,conv:[
+    ['CASSE',106.43],['PARTICULAR Cartão',300],['PARTICULAR PIX',250]]},
+  {name:'RX Trânsito Intestinal',ref:{hm:72,co:39,filme:17,material:30},dur:30,conv:[
     ['ASSEC/CEHOP',300],['CASSE',158.90],['PARTICULAR Cartão',350],
-    ['PARTICULAR PIX',350],['PETROBRAS',155.85]
-  ]},
-  {name:'Fistulografia',ref:{hm:51,co:35,filme:9,material:305,imp:0,tec:0},conv:[
+    ['PARTICULAR PIX',350],['PETROBRAS',155.85]]},
+  {name:'Fistulografia',ref:{hm:51,co:35,filme:9,material:305},dur:25,conv:[
     ['FUSEX',400.75],['PARTICULAR Cartão',350],['PARTICULAR PIX',300],
-    ['PETROBRAS',377.52],['VALE',362.59]
-  ]},
-  {name:'Sialografia',ref:{hm:80,co:41,filme:8,material:0,imp:0,tec:0},conv:[
-    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]
-  ]}
+    ['PETROBRAS',377.52],['VALE',362.59]]},
+  {name:'Sialografia',ref:{hm:80,co:41,filme:8,material:0},dur:25,conv:[
+    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]]}
 ];
 
-let cur=0,myChart=null;
+let cur=0, myChart=null;
 
 const costPlugin={
   id:'costLine',
   afterDraw(chart){
-    const tot=getTotal();
-    if(!tot) return;
+    const pm=getPrecoMinimo();
+    if(!pm) return;
     const {ctx,chartArea:{top,bottom},scales:{x}}=chart;
-    const xp=x.getPixelForValue(tot);
+    const xp=x.getPixelForValue(pm);
     ctx.save();
     ctx.beginPath();ctx.setLineDash([7,5]);
     ctx.strokeStyle='#e8621a';ctx.lineWidth=2.5;
     ctx.moveTo(xp,top);ctx.lineTo(xp,bottom);ctx.stroke();
     ctx.setLineDash([]);ctx.fillStyle='#e8621a';
     ctx.font='700 10px Inter,sans-serif';ctx.textAlign='left';
-    const lbl='R$'+tot.toFixed(0);
+    const lbl='Mín: R$'+pm.toFixed(0);
     const tw=ctx.measureText(lbl).width;
-    const tx=(xp+4+tw+8>chart.chartArea.right)?xp-tw-8:xp+4;
+    const tx=(xp+tw+12>chart.chartArea.right)?xp-tw-8:xp+4;
     ctx.fillText(lbl,tx,top+13);
     ctx.restore();
   }
 };
 
-const btnC=document.getElementById('btns');
+// Buttons
+const bc=document.getElementById('btns');
 procs.forEach((p,i)=>{
   const b=document.createElement('button');
   b.className='pb'+(i===0?' act':'');
   b.textContent=p.name;
   b.onclick=()=>sel(i);
-  btnC.appendChild(b);
+  bc.appendChild(b);
 });
 
 function sel(i){
@@ -312,38 +392,57 @@ function sel(i){
   document.getElementById('i-hm').value=p.ref.hm;
   document.getElementById('i-co').value=p.ref.co;
   document.getElementById('i-ot').value=p.ref.filme;
-  document.getElementById('i-imp').value=p.ref.imp;
-  document.getElementById('i-tec').value=p.ref.tec;
+  document.getElementById('i-dur').value=p.dur;
   document.getElementById('cht-ttl').textContent='📊 '+p.name+' — comparativo por convênio';
   const rt=p.ref.hm+p.ref.co+p.ref.filme+p.ref.material;
   document.getElementById('l-ref').innerHTML=
-    `HM: <strong>R$${p.ref.hm}</strong> &nbsp;|&nbsp; CO: <strong>R$${p.ref.co}</strong> &nbsp;|&nbsp; Filme: <strong>R$${p.ref.filme}</strong> &nbsp;|&nbsp; Material: <strong>R$${p.ref.material}</strong><br>Total no sistema (sem imposto/técnico): <strong>R$${rt.toFixed(2)}</strong>`;
+    `HM: <strong>R$${p.ref.hm}</strong> &nbsp;|&nbsp; CO: <strong>R$${p.ref.co}</strong> &nbsp;|&nbsp; Filme: <strong>R$${p.ref.filme}</strong> &nbsp;|&nbsp; Material: <strong>R$${p.ref.material}</strong><br>Total no sistema (sem técnico/imposto): <strong>${fmt(rt)}</strong>`;
   go();
 }
 
-function getTotal(){
-  return ['i-mat','i-hm','i-co','i-ot','i-imp','i-tec']
+function getDirectCosts(){
+  return ['i-mat','i-hm','i-co','i-ot']
     .reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
+}
+function getTecCost(){
+  const d=parseFloat(document.getElementById('i-dur').value)||0;
+  return d*MIN;
+}
+function getPrecoMinimo(){
+  return (getDirectCosts()+getTecCost())/(1-TAX);
 }
 
 function fmt(v){
+  if(isNaN(v)) return 'R$ –';
   return 'R$ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
 }
 
 function go(){
   const p=procs[cur];
-  const tot=getTotal();
-  document.getElementById('l-tot').textContent=fmt(tot);
+  const dir=getDirectCosts();
+  const tec=getTecCost();
+  const sub=dir+tec;
+  const pm=getPrecoMinimo();   // minimum price
+  const imp=pm*TAX;            // tax amount at minimum price
 
+  // Update panel
+  document.getElementById('l-tec').textContent=fmt(tec);
+  document.getElementById('l-tec2').textContent=fmt(tec);
+  document.getElementById('l-dir').textContent=fmt(dir);
+  document.getElementById('l-sub').textContent=fmt(sub);
+  document.getElementById('l-imp').textContent=fmt(imp);
+  document.getElementById('l-preco').textContent=fmt(pm);
+
+  // Chart
   const sorted=[...p.conv].sort((a,b)=>b[1]-a[1]);
   const labels=sorted.map(([k])=>k);
   const vals=sorted.map(([,v])=>v);
-  const ok=vals.filter(v=>v>=tot).length;
+  const ok=vals.filter(v=>v>=pm).length;
   document.getElementById('l-ok').textContent=ok;
   document.getElementById('l-nk').textContent=vals.length-ok;
 
-  const colors=vals.map(v=>v>=tot?'rgba(42,138,85,.82)':'rgba(199,50,50,.82)');
-  const hcolors=vals.map(v=>v>=tot?'#2a8a55':'#c73232');
+  const colors=vals.map(v=>v>=pm?'rgba(42,138,85,.82)':'rgba(199,50,50,.82)');
+  const hcolors=vals.map(v=>v>=pm?'#2a8a55':'#c73232');
 
   const h=Math.max(240,sorted.length*40+70);
   document.getElementById('cw').style.height=h+'px';
@@ -363,17 +462,23 @@ function go(){
       plugins:{
         legend:{display:false},
         tooltip:{
-          backgroundColor:'rgba(18,48,94,.93)',
+          backgroundColor:'rgba(18,48,94,.95)',
           titleFont:{size:12,weight:'700'},bodyFont:{size:11},
-          padding:10,cornerRadius:8,
+          padding:11,cornerRadius:8,
           callbacks:{
             title:(items)=>items[0].label,
             label:(c)=>{
-              const v=c.raw,m=v-tot,pct=tot>0?(m/tot*100).toFixed(1):0;
+              const v=c.raw;
+              const impV=v*TAX;
+              const liq=v*(1-TAX);
+              const marg=liq-sub;
+              const pct=sub>0?(marg/sub*100).toFixed(1):0;
               return [
-                ` Pago: R$ ${v.toFixed(2)}`,
-                ` Custo mín.: R$ ${tot.toFixed(2)}`,
-                ` Margem: ${m>=0?'+':''}R$ ${Math.abs(m).toFixed(2)} (${m>=0?'+':''}${pct}%)`
+                ` Valor bruto:     R$ ${v.toFixed(2)}`,
+                ` Imposto (13,5%): −R$ ${impV.toFixed(2)}`,
+                ` Receita líquida: R$ ${liq.toFixed(2)}`,
+                ` Custo direto:    −R$ ${sub.toFixed(2)}`,
+                ` Margem:          ${marg>=0?'+':''}R$ ${marg.toFixed(2)} (${marg>=0?'+':''}${pct}%)`
               ];
             }
           }
@@ -386,20 +491,25 @@ function go(){
     }
   });
 
+  // Table
   const tb=document.getElementById('tbody');
   tb.innerHTML='';
   sorted.forEach(([name,val])=>{
-    const m=val-tot,pct=tot>0?(m/tot*100):0;
-    const mc=m>=0?'var(--ok)':'var(--no)';
-    const badge=m<0
+    const impV=val*TAX;
+    const liq=val*(1-TAX);
+    const marg=liq-sub;
+    const pct=sub>0?(marg/sub*100):0;
+    const mc=marg>=0?'var(--ok)':'var(--no)';
+    const badge=marg<0
       ?'<span class="badge b-no">Inviável</span>'
       :pct<8?'<span class="badge b-wa">Margem estreita</span>'
       :'<span class="badge b-ok">Viável</span>';
     tb.innerHTML+=`<tr>
-      <td class="conv-name">${name}</td>
+      <td class="cn">${name}</td>
       <td style="font-weight:700;">${fmt(val)}</td>
-      <td style="color:var(--muted);">${fmt(tot)}</td>
-      <td style="color:${mc};font-weight:700;">${m>=0?'+':'−'}${fmt(Math.abs(m))}</td>
+      <td style="color:var(--no);">−${fmt(impV)}</td>
+      <td style="font-weight:600;color:var(--blue);">${fmt(liq)}</td>
+      <td style="color:${mc};font-weight:700;">${marg>=0?'+':'−'}${fmt(Math.abs(marg))}</td>
       <td>${badge}</td>
     </tr>`;
   });
