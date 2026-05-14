@@ -28,18 +28,26 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .hdr-r h1{font-size:14px;font-weight:600;color:#fff;}
 .hdr-r p{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
 
+/* TABS */
+.tabs-container {background: var(--card); border-bottom: 1px solid var(--border); padding: 0 28px; display: flex; gap: 20px;}
+.tab-btn {padding: 14px 4px; background: transparent; border: none; border-bottom: 3px solid transparent; color: var(--muted); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s; font-family: inherit;}
+.tab-btn:hover {color: var(--blue);}
+.tab-btn.active {color: var(--navy); border-bottom-color: var(--orange);}
+
 /* CONTENT */
-.wrap{padding:22px 28px;max-width:1320px;margin:0 auto;}
+.wrap{padding:22px 28px;max-width:1320px;margin:0 auto; display:none;}
+.wrap.active {display: block; animation: fadeIn 0.3s ease;}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
 /* PROC BUTTONS */
-.sec-lbl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:9px; display:flex; justify-content:space-between; align-items:center;}
 .proc-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
 .pb{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:6px 12px;font-size:11.5px;cursor:pointer;color:var(--muted);font-family:inherit;font-weight:500;white-space:nowrap;transition:all .15s;}
 .pb:hover{border-color:var(--blue2);color:var(--blue);background:var(--blue-light);}
 .pb.act{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
 
 /* LAYOUT */
-.layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:18px;margin-bottom:18px;align-items:start;}
+.layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:18px;margin-bottom:18px;align-items:start;}
 
 /* CARD */
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(18,48,94,.07);overflow:hidden;}
@@ -48,7 +56,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .c-body{padding:14px 16px;}
 
 /* SECTION INSIDE PANEL */
-.panel-sec{margin-bottom:12px;}
+.panel-sec{margin-bottom:16px;}
 .panel-sec-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
 .panel-sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
 
@@ -56,8 +64,21 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .cr{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--light);}
 .cr:last-of-type{border-bottom:none;}
 .cr label{flex:1;font-size:12px;color:var(--muted);font-weight:500;}
-.cr input{width:88px;text-align:right;border:1.5px solid var(--border);border-radius:7px;padding:5px 9px;font-size:13px;font-family:inherit;font-weight:600;background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;}
+.input-group {display:flex; align-items:center; gap:6px;}
+.cr-pct {font-size: 10px; color: var(--blue2); font-weight: 700; background: var(--blue-light); padding: 2px 6px; border-radius: 4px; width: 42px; text-align: center;}
+.cr input{width:82px;text-align:right;border:1.5px solid var(--border);border-radius:7px;padding:5px 9px;font-size:13px;font-family:inherit;font-weight:600;background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;}
 .cr input:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(46,125,212,.12);background:#fff;}
+
+/* ACTION BUTTONS */
+.action-btns {display: flex; gap: 8px; margin-top: 10px;}
+.btn-save {flex: 1; background: var(--ok); color: #fff; border: none; padding: 8px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: opacity 0.2s;}
+.btn-save:hover {opacity: 0.9;}
+.btn-reset {background: #fff; color: var(--muted); border: 1px solid var(--border); padding: 8px 12px; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 11px;}
+.btn-reset:hover {background: var(--bg); color: var(--text);}
+
+/* TOAST */
+.toast {position: fixed; bottom: 20px; right: 20px; background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 500; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: translateY(100px); opacity: 0; transition: all 0.3s ease; z-index: 1000;}
+.toast.show {transform: translateY(0); opacity: 1;}
 
 /* TÉCNICO BLOCK */
 .tec-info{background:linear-gradient(135deg,var(--blue-light),#dde8f8);border-radius:8px;padding:10px 12px;margin-bottom:10px;border-left:3px solid var(--blue2);}
@@ -79,8 +100,6 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .tax-title{font-size:10px;font-weight:700;color:var(--orange);letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px;}
 .tax-rate-big{font-size:22px;font-weight:700;color:var(--orange);line-height:1;}
 .tax-desc{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.5;}
-.tax-formula{margin-top:8px;font-size:10.5px;color:var(--muted);background:#fff;border-radius:6px;padding:6px 8px;border:1px solid rgba(232,98,26,.2);line-height:1.7;}
-.tax-formula strong{color:var(--orange);}
 
 /* TOTAL BLOCK */
 .total-block{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:10px;padding:14px;margin-top:12px;}
@@ -119,22 +138,25 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .t-head p:first-child{font-size:12px;font-weight:600;color:#fff;}
 .t-head p:last-child{font-size:10px;color:rgba(255,255,255,.5);}
 .t-wrap{overflow-x:auto;}
-table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;min-width:560px;}
-colgroup col:nth-child(1){width:28%} colgroup col:nth-child(2){width:16%}
-colgroup col:nth-child(3){width:16%} colgroup col:nth-child(4){width:16%}
-colgroup col:nth-child(5){width:13%} colgroup col:nth-child(6){width:11%}
-thead tr{background:var(--blue-light);}
-th{padding:8px 14px;text-align:left;font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;}
+table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;min-width:600px;}
+th{padding:8px 14px;text-align:left;font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:var(--blue-light);}
 th:not(:first-child){text-align:right;} th:last-child{text-align:center;}
 tbody tr{border-bottom:1px solid var(--light);transition:background .1s;}
 tbody tr:hover{background:#f2f6ff;}
 td{padding:9px 14px;}
 td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
 .cn{font-weight:600;color:var(--navy);}
-.badge{font-size:10.5px;padding:3px 9px;border-radius:999px;font-weight:700;display:inline-block;}
+.badge{font-size:10.5px;padding:3px 9px;border-radius:999px;font-weight:700;display:inline-block;white-space: nowrap;}
 .b-ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-border);}
 .b-wa{background:var(--wa-bg);color:var(--wa);border:1px solid var(--wa-border);}
 .b-no{background:var(--no-bg);color:var(--no);border:1px solid var(--no-border);}
+
+/* DASHBOARD GRID (NEW TAB) */
+.dash-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 20px;}
+.dash-card {background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
+.dash-card h3 {font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; margin-bottom: 8px;}
+.dash-card .val {font-size: 28px; font-weight: 700; color: var(--navy);}
+.dash-card .sub {font-size: 11px; color: var(--muted); margin-top: 4px;}
 
 .note{margin-top:18px;padding:12px 16px;background:#fffbef;border:1px solid #f0d57a;border-left:4px solid var(--orange);border-radius:10px;font-size:11.5px;color:#7a5200;line-height:1.7;}
 .footer{margin-top:22px;padding:14px 28px;border-top:1px solid var(--border);text-align:center;font-size:10px;color:var(--muted);background:var(--card);}
@@ -155,17 +177,26 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
   </div>
   <div class="hdr-r">
     <h1>Análise de Viabilidade Financeira</h1>
-    <p>Exames RX Contrastado · Piso mínimo de negociação com convênios</p>
+    <p>Exames RX Contrastado · Piso mínimo de negociação</p>
   </div>
 </header>
 
-<div class="wrap">
+<div class="tabs-container">
+  <button class="tab-btn active" onclick="switchTab('tab-procs', this)">Viabilidade por Procedimento</button>
+  <button class="tab-btn" onclick="switchTab('tab-novos', this)">Análise de Credenciamento (GEAP/Select)</button>
+</div>
 
-  <p class="sec-lbl">Selecione o procedimento</p>
+<!-- ============================================== -->
+<!-- ABA 1: VIABILIDADE POR PROCEDIMENTO            -->
+<!-- ============================================== -->
+<div class="wrap active" id="tab-procs">
+  <div class="sec-lbl">
+    <span>Selecione o procedimento</span>
+    <span style="color: var(--ok); font-size: 9px;"><span id="status-salvo">● Base de dados ativa</span></span>
+  </div>
   <div class="proc-row" id="btns"></div>
 
   <div class="layout">
-
     <!-- PAINEL DE CUSTOS -->
     <div class="card">
       <div class="c-head"><h2>💰 Composição do Custo Real</h2></div>
@@ -174,10 +205,43 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
         <!-- CUSTOS DIRETOS -->
         <div class="panel-sec">
           <div class="panel-sec-title">Custos Diretos</div>
-          <div class="cr"><label>Contraste / medicamento</label><input type="number" id="i-mat" min="0" step="10" oninput="go()"></div>
-          <div class="cr"><label>Honorário médico</label><input type="number" id="i-hm" min="0" step="5" oninput="go()"></div>
-          <div class="cr"><label>Custo operacional</label><input type="number" id="i-co" min="0" step="5" oninput="go()"></div>
-          <div class="cr" style="border-bottom:none;"><label>Filme / outros</label><input type="number" id="i-ot" min="0" step="5" oninput="go()"></div>
+          
+          <div class="cr">
+            <label>MAT / MED</label>
+            <div class="input-group">
+              <span class="cr-pct" id="pct-mat">0%</span>
+              <input type="number" id="i-mat" min="0" step="10" oninput="go()">
+            </div>
+          </div>
+          
+          <div class="cr">
+            <label>Honorário médico</label>
+            <div class="input-group">
+              <span class="cr-pct" id="pct-hm">0%</span>
+              <input type="number" id="i-hm" min="0" step="5" oninput="go()">
+            </div>
+          </div>
+          
+          <div class="cr">
+            <label>Custo operacional</label>
+            <div class="input-group">
+              <span class="cr-pct" id="pct-co">0%</span>
+              <input type="number" id="i-co" min="0" step="5" oninput="go()">
+            </div>
+          </div>
+          
+          <div class="cr" style="border-bottom:none;">
+            <label>Filme / outros</label>
+            <div class="input-group">
+              <span class="cr-pct" id="pct-ot">0%</span>
+              <input type="number" id="i-ot" min="0" step="5" oninput="go()">
+            </div>
+          </div>
+
+          <div class="action-btns">
+            <button class="btn-reset" onclick="resetToDefault()">↺ Restaurar Original</button>
+            <button class="btn-save" onclick="saveData()">💾 Salvar Valores</button>
+          </div>
         </div>
 
         <!-- TÉCNICO CLT -->
@@ -187,12 +251,7 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
             <div class="tec-info-title">Custo real CLT calculado</div>
             <div class="tec-grid">
               <span>Salário base:</span><span><strong>R$ 4.538,80</strong></span>
-              <span>INSS patronal (20%):</span><span><strong>R$ 907,76</strong></span>
-              <span>FGTS (8%):</span><span><strong>R$ 363,10</strong></span>
-              <span>RAT/SAT (2%):</span><span><strong>R$ 90,78</strong></span>
-              <span>Terceiros (5,8%):</span><span><strong>R$ 263,25</strong></span>
-              <span>13º + Férias + 1/3:</span><span><strong>R$ 882,54</strong></span>
-              <span>FGTS s/ 13º e férias:</span><span><strong>R$ 70,60</strong></span>
+              <span>Encargos + Férias/13º:</span><span><strong>R$ 2.578,04</strong></span>
             </div>
             <div class="tec-rate">Total mensal: R$ 7.116,84 &nbsp;|&nbsp; <strong>R$ 32,35 / hora</strong></div>
           </div>
@@ -214,14 +273,8 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
             <div class="tax-title">🔒 Lucro Presumido</div>
             <div style="display:flex;align-items:baseline;gap:6px;">
               <span class="tax-rate-big">13,50%</span>
-              <span style="font-size:11px;color:var(--muted);">sobre a receita bruta</span>
             </div>
-            <div class="tax-desc">IRPJ + CSLL + PIS + COFINS aplicados sobre o valor recebido de cada convênio.</div>
-            <div class="tax-formula">
-              Preço mínimo = <strong>Custos diretos ÷ (1 − 13,5%)</strong><br>
-              = Custos diretos ÷ 0,865<br>
-              <em>O imposto é calculado individualmente por convênio.</em>
-            </div>
+            <div class="tax-desc">IRPJ + CSLL + PIS + COFINS</div>
           </div>
         </div>
 
@@ -235,14 +288,8 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
             <div class="tb-item">Custos diretos<strong id="l-dir">R$ 0,00</strong></div>
             <div class="tb-item">Técnico CLT<strong id="l-tec2">R$ 0,00</strong></div>
             <div class="tb-item">Subtotal (sem impostos)<strong id="l-sub">R$ 0,00</strong></div>
-            <div class="tb-item">Imposto (13,5% da receita)<strong id="l-imp">R$ 0,00</strong></div>
+            <div class="tb-item">Imposto mínimo<strong id="l-imp">R$ 0,00</strong></div>
           </div>
-        </div>
-
-        <!-- REF -->
-        <div class="ref-box">
-          <div class="ref-ttl">Referência do sistema atual</div>
-          <div id="l-ref"></div>
         </div>
 
         <!-- COUNTERS -->
@@ -263,7 +310,7 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
           <span class="li"><span class="dash-l"></span>&nbsp;Preço mínimo viável</span>
         </div>
         <div id="cw" style="height:280px;">
-          <canvas id="mc" aria-label="Gráfico comparativo de valores dos convênios com linha de preço mínimo viável"></canvas>
+          <canvas id="mc" aria-label="Gráfico comparativo de valores dos convênios"></canvas>
         </div>
       </div>
     </div>
@@ -273,18 +320,18 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
   <div class="card">
     <div class="t-head">
       <p>Detalhe por convênio</p>
-      <p>Ordenado por valor pago (maior → menor) · Imposto calculado individualmente sobre cada valor</p>
+      <p>Ordenado por valor pago (maior → menor)</p>
     </div>
     <div class="t-wrap">
       <table>
-        <colgroup><col><col><col><col><col><col></colgroup>
+        <colgroup><col style="width:25%"><col style="width:15%"><col style="width:15%"><col style="width:15%"><col style="width:15%"><col style="width:15%"></colgroup>
         <thead>
           <tr>
             <th>Convênio</th>
             <th style="text-align:right;">Valor pago</th>
             <th style="text-align:right;">−Imposto (13,5%)</th>
             <th style="text-align:right;">Receita líquida</th>
-            <th style="text-align:right;">Custo direto</th>
+            <th style="text-align:right;">Margem (R$)</th>
             <th style="text-align:center;">Situação</th>
           </tr>
         </thead>
@@ -292,64 +339,151 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
       </table>
     </div>
   </div>
+</div>
 
+<!-- ============================================== -->
+<!-- ABA 2: ANÁLISE GEAP / SELECT                   -->
+<!-- ============================================== -->
+<div class="wrap" id="tab-novos">
+  <div class="dash-grid">
+    <div class="dash-card">
+      <h3>Exames Analisados</h3>
+      <div class="val" id="n-total">12</div>
+      <div class="sub">Total de procedimentos na base</div>
+    </div>
+    <div class="dash-card" style="border-top: 4px solid var(--ok);">
+      <h3>Aprovação GEAP</h3>
+      <div class="val" id="n-geap" style="color:var(--ok);">0</div>
+      <div class="sub">Exames com margem positiva</div>
+    </div>
+    <div class="dash-card" style="border-top: 4px solid var(--blue);">
+      <h3>Aprovação Select</h3>
+      <div class="val" id="n-select" style="color:var(--blue);">0</div>
+      <div class="sub">Exames com margem positiva</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="t-head">
+      <p>Simulação de Credenciamento: GEAP e SELECT</p>
+      <p>Comparativo direto das tabelas negociadas vs. Custo Mínimo Viável da Clínica</p>
+    </div>
+    <div class="t-wrap">
+      <table>
+        <colgroup><col style="width:30%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:14%"></colgroup>
+        <thead>
+          <tr>
+            <th>Procedimento</th>
+            <th style="text-align:right;">Custo Mínimo Viável<br><span style="font-size:8px;font-weight:400;">(Mat + HM + CO + Tec + Impostos)</span></th>
+            <th style="text-align:right;">Proposta GEAP</th>
+            <th style="text-align:center;">Status GEAP</th>
+            <th style="text-align:right;">Proposta SELECT</th>
+            <th style="text-align:center;">Status SELECT</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-novos"></tbody>
+      </table>
+    </div>
+  </div>
+  
   <div class="note">
-    ⚠ <strong>Atenção:</strong> Os valores pré-carregados são referência do sistema atual (planilha 339). Atualize os campos com os custos reais praticados hoje. A <strong>duração do exame</strong> é uma estimativa — ajuste conforme o tempo real de uso do técnico em cada procedimento. O PETROBRAS na Urografia Excretora (R$ 119,32) provavelmente não inclui o material, fornecido separadamente.
+    ℹ️ <strong>Nota sobre GEAP e Select:</strong> Os valores da GEAP e Select foram atualizados com base na última proposta de credenciamento enviada. Verifique as margens acima para decidir se o credenciamento de todo o escopo de exames é financeiramente vantajoso.
   </div>
 </div>
 
-<div class="footer">PROIMAGEM Exames e Consultas · Ferramenta interna de análise de viabilidade · Os dados inseridos ficam apenas neste dispositivo.</div>
+<div class="footer">PROIMAGEM Exames e Consultas · Os dados inseridos e salvos ficam armazenados apenas no seu navegador local.</div>
+
+<div class="toast" id="toast">✅ Valores salvos com sucesso!</div>
 
 <script>
 const TAX  = 0.135;          // Lucro Presumido
-const HORA = 32.35;          // R$/h — técnico CLT (salário R$4.538,80 + encargos)
+const HORA = 32.35;          // R$/h — técnico CLT
 const MIN  = HORA / 60;      // R$/min
 
-const procs=[
+// Valores atualizados conforme a tabela (PDF) enviada
+const defaultProcs = [
   {name:'Histerossalpingografia',  ref:{hm:70,co:42,filme:7,material:890},dur:35,conv:[
     ['ASSEC/CEHOP',997.52],['ASSEM',1003.00],['CAPESAUDE',992.32],['CASEMBRAPA',1017.79],
     ['CASSE',1013.77],['CASSIND',687.23],['CODEVASF',1055.13],['FACHESF',998.90],
     ['FUSEX',1030.00],['PARTICULAR Cartão',700],['PARTICULAR PIX',600],['PETROBRAS',1001.49],
-    ['PLAN ASSISTE',988.89],['SAÚDE CAIXA',1030.87],['SMS',859],['VALE',959.02]]},
+    ['PLAN ASSISTE',988.89],['SAÚDE CAIXA',1030.87],['SMS',859],['VALE',959.02],
+    ['GEAP', 760.00], ['SELECT', 650.00]
+  ]},
   {name:'Urografia Excretora',     ref:{hm:70,co:42,filme:16,material:679},dur:45,conv:[
     ['ASSEC/CEHOP',792.68],['ASSEM',805.39],['CASEMBRAPA',819.52],['CASSE',882.54],
     ['CASSI',504.24],['CASSIND',350.50],['CODEVASF',859.06],['FACHESF',800.93],
     ['FUSEX',834.05],['PARTICULAR Cartão',350],['PARTICULAR PIX',320],['PETROBRAS',119.32],
-    ['PLAN ASSISTE',784.90],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25],['VALE',751.28]]},
+    ['PLAN ASSISTE',784.90],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25],['VALE',751.28],
+    ['GEAP', 400.00], ['SELECT', 380.00]
+  ]},
   {name:'Uretrocistografia Miccional',ref:{hm:70,co:42,filme:12,material:641},dur:30,conv:[
     ['ASSEC/CEHOP',752.92],['ASSEM',765.04],['CAPESAUDE',730.32],['CASEMBRAPA',756.62],
     ['CASSE',850.22],['CASSIND',332.60],['CODEVASF',800.95],['FACHESF',760.79],
     ['FUSEX',794.01],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',721.48],
-    ['POSTAL SAÚDE',761.34],['SAÚDE CAIXA',764.93],['VALE',724.62]]},
+    ['POSTAL SAÚDE',761.34],['SAÚDE CAIXA',764.93],['VALE',724.62],
+    ['GEAP', 400.00], ['SELECT', 390.00]
+  ]},
   {name:'Uretrocistografia Retrógrada',ref:{hm:70,co:42,filme:12,material:345},dur:25,conv:[
     ['ASSEC/CEHOP',456.53],['ASSEM',468.65],['CAPESAUDE',440.72],['CASEMBRAPA',467.02],
     ['CASSE',517.31],['CASSIND',326.07],['CODEVASF',511.35],['FACHESF',464.40],
     ['FUSEX',497.62],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',431.88],
-    ['POSTAL SAÚDE',464.95],['SAÚDE CAIXA',475.33],['VALE',439.02]]},
+    ['POSTAL SAÚDE',464.95],['SAÚDE CAIXA',475.33],['VALE',439.02],
+    ['GEAP', 400.00], ['SELECT', 600.00]
+  ]},
   {name:'Uretrocist. Miccional Criança',ref:{hm:95,co:45,filme:12,material:641},dur:35,conv:[
     ['ASSEM',793.59],['CASEMBRAPA',789.44],['CASSE',879.75],['CASSIND',347.38],
     ['CODEVASF',831.22],['FACHESF',787.78],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
-    ['PLAN ASSISTE',744.18],['SAÚDE CAIXA',799.01],['VALE',755.48]]},
+    ['PLAN ASSISTE',744.18],['SAÚDE CAIXA',799.01],['VALE',755.48],
+    ['GEAP', 450.00], ['SELECT', 298.00]
+  ]},
   {name:'Uretrocist. Retrógrada Criança',ref:{hm:95,co:45,filme:12,material:345},dur:30,conv:[
     ['ASSEM',497.20],['CASEMBRAPA',499.84],['CASSE',546.83],['CASSIND',347.38],
     ['CODEVASF',541.62],['FACHESF',491.39],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
-    ['PLAN ASSISTE',454.58],['SAÚDE CAIXA',509.41],['VALE',469.88]]},
+    ['PLAN ASSISTE',454.58],['SAÚDE CAIXA',509.41],['VALE',469.88],
+    ['GEAP', 450.00], ['SELECT', 600.00]
+  ]},
   {name:'Enema Opaco',ref:{hm:99,co:48,filme:22,material:166},dur:40,conv:[
-    ['CASSE',335.55],['PARTICULAR Cartão',350],['PARTICULAR PIX',350]]},
+    ['CASSE',335.55],['PARTICULAR Cartão',350],['PARTICULAR PIX',350],
+    ['GEAP', 450.00], ['SELECT', 400.00]
+  ]},
   {name:'RX Esôfago-Estômago-Duodeno',ref:{hm:99,co:39,filme:17,material:59},dur:25,conv:[
     ['ASSEC/CEHOP',300],['CASSE',214.88],['LIFE EMPRESARIAL',128.74],
-    ['PARTICULAR Cartão',350],['PARTICULAR PIX',350]]},
+    ['PARTICULAR Cartão',350],['PARTICULAR PIX',350],
+    ['GEAP', 450.00], ['SELECT', 390.00]
+  ]},
   {name:'Esofagograma',ref:{hm:45,co:25,filme:7,material:30},dur:15,conv:[
-    ['CASSE',106.43],['PARTICULAR Cartão',300],['PARTICULAR PIX',250]]},
+    ['CASSE',106.43],['PARTICULAR Cartão',300],['PARTICULAR PIX',250],
+    ['GEAP', 300.00], ['SELECT', 290.00]
+  ]},
   {name:'RX Trânsito Intestinal',ref:{hm:72,co:39,filme:17,material:30},dur:30,conv:[
     ['ASSEC/CEHOP',300],['CASSE',158.90],['PARTICULAR Cartão',350],
-    ['PARTICULAR PIX',350],['PETROBRAS',155.85]]},
+    ['PARTICULAR PIX',350],['PETROBRAS',155.85],
+    ['GEAP', 400.00], ['SELECT', 390.00]
+  ]},
   {name:'Fistulografia',ref:{hm:51,co:35,filme:9,material:305},dur:25,conv:[
     ['FUSEX',400.75],['PARTICULAR Cartão',350],['PARTICULAR PIX',300],
-    ['PETROBRAS',377.52],['VALE',362.59]]},
+    ['PETROBRAS',377.52],['VALE',362.59]
+  ]},
   {name:'Sialografia',ref:{hm:80,co:41,filme:8,material:0},dur:25,conv:[
-    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]]}
+    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]
+  ]}
 ];
+
+// Carregar do localStorage ou usar o padrão
+let procs = [];
+const savedData = localStorage.getItem('proImagemData');
+if(savedData) {
+  procs = JSON.parse(savedData);
+  // Garante que os valores de convênio sejam sempre os mais recentes (importante para atualizar GEAP/Select sem perder os salvamentos do usuário)
+  procs.forEach((p, index) => {
+    if(defaultProcs[index]) {
+      p.conv = [...defaultProcs[index].conv];
+    }
+  });
+} else {
+  // Deep copy
+  procs = JSON.parse(JSON.stringify(defaultProcs));
+}
 
 let cur=0, myChart=null;
 
@@ -374,7 +508,17 @@ const costPlugin={
   }
 };
 
-// Buttons
+// UI TABS
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.wrap').forEach(w => w.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+  
+  if(tabId === 'tab-novos') buildNovosTab();
+}
+
+// Inicializar botões de procedimento
 const bc=document.getElementById('btns');
 procs.forEach((p,i)=>{
   const b=document.createElement('button');
@@ -385,21 +529,56 @@ procs.forEach((p,i)=>{
 });
 
 function sel(i){
+  // Antes de trocar, ler os valores atuais da tela e gravar na variável temporária
+  updateCurrentProcFromInputs();
+  
   cur=i;
   document.querySelectorAll('.pb').forEach((b,idx)=>b.className='pb'+(idx===i?' act':''));
   const p=procs[i];
+  
+  // Alimentar inputs
   document.getElementById('i-mat').value=p.ref.material;
   document.getElementById('i-hm').value=p.ref.hm;
   document.getElementById('i-co').value=p.ref.co;
   document.getElementById('i-ot').value=p.ref.filme;
   document.getElementById('i-dur').value=p.dur;
   document.getElementById('cht-ttl').textContent='📊 '+p.name+' — comparativo por convênio';
-  const rt=p.ref.hm+p.ref.co+p.ref.filme+p.ref.material;
-  document.getElementById('l-ref').innerHTML=
-    `HM: <strong>R$${p.ref.hm}</strong> &nbsp;|&nbsp; CO: <strong>R$${p.ref.co}</strong> &nbsp;|&nbsp; Filme: <strong>R$${p.ref.filme}</strong> &nbsp;|&nbsp; Material: <strong>R$${p.ref.material}</strong><br>Total no sistema (sem técnico/imposto): <strong>${fmt(rt)}</strong>`;
+  
   go();
 }
 
+function updateCurrentProcFromInputs() {
+  if(!document.getElementById('i-mat').value) return; // Evita erro no primeiro load
+  procs[cur].ref.material = parseFloat(document.getElementById('i-mat').value) || 0;
+  procs[cur].ref.hm = parseFloat(document.getElementById('i-hm').value) || 0;
+  procs[cur].ref.co = parseFloat(document.getElementById('i-co').value) || 0;
+  procs[cur].ref.filme = parseFloat(document.getElementById('i-ot').value) || 0;
+  procs[cur].dur = parseFloat(document.getElementById('i-dur').value) || 0;
+}
+
+function saveData() {
+  updateCurrentProcFromInputs();
+  localStorage.setItem('proImagemData', JSON.stringify(procs));
+  showToast();
+}
+
+function resetToDefault() {
+  if(confirm("Tem certeza que deseja restaurar os valores originais da planilha para TODOS os exames? Isso apagará as edições salvas.")) {
+    localStorage.removeItem('proImagemData');
+    procs = JSON.parse(JSON.stringify(defaultProcs));
+    sel(cur);
+    showToast("Restaurado para os padrões!");
+  }
+}
+
+function showToast(msg = "✅ Valores salvos com sucesso!") {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// Helpers Matemáticos
 function getDirectCosts(){
   return ['i-mat','i-hm','i-co','i-ot']
     .reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
@@ -411,7 +590,6 @@ function getTecCost(){
 function getPrecoMinimo(){
   return (getDirectCosts()+getTecCost())/(1-TAX);
 }
-
 function fmt(v){
   if(isNaN(v)) return 'R$ –';
   return 'R$ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
@@ -424,6 +602,17 @@ function go(){
   const sub=dir+tec;
   const pm=getPrecoMinimo();   // minimum price
   const imp=pm*TAX;            // tax amount at minimum price
+
+  // Update percentages
+  const matVal = parseFloat(document.getElementById('i-mat').value)||0;
+  const hmVal = parseFloat(document.getElementById('i-hm').value)||0;
+  const coVal = parseFloat(document.getElementById('i-co').value)||0;
+  const otVal = parseFloat(document.getElementById('i-ot').value)||0;
+  
+  document.getElementById('pct-mat').textContent = dir > 0 ? Math.round((matVal/dir)*100)+'%' : '0%';
+  document.getElementById('pct-hm').textContent = dir > 0 ? Math.round((hmVal/dir)*100)+'%' : '0%';
+  document.getElementById('pct-co').textContent = dir > 0 ? Math.round((coVal/dir)*100)+'%' : '0%';
+  document.getElementById('pct-ot').textContent = dir > 0 ? Math.round((otVal/dir)*100)+'%' : '0%';
 
   // Update panel
   document.getElementById('l-tec').textContent=fmt(tec);
@@ -491,7 +680,6 @@ function go(){
     }
   });
 
-  // Table
   const tb=document.getElementById('tbody');
   tb.innerHTML='';
   sorted.forEach(([name,val])=>{
@@ -500,12 +688,17 @@ function go(){
     const marg=liq-sub;
     const pct=sub>0?(marg/sub*100):0;
     const mc=marg>=0?'var(--ok)':'var(--no)';
+    
+    // Destaque visual para GEAP e SELECT
+    const isNew = (name === 'GEAP' || name === 'SELECT');
+    const nameStyle = isNew ? 'color: var(--orange); font-weight: 800;' : '';
+
     const badge=marg<0
       ?'<span class="badge b-no">Inviável</span>'
       :pct<8?'<span class="badge b-wa">Margem estreita</span>'
       :'<span class="badge b-ok">Viável</span>';
-    tb.innerHTML+=`<tr>
-      <td class="cn">${name}</td>
+    tb.innerHTML+=`<tr style="${isNew ? 'background: #fff8f4;' : ''}">
+      <td class="cn" style="${nameStyle}">${name} ${isNew ? '✨' : ''}</td>
       <td style="font-weight:700;">${fmt(val)}</td>
       <td style="color:var(--no);">−${fmt(impV)}</td>
       <td style="font-weight:600;color:var(--blue);">${fmt(liq)}</td>
@@ -515,6 +708,49 @@ function go(){
   });
 }
 
+function buildNovosTab() {
+  const tb = document.getElementById('tbody-novos');
+  tb.innerHTML = '';
+  
+  let geapOk = 0;
+  let selectOk = 0;
+
+  procs.forEach(p => {
+    // Calcula o custo minimo desse procedimento com os dados salvos nele
+    const dir = p.ref.material + p.ref.hm + p.ref.co + p.ref.filme;
+    const tec = p.dur * MIN;
+    const pm = (dir + tec) / (1 - TAX);
+
+    // Encontra os valores de GEAP e Select no array de convenios
+    const vGeap = p.conv.find(c => c[0] === 'GEAP')?.[1] || 0;
+    const vSelect = p.conv.find(c => c[0] === 'SELECT')?.[1] || 0;
+
+    // Avalia situação
+    const stGeap = vGeap >= pm;
+    const stSelect = vSelect >= pm;
+
+    if(stGeap) geapOk++;
+    if(stSelect) selectOk++;
+
+    const bGeap = stGeap ? '<span class="badge b-ok">Viável</span>' : '<span class="badge b-no">Inviável</span>';
+    const bSelect = stSelect ? '<span class="badge b-ok">Viável</span>' : '<span class="badge b-no">Inviável</span>';
+
+    tb.innerHTML += `<tr>
+      <td class="cn">${p.name}</td>
+      <td style="font-weight:700; color:var(--text);">${fmt(pm)}</td>
+      <td style="font-weight:600; color:${stGeap ? 'var(--ok)' : 'var(--no)'}">${vGeap ? fmt(vGeap) : 'Sem proposta'}</td>
+      <td>${vGeap ? bGeap : '-'}</td>
+      <td style="font-weight:600; color:${stSelect ? 'var(--blue)' : 'var(--no)'}">${vSelect ? fmt(vSelect) : 'Sem proposta'}</td>
+      <td>${vSelect ? bSelect : '-'}</td>
+    </tr>`;
+  });
+
+  document.getElementById('n-total').textContent = procs.length;
+  document.getElementById('n-geap').textContent = geapOk;
+  document.getElementById('n-select').textContent = selectOk;
+}
+
+// Inicializa a ferramenta
 sel(0);
 </script>
 </body>
