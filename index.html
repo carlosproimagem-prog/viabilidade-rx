@@ -10,166 +10,200 @@
 :root{
   --navy:#12305e;--blue:#1e5fa8;--blue2:#2e7dd4;--blue-light:#e8eef7;
   --orange:#e8621a;--orange2:#f07c3a;--orange-light:#fff2eb;
-  --ok:#1a7a41;--ok-bg:#e9f5ee;--ok-border:#aad8be;
-  --wa:#925500;--wa-bg:#fff3e0;--wa-border:#f5cc80;
-  --no:#c72626;--no-bg:#fdeaea;--no-border:#f5aaaa;
+  --ok:#1a7a41;--ok-bg:#e9f5ee;--ok-b:#aad8be;
+  --wa:#925500;--wa-bg:#fff3e0;--wa-b:#f5cc80;
+  --no:#c72626;--no-bg:#fdeaea;--no-b:#f5aaaa;
   --bg:#f0f4fa;--card:#fff;--border:#dce5f0;
   --text:#1a2a40;--muted:#5a6e88;--light:#e8eef7;
+  --geap:#1e5fa8;--sel:#1a7a41;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:13px;}
 
-/* HEADER */
-.hdr{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 14px rgba(18,48,94,.4);flex-wrap:wrap;gap:10px;}
+/* ── HEADER ── */
+.hdr{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:15px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 14px rgba(18,48,94,.4);flex-wrap:wrap;gap:10px;}
 .logo-name{font-size:24px;font-weight:700;line-height:1;}
-.pro{color:var(--orange);} .img{color:#fff;}
+.pro{color:var(--orange);}.img{color:#fff;}
 .logo-sub{font-size:9px;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:3px;}
-.hdr-r{text-align:right;}
-.hdr-r h1{font-size:14px;font-weight:600;color:#fff;}
-.hdr-r p{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+.hdr-r h1{font-size:14px;font-weight:600;color:#fff;text-align:right;}
+.hdr-r p{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;text-align:right;}
 
-/* TABS */
-.tabs-container {background: var(--card); border-bottom: 1px solid var(--border); padding: 0 28px; display: flex; gap: 20px;}
-.tab-btn {padding: 14px 4px; background: transparent; border: none; border-bottom: 3px solid transparent; color: var(--muted); font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s; font-family: inherit;}
-.tab-btn:hover {color: var(--blue);}
-.tab-btn.active {color: var(--navy); border-bottom-color: var(--orange);}
+/* ── TABS ── */
+.tabs-nav{display:flex;background:var(--navy);padding:0 28px;gap:2px;border-bottom:2px solid rgba(255,255,255,.1);}
+.tn{border:none;padding:11px 18px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;color:rgba(255,255,255,.55);background:transparent;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .18s;white-space:nowrap;}
+.tn:hover{color:rgba(255,255,255,.85);}
+.tn.act{color:#fff;border-bottom-color:var(--orange);}
 
-/* CONTENT */
-.wrap{padding:22px 28px;max-width:1320px;margin:0 auto; display:none;}
-.wrap.active {display: block; animation: fadeIn 0.3s ease;}
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+/* ── WRAP ── */
+.wrap{padding:22px 28px;max-width:1360px;margin:0 auto;}
 
-/* PROC BUTTONS */
-.sec-lbl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:9px; display:flex; justify-content:space-between; align-items:center;}
+/* ── SECTION LABEL ── */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
+
+/* ── PROC BUTTONS ── */
 .proc-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
 .pb{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:6px 12px;font-size:11.5px;cursor:pointer;color:var(--muted);font-family:inherit;font-weight:500;white-space:nowrap;transition:all .15s;}
 .pb:hover{border-color:var(--blue2);color:var(--blue);background:var(--blue-light);}
 .pb.act{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
 
-/* LAYOUT */
-.layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:18px;margin-bottom:18px;align-items:start;}
+/* ── LAYOUT ── */
+.layout{display:grid;grid-template-columns:318px minmax(0,1fr);gap:18px;margin-bottom:18px;align-items:start;}
 
-/* CARD */
+/* ── CARD ── */
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(18,48,94,.07);overflow:hidden;}
 .c-head{background:linear-gradient(90deg,var(--navy),var(--blue));padding:11px 16px;display:flex;align-items:center;gap:8px;}
 .c-head h2{font-size:12px;font-weight:600;color:#fff;letter-spacing:.3px;flex:1;}
+.save-badge{font-size:10px;font-weight:700;color:#a0f0c0;background:rgba(255,255,255,.12);border-radius:6px;padding:3px 9px;transition:opacity .4s;white-space:nowrap;}
 .c-body{padding:14px 16px;}
 
-/* SECTION INSIDE PANEL */
-.panel-sec{margin-bottom:16px;}
-.panel-sec-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
-.panel-sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
+/* ── PANEL SECTION TITLE ── */
+.pst{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:10px 0 6px;display:flex;align-items:center;gap:6px;}
+.pst::after{content:'';flex:1;height:1px;background:var(--border);}
+.pst:first-child{margin-top:0;}
 
-/* INPUT ROW */
-.cr{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--light);}
-.cr:last-of-type{border-bottom:none;}
-.cr label{flex:1;font-size:12px;color:var(--muted);font-weight:500;}
-.input-group {display:flex; align-items:center; gap:6px;}
-.cr-pct {font-size: 10px; color: var(--blue2); font-weight: 700; background: var(--blue-light); padding: 2px 6px; border-radius: 4px; width: 42px; text-align: center;}
-.cr input{width:82px;text-align:right;border:1.5px solid var(--border);border-radius:7px;padding:5px 9px;font-size:13px;font-family:inherit;font-weight:600;background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;}
-.cr input:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(46,125,212,.12);background:#fff;}
+/* ── INPUT ROWS ── */
+.cr{display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid var(--light);}
+.cr:last-of-type,.cr.last{border-bottom:none;}
+.cr label{flex:1;font-size:12px;color:var(--muted);font-weight:500;min-width:0;}
 
-/* ACTION BUTTONS */
-.action-btns {display: flex; gap: 8px; margin-top: 10px;}
-.btn-save {flex: 1; background: var(--ok); color: #fff; border: none; padding: 8px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: opacity 0.2s;}
-.btn-save:hover {opacity: 0.9;}
-.btn-reset {background: #fff; color: var(--muted); border: 1px solid var(--border); padding: 8px 12px; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 11px;}
-.btn-reset:hover {background: var(--bg); color: var(--text);}
+/* Mode toggle */
+.mt{display:flex;border:1.5px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
+.mtb{border:none;padding:3px 7px;font-size:10px;cursor:pointer;font-family:inherit;font-weight:700;background:var(--bg);color:var(--muted);transition:all .12s;line-height:1.4;}
+.mtb.act{background:var(--navy);color:#fff;}
 
-/* TOAST */
-.toast {position: fixed; bottom: 20px; right: 20px; background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 500; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: translateY(100px); opacity: 0; transition: all 0.3s ease; z-index: 1000;}
-.toast.show {transform: translateY(0); opacity: 1;}
+/* Input + suffix wrapper */
+.iw{position:relative;flex-shrink:0;}
+.iw input{width:82px;text-align:right;border:1.5px solid var(--border);border-radius:7px;padding:5px 20px 5px 6px;font-size:13px;font-family:inherit;font-weight:600;background:var(--bg);color:var(--text);transition:border-color .15s,box-shadow .15s;}
+.iw input:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(46,125,212,.12);background:#fff;}
+.iw .sfx{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--muted);font-weight:700;pointer-events:none;}
+.pct-eq{font-size:10px;color:var(--blue2);white-space:nowrap;flex-shrink:0;font-weight:600;}
 
-/* TÉCNICO BLOCK */
+/* Técnico info */
 .tec-info{background:linear-gradient(135deg,var(--blue-light),#dde8f8);border-radius:8px;padding:10px 12px;margin-bottom:10px;border-left:3px solid var(--blue2);}
 .tec-info-title{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px;}
-.tec-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;font-size:10.5px;color:var(--muted);line-height:1.6;}
+.tec-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 10px;font-size:10.5px;color:var(--muted);line-height:1.65;}
 .tec-grid strong{color:var(--text);}
-.tec-rate{margin-top:6px;font-size:12px;font-weight:700;color:var(--navy);text-align:center;background:#fff;border-radius:6px;padding:5px;border:1px solid var(--border);}
-
+.tec-rate{margin-top:7px;font-size:12px;font-weight:700;color:var(--navy);text-align:center;background:#fff;border-radius:6px;padding:5px;border:1px solid var(--border);}
 .dur-row{display:flex;align-items:center;gap:8px;background:var(--bg);border-radius:8px;padding:8px 10px;border:1.5px solid var(--border);}
 .dur-row label{font-size:12px;color:var(--muted);font-weight:500;flex:1;}
-.dur-row input{width:60px;text-align:center;border:1.5px solid var(--border);border-radius:6px;padding:5px 6px;font-size:14px;font-family:inherit;font-weight:700;background:#fff;color:var(--text);}
+.dur-row input{width:58px;text-align:center;border:1.5px solid var(--border);border-radius:6px;padding:5px;font-size:14px;font-family:inherit;font-weight:700;background:#fff;color:var(--text);}
 .dur-row input:focus{outline:none;border-color:var(--blue2);}
-.dur-row .dur-unit{font-size:11px;color:var(--muted);}
-.tec-custo-calc{margin-top:6px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);}
-.tec-custo-val{font-size:14px;font-weight:700;color:var(--navy);}
+.tec-calc{margin-top:6px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);}
+.tec-val{font-size:14px;font-weight:700;color:var(--navy);}
 
-/* IMPOSTO BLOCK */
+/* Tax info */
 .tax-info{background:var(--orange-light);border-radius:8px;padding:10px 12px;border-left:3px solid var(--orange);}
-.tax-title{font-size:10px;font-weight:700;color:var(--orange);letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px;}
-.tax-rate-big{font-size:22px;font-weight:700;color:var(--orange);line-height:1;}
+.tax-ttl{font-size:10px;font-weight:700;color:var(--orange);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;}
+.tax-big{font-size:22px;font-weight:700;color:var(--orange);line-height:1;}
 .tax-desc{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.5;}
+.tax-formula{margin-top:8px;font-size:10.5px;color:var(--muted);background:#fff;border-radius:6px;padding:6px 8px;border:1px solid rgba(232,98,26,.2);line-height:1.7;}
+.tax-formula strong{color:var(--orange);}
 
-/* TOTAL BLOCK */
+/* Total block */
 .total-block{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:10px;padding:14px;margin-top:12px;}
 .total-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;}
-.total-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.8px;}
+.total-lbl{font-size:10px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.8px;}
 #l-preco{font-size:24px;font-weight:700;color:var(--orange2);}
-.total-breakdown{display:grid;grid-template-columns:1fr 1fr;gap:5px;border-top:1px solid rgba(255,255,255,.15);padding-top:8px;}
-.tb-item{font-size:10.5px;color:rgba(255,255,255,.65);}
-.tb-item strong{color:#fff;display:block;font-size:12px;}
+.total-bd{display:grid;grid-template-columns:1fr 1fr;gap:5px;border-top:1px solid rgba(255,255,255,.15);padding-top:8px;}
+.tbi{font-size:10.5px;color:rgba(255,255,255,.65);}
+.tbi strong{color:#fff;display:block;font-size:12px;}
 
-/* REF BOX */
+/* Ref box */
 .ref-box{margin-top:10px;padding:9px 12px;background:var(--blue-light);border-radius:8px;border-left:3px solid var(--blue2);}
 .ref-ttl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--blue);margin-bottom:3px;}
-#l-ref{font-size:11px;color:var(--muted);line-height:1.8;}
 
-/* COUNTERS */
+/* Counters */
 .counters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
 .counter{border-radius:10px;padding:12px;text-align:center;}
-.c-ok{background:var(--ok-bg);border:1px solid var(--ok-border);}
-.c-no{background:var(--no-bg);border:1px solid var(--no-border);}
+.c-ok{background:var(--ok-bg);border:1px solid var(--ok-b);}
+.c-no{background:var(--no-bg);border:1px solid var(--no-b);}
 .cnt-lbl{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;}
 .cnt-val{font-size:28px;font-weight:700;}
 .c-ok .cnt-lbl,.c-ok .cnt-val{color:var(--ok);}
 .c-no .cnt-lbl,.c-no .cnt-val{color:var(--no);}
 
-/* CHART */
+/* Chart */
 .chart-body{padding:14px 16px;}
-.legend{display:flex;gap:16px;margin-bottom:12px;font-size:11px;color:var(--muted);flex-wrap:wrap;}
+.legend{display:flex;gap:14px;margin-bottom:12px;font-size:11px;color:var(--muted);flex-wrap:wrap;}
 .li{display:flex;align-items:center;gap:5px;}
 .dot{width:10px;height:10px;border-radius:3px;}
 .dash-l{width:18px;border-top:2.5px dashed var(--orange);display:inline-block;}
 #cw{position:relative;width:100%;}
 
-/* TABLE */
+/* Table */
 .t-head{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--navy),var(--blue));}
 .t-head p:first-child{font-size:12px;font-weight:600;color:#fff;}
 .t-head p:last-child{font-size:10px;color:rgba(255,255,255,.5);}
 .t-wrap{overflow-x:auto;}
-table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;min-width:600px;}
-th{padding:8px 14px;text-align:left;font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:var(--blue-light);}
-th:not(:first-child){text-align:right;} th:last-child{text-align:center;}
+table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;min-width:520px;}
+thead tr{background:var(--blue-light);}
+th{padding:8px 14px;text-align:left;font-weight:700;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;}
+th:not(:first-child){text-align:right;}th:last-child{text-align:center;}
 tbody tr{border-bottom:1px solid var(--light);transition:background .1s;}
 tbody tr:hover{background:#f2f6ff;}
-td{padding:9px 14px;}
-td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
+td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-align:center;}
 .cn{font-weight:600;color:var(--navy);}
-.badge{font-size:10.5px;padding:3px 9px;border-radius:999px;font-weight:700;display:inline-block;white-space: nowrap;}
-.b-ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-border);}
-.b-wa{background:var(--wa-bg);color:var(--wa);border:1px solid var(--wa-border);}
-.b-no{background:var(--no-bg);color:var(--no);border:1px solid var(--no-border);}
+.badge{font-size:10.5px;padding:3px 9px;border-radius:999px;font-weight:700;display:inline-block;}
+.b-ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-b);}
+.b-wa{background:var(--wa-bg);color:var(--wa);border:1px solid var(--wa-b);}
+.b-no{background:var(--no-bg);color:var(--no);border:1px solid var(--no-b);}
 
-/* DASHBOARD GRID (NEW TAB) */
-.dash-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 20px;}
-.dash-card {background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);}
-.dash-card h3 {font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; margin-bottom: 8px;}
-.dash-card .val {font-size: 28px; font-weight: 700; color: var(--navy);}
-.dash-card .sub {font-size: 11px; color: var(--muted); margin-top: 4px;}
+/* Convênio tags */
+.tag-geap{display:inline-block;font-size:9px;font-weight:700;background:#e0eaff;color:var(--navy);border-radius:4px;padding:1px 5px;margin-left:4px;vertical-align:middle;border:1px solid #b8d0f5;}
+.tag-sel{display:inline-block;font-size:9px;font-weight:700;background:#e0f5ea;color:var(--ok);border-radius:4px;padding:1px 5px;margin-left:4px;vertical-align:middle;border:1px solid #aad8be;}
 
+/* NOTE */
 .note{margin-top:18px;padding:12px 16px;background:#fffbef;border:1px solid #f0d57a;border-left:4px solid var(--orange);border-radius:10px;font-size:11.5px;color:#7a5200;line-height:1.7;}
+
+/* ── CREDENC TAB ── */
+.credenc-hero{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:14px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.credenc-hero h2{font-size:16px;font-weight:700;color:#fff;}
+.credenc-hero p{font-size:11.5px;color:rgba(255,255,255,.65);margin-top:4px;}
+.conv-logos{display:flex;gap:10px;flex-wrap:wrap;}
+.conv-logo{padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;border:2px solid rgba(255,255,255,.3);color:#fff;}
+.cl-geap{background:rgba(46,125,212,.4);}
+.cl-sel{background:rgba(26,122,65,.4);}
+
+.cred-summary{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+.cred-card{border-radius:14px;padding:18px;box-shadow:0 2px 8px rgba(18,48,94,.07);overflow:hidden;position:relative;}
+.cc-geap{background:linear-gradient(135deg,#1e5fa8,#2e7dd4);border:1px solid #1e5fa8;}
+.cc-sel{background:linear-gradient(135deg,#1a7a41,#27a057);border:1px solid #1a7a41;}
+.cred-card h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:2px;}
+.cred-card p{font-size:11px;color:rgba(255,255,255,.7);}
+.cred-metrics{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;}
+.cred-metric{text-align:center;}
+.cm-val{font-size:28px;font-weight:700;color:#fff;}
+.cm-lbl{font-size:10px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.cm-ok{color:#7df7b4;}.cm-no{color:#ffb3b3;}.cm-wa{color:#ffe08a;}
+
+.cred-table-card{margin-bottom:18px;}
+.cred-table-card table{min-width:660px;}
+.cred-table-card colgroup col:nth-child(1){width:25%;}
+.cred-table-card colgroup col:nth-child(2){width:14%;}
+.cred-table-card colgroup col:nth-child(3){width:14%;}
+.cred-table-card colgroup col:nth-child(4){width:14%;}
+.cred-table-card colgroup col:nth-child(5){width:14%;}
+.cred-table-card colgroup col:nth-child(6){width:10%;}
+.cred-table-card colgroup col:nth-child(7){width:10%;}
+
+.cell-ok{color:var(--ok);font-weight:700;}
+.cell-no{color:var(--no);font-weight:700;}
+.cell-na{color:var(--muted);font-style:italic;}
+
+/* Footer */
 .footer{margin-top:22px;padding:14px 28px;border-top:1px solid var(--border);text-align:center;font-size:10px;color:var(--muted);background:var(--card);}
 
 @media(max-width:780px){
   .layout{grid-template-columns:1fr;}
   .wrap{padding:14px;}
-  .hdr{padding:12px 14px;}
+  .hdr,.tabs-nav{padding-left:14px;padding-right:14px;}
+  .cred-summary{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="hdr">
   <div>
     <div class="logo-name"><span class="pro">PRO</span><span class="img">IMAGEM</span></div>
@@ -177,119 +211,136 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
   </div>
   <div class="hdr-r">
     <h1>Análise de Viabilidade Financeira</h1>
-    <p>Exames RX Contrastado · Piso mínimo de negociação</p>
+    <p>Exames RX Contrastado · Piso mínimo de negociação com convênios</p>
   </div>
 </header>
 
-<div class="tabs-container">
-  <button class="tab-btn active" onclick="switchTab('tab-procs', this)">Viabilidade por Procedimento</button>
-  <button class="tab-btn" onclick="switchTab('tab-novos', this)">Análise de Credenciamento (GEAP/Select)</button>
-</div>
+<!-- TABS -->
+<nav class="tabs-nav">
+  <button class="tn act" id="btn-main" onclick="showTab('main')">📊 Análise Principal</button>
+  <button class="tn" id="btn-credenc" onclick="showTab('credenc')">🔍 Credenciamento GEAP &amp; Select</button>
+</nav>
 
-<!-- ============================================== -->
-<!-- ABA 1: VIABILIDADE POR PROCEDIMENTO            -->
-<!-- ============================================== -->
-<div class="wrap active" id="tab-procs">
-  <div class="sec-lbl">
-    <span>Selecione o procedimento</span>
-    <span style="color: var(--ok); font-size: 9px;"><span id="status-salvo">● Base de dados ativa</span></span>
-  </div>
+<!-- ═══════════════ TAB MAIN ═══════════════ -->
+<div id="t-main" class="wrap">
+
+  <p class="sec-lbl">Selecione o procedimento</p>
   <div class="proc-row" id="btns"></div>
 
   <div class="layout">
-    <!-- PAINEL DE CUSTOS -->
+
+    <!-- COST PANEL -->
     <div class="card">
-      <div class="c-head"><h2>💰 Composição do Custo Real</h2></div>
+      <div class="c-head">
+        <h2>💰 Composição do Custo Real</h2>
+        <div class="save-badge" id="save-badge" style="opacity:0;">✓ Salvo</div>
+      </div>
       <div class="c-body">
 
-        <!-- CUSTOS DIRETOS -->
-        <div class="panel-sec">
-          <div class="panel-sec-title">Custos Diretos</div>
-          
-          <div class="cr">
-            <label>MAT / MED</label>
-            <div class="input-group">
-              <span class="cr-pct" id="pct-mat">0%</span>
-              <input type="number" id="i-mat" min="0" step="10" oninput="go()">
-            </div>
-          </div>
-          
-          <div class="cr">
-            <label>Honorário médico</label>
-            <div class="input-group">
-              <span class="cr-pct" id="pct-hm">0%</span>
-              <input type="number" id="i-hm" min="0" step="5" oninput="go()">
-            </div>
-          </div>
-          
-          <div class="cr">
-            <label>Custo operacional</label>
-            <div class="input-group">
-              <span class="cr-pct" id="pct-co">0%</span>
-              <input type="number" id="i-co" min="0" step="5" oninput="go()">
-            </div>
-          </div>
-          
-          <div class="cr" style="border-bottom:none;">
-            <label>Filme / outros</label>
-            <div class="input-group">
-              <span class="cr-pct" id="pct-ot">0%</span>
-              <input type="number" id="i-ot" min="0" step="5" oninput="go()">
-            </div>
-          </div>
+        <div class="pst">Custos Diretos</div>
 
-          <div class="action-btns">
-            <button class="btn-reset" onclick="resetToDefault()">↺ Restaurar Original</button>
-            <button class="btn-save" onclick="saveData()">💾 Salvar Valores</button>
+        <!-- MAT/MED -->
+        <div class="cr">
+          <label>MAT/MED</label>
+          <div class="mt" data-field="mat">
+            <button class="mtb act" data-mode="R$" onclick="setMode('mat','R$')">R$</button>
+            <button class="mtb" data-mode="%" onclick="setMode('mat','%')">%</button>
           </div>
+          <div class="iw"><input type="number" id="i-mat" min="0" step="10" oninput="onInp('mat')"><span class="sfx" id="sfx-mat"></span></div>
+          <span class="pct-eq" id="pct-mat" style="display:none"></span>
         </div>
 
-        <!-- TÉCNICO CLT -->
-        <div class="panel-sec">
-          <div class="panel-sec-title">Técnico de RX (CLT)</div>
-          <div class="tec-info">
-            <div class="tec-info-title">Custo real CLT calculado</div>
-            <div class="tec-grid">
-              <span>Salário base:</span><span><strong>R$ 4.538,80</strong></span>
-              <span>Encargos + Férias/13º:</span><span><strong>R$ 2.578,04</strong></span>
-            </div>
-            <div class="tec-rate">Total mensal: R$ 7.116,84 &nbsp;|&nbsp; <strong>R$ 32,35 / hora</strong></div>
+        <!-- HM -->
+        <div class="cr">
+          <label>Honorário médico</label>
+          <div class="mt" data-field="hm">
+            <button class="mtb act" data-mode="R$" onclick="setMode('hm','R$')">R$</button>
+            <button class="mtb" data-mode="%" onclick="setMode('hm','%')">%</button>
           </div>
-          <div class="dur-row">
-            <label>Duração do exame</label>
-            <input type="number" id="i-dur" min="1" max="180" step="5" oninput="go()">
-            <span class="dur-unit">min</span>
+          <div class="iw"><input type="number" id="i-hm" min="0" step="5" oninput="onInp('hm')"><span class="sfx" id="sfx-hm"></span></div>
+          <span class="pct-eq" id="pct-hm" style="display:none"></span>
+        </div>
+
+        <!-- CO -->
+        <div class="cr">
+          <label>Custo operacional</label>
+          <div class="mt" data-field="co">
+            <button class="mtb act" data-mode="R$" onclick="setMode('co','R$')">R$</button>
+            <button class="mtb" data-mode="%" onclick="setMode('co','%')">%</button>
           </div>
-          <div class="tec-custo-calc">
-            <span>Custo do técnico no exame:</span>
-            <span class="tec-custo-val" id="l-tec">R$ 0,00</span>
+          <div class="iw"><input type="number" id="i-co" min="0" step="5" oninput="onInp('co')"><span class="sfx" id="sfx-co"></span></div>
+          <span class="pct-eq" id="pct-co" style="display:none"></span>
+        </div>
+
+        <!-- FILME -->
+        <div class="cr last">
+          <label>Filme / outros</label>
+          <div class="mt" data-field="ot">
+            <button class="mtb act" data-mode="R$" onclick="setMode('ot','R$')">R$</button>
+            <button class="mtb" data-mode="%" onclick="setMode('ot','%')">%</button>
           </div>
+          <div class="iw"><input type="number" id="i-ot" min="0" step="5" oninput="onInp('ot')"><span class="sfx" id="sfx-ot"></span></div>
+          <span class="pct-eq" id="pct-ot" style="display:none"></span>
+        </div>
+
+        <!-- TÉCNICO -->
+        <div class="pst">Técnico de RX (CLT)</div>
+        <div class="tec-info">
+          <div class="tec-info-title">Custo real CLT calculado</div>
+          <div class="tec-grid">
+            <span>Salário base:</span><span><strong>R$ 4.538,80</strong></span>
+            <span>INSS patronal (20%):</span><span><strong>R$ 907,76</strong></span>
+            <span>FGTS (8%):</span><span><strong>R$ 363,10</strong></span>
+            <span>RAT/SAT (2%):</span><span><strong>R$ 90,78</strong></span>
+            <span>Terceiros (5,8%):</span><span><strong>R$ 263,25</strong></span>
+            <span>13º + Férias + 1/3:</span><span><strong>R$ 882,54</strong></span>
+            <span>FGTS s/ 13º e férias:</span><span><strong>R$ 70,60</strong></span>
+          </div>
+          <div class="tec-rate">Total mensal: R$ 7.116,84 &nbsp;|&nbsp; <strong>R$ 32,35 / hora</strong></div>
+        </div>
+        <div class="dur-row">
+          <label>Duração do exame</label>
+          <input type="number" id="i-dur" min="1" max="180" step="5" oninput="onInp(null)">
+          <span style="font-size:11px;color:var(--muted);">min</span>
+        </div>
+        <div class="tec-calc">
+          <span>Custo do técnico:</span>
+          <span class="tec-val" id="l-tec">R$ 0,00</span>
         </div>
 
         <!-- TRIBUTAÇÃO -->
-        <div class="panel-sec">
-          <div class="panel-sec-title">Tributação</div>
-          <div class="tax-info">
-            <div class="tax-title">🔒 Lucro Presumido</div>
-            <div style="display:flex;align-items:baseline;gap:6px;">
-              <span class="tax-rate-big">13,50%</span>
-            </div>
-            <div class="tax-desc">IRPJ + CSLL + PIS + COFINS</div>
+        <div class="pst">Tributação</div>
+        <div class="tax-info">
+          <div class="tax-ttl">🔒 Lucro Presumido</div>
+          <div style="display:flex;align-items:baseline;gap:6px;">
+            <span class="tax-big">13,50%</span>
+            <span style="font-size:11px;color:var(--muted);">sobre a receita bruta</span>
+          </div>
+          <div class="tax-desc">IRPJ + CSLL + PIS + COFINS aplicados sobre o valor recebido de cada convênio.</div>
+          <div class="tax-formula">
+            Preço mínimo = <strong>Custos fixos ÷ (1 − % variáveis − 13,5%)</strong><br>
+            <em>Calculado individualmente por convênio.</em>
           </div>
         </div>
 
         <!-- TOTAL -->
         <div class="total-block">
           <div class="total-top">
-            <span class="total-label">Preço mínimo viável</span>
+            <span class="total-lbl">Preço mínimo viável</span>
             <span id="l-preco">R$ 0,00</span>
           </div>
-          <div class="total-breakdown">
-            <div class="tb-item">Custos diretos<strong id="l-dir">R$ 0,00</strong></div>
-            <div class="tb-item">Técnico CLT<strong id="l-tec2">R$ 0,00</strong></div>
-            <div class="tb-item">Subtotal (sem impostos)<strong id="l-sub">R$ 0,00</strong></div>
-            <div class="tb-item">Imposto mínimo<strong id="l-imp">R$ 0,00</strong></div>
+          <div class="total-bd">
+            <div class="tbi">Custos fixos<strong id="l-dir">R$ 0,00</strong></div>
+            <div class="tbi">Técnico CLT<strong id="l-tec2">R$ 0,00</strong></div>
+            <div class="tbi">% variáveis<strong id="l-varpct">0,0%</strong></div>
+            <div class="tbi">Imposto s/ receita<strong>13,5%</strong></div>
           </div>
+        </div>
+
+        <!-- REF -->
+        <div class="ref-box">
+          <div class="ref-ttl">Referência do sistema atual</div>
+          <div id="l-ref" style="font-size:11px;color:var(--muted);line-height:1.8;"></div>
         </div>
 
         <!-- COUNTERS -->
@@ -300,38 +351,36 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
       </div>
     </div>
 
-    <!-- GRÁFICO -->
+    <!-- CHART PANEL -->
     <div class="card">
       <div class="c-head"><h2 id="cht-ttl">📊 Selecione um procedimento</h2></div>
       <div class="chart-body">
         <div class="legend">
           <span class="li"><span class="dot" style="background:#2a8a55;"></span>Acima do preço mínimo</span>
           <span class="li"><span class="dot" style="background:#c73232;"></span>Abaixo do preço mínimo</span>
-          <span class="li"><span class="dash-l"></span>&nbsp;Preço mínimo viável</span>
+          <span class="li"><span class="dash-l"></span>&nbsp;Preço mínimo</span>
         </div>
-        <div id="cw" style="height:280px;">
-          <canvas id="mc" aria-label="Gráfico comparativo de valores dos convênios"></canvas>
-        </div>
+        <div id="cw" style="height:280px;"><canvas id="mc" aria-label="Comparativo de valores dos convênios com preço mínimo viável"></canvas></div>
       </div>
     </div>
   </div>
 
-  <!-- TABELA -->
+  <!-- TABLE -->
   <div class="card">
     <div class="t-head">
       <p>Detalhe por convênio</p>
-      <p>Ordenado por valor pago (maior → menor)</p>
+      <p>Ordenado por valor pago · Imposto calculado individualmente sobre cada valor</p>
     </div>
     <div class="t-wrap">
       <table>
-        <colgroup><col style="width:25%"><col style="width:15%"><col style="width:15%"><col style="width:15%"><col style="width:15%"><col style="width:15%"></colgroup>
+        <colgroup><col style="width:30%"><col style="width:16%"><col style="width:16%"><col style="width:16%"><col style="width:13%"><col style="width:9%"></colgroup>
         <thead>
           <tr>
             <th>Convênio</th>
             <th style="text-align:right;">Valor pago</th>
             <th style="text-align:right;">−Imposto (13,5%)</th>
-            <th style="text-align:right;">Receita líquida</th>
-            <th style="text-align:right;">Margem (R$)</th>
+            <th style="text-align:right;">Rec. líquida</th>
+            <th style="text-align:right;">Margem</th>
             <th style="text-align:center;">Situação</th>
           </tr>
         </thead>
@@ -339,418 +388,574 @@ td:not(:first-child){text-align:right;} td:last-child{text-align:center;}
       </table>
     </div>
   </div>
+
+  <div class="note">
+    ⚠ <strong>Atenção:</strong> Os valores pré-carregados são referência do sistema atual. Atualize os campos com os custos reais — eles ficam <strong>salvos automaticamente</strong> por procedimento. Use <strong>%</strong> quando o custo varia proporcionalmente à receita (ex: honorário médico). O PETROBRAS na Urografia (R$ 119,32) provavelmente não inclui o material, fornecido separadamente.
+  </div>
 </div>
 
-<!-- ============================================== -->
-<!-- ABA 2: ANÁLISE GEAP / SELECT                   -->
-<!-- ============================================== -->
-<div class="wrap" id="tab-novos">
-  <div class="dash-grid">
-    <div class="dash-card">
-      <h3>Exames Analisados</h3>
-      <div class="val" id="n-total">12</div>
-      <div class="sub">Total de procedimentos na base</div>
+<!-- ═══════════════ TAB CREDENC ═══════════════ -->
+<div id="t-credenc" class="wrap" style="display:none;">
+
+  <div class="credenc-hero">
+    <div>
+      <h2>Análise de Credenciamento</h2>
+      <p>Compare os valores negociados com GEAP e Select frente ao custo mínimo viável de cada procedimento.<br>Os custos usados são os configurados (e salvos) na aba principal.</p>
     </div>
-    <div class="dash-card" style="border-top: 4px solid var(--ok);">
-      <h3>Aprovação GEAP</h3>
-      <div class="val" id="n-geap" style="color:var(--ok);">0</div>
-      <div class="sub">Exames com margem positiva</div>
-    </div>
-    <div class="dash-card" style="border-top: 4px solid var(--blue);">
-      <h3>Aprovação Select</h3>
-      <div class="val" id="n-select" style="color:var(--blue);">0</div>
-      <div class="sub">Exames com margem positiva</div>
+    <div class="conv-logos">
+      <div class="conv-logo cl-geap">GEAP saúde</div>
+      <div class="conv-logo cl-sel">♥ Select</div>
     </div>
   </div>
 
-  <div class="card">
+  <!-- Summary cards -->
+  <div class="cred-summary">
+    <div class="cred-card cc-geap">
+      <h3>GEAP saúde</h3>
+      <p>Valores CRN 06/05/2026 · 10 procedimentos negociados</p>
+      <div class="cred-metrics">
+        <div class="cred-metric"><div class="cm-val cm-ok" id="geap-ok">—</div><div class="cm-lbl">Viáveis</div></div>
+        <div class="cred-metric"><div class="cm-val cm-wa" id="geap-wa">—</div><div class="cm-lbl">Margem estreita</div></div>
+        <div class="cred-metric"><div class="cm-val cm-no" id="geap-no">—</div><div class="cm-lbl">Inviáveis</div></div>
+      </div>
+    </div>
+    <div class="cred-card cc-sel">
+      <h3>♥ Select</h3>
+      <p>Pacotes negociados · 11 procedimentos</p>
+      <div class="cred-metrics">
+        <div class="cred-metric"><div class="cm-val cm-ok" id="sel-ok">—</div><div class="cm-lbl">Viáveis</div></div>
+        <div class="cred-metric"><div class="cm-val cm-wa" id="sel-wa">—</div><div class="cm-lbl">Margem estreita</div></div>
+        <div class="cred-metric"><div class="cm-val cm-no" id="sel-no">—</div><div class="cm-lbl">Inviáveis</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Credenc table -->
+  <div class="card cred-table-card" style="margin-bottom:18px;">
     <div class="t-head">
-      <p>Simulação de Credenciamento: GEAP e SELECT</p>
-      <p>Comparativo direto das tabelas negociadas vs. Custo Mínimo Viável da Clínica</p>
+      <p>Comparativo por procedimento — GEAP &amp; Select vs. Custo Mínimo Viável</p>
+      <p>Custos configurados na aba principal · Lucro Presumido 13,5%</p>
     </div>
     <div class="t-wrap">
-      <table>
-        <colgroup><col style="width:30%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:14%"></colgroup>
+      <table id="credenc-table">
+        <colgroup><col><col><col><col><col><col><col></colgroup>
         <thead>
           <tr>
             <th>Procedimento</th>
-            <th style="text-align:right;">Custo Mínimo Viável<br><span style="font-size:8px;font-weight:400;">(Mat + HM + CO + Tec + Impostos)</span></th>
-            <th style="text-align:right;">Proposta GEAP</th>
-            <th style="text-align:center;">Status GEAP</th>
-            <th style="text-align:right;">Proposta SELECT</th>
-            <th style="text-align:center;">Status SELECT</th>
+            <th style="text-align:right;">Custo mínimo</th>
+            <th style="text-align:right;">GEAP</th>
+            <th style="text-align:right;">Margem GEAP</th>
+            <th style="text-align:right;">SELECT</th>
+            <th style="text-align:right;">Margem SELECT</th>
+            <th style="text-align:center;">Recomendação</th>
           </tr>
         </thead>
-        <tbody id="tbody-novos"></tbody>
+        <tbody id="credenc-tbody"></tbody>
       </table>
     </div>
   </div>
-  
-  <div class="note">
-    ℹ️ <strong>Nota sobre GEAP e Select:</strong> Os valores da GEAP e Select foram atualizados com base na última proposta de credenciamento enviada. Verifique as margens acima para decidir se o credenciamento de todo o escopo de exames é financeiramente vantajoso.
+
+  <!-- Credenc chart -->
+  <div class="card" style="padding:16px;">
+    <p style="font-size:13px;font-weight:600;margin-bottom:4px;">Visão geral — GEAP &amp; Select vs. Preço mínimo viável por procedimento</p>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">♦ Marcadores laranja = preço mínimo de cada procedimento · Barras acima do marcador = viável</p>
+    <div class="legend" style="margin-bottom:12px;">
+      <span class="li"><span class="dot" style="background:#1e5fa8;"></span>GEAP</span>
+      <span class="li"><span class="dot" style="background:#1a7a41;"></span>SELECT</span>
+      <span class="li"><span style="font-size:14px;line-height:1;">♦</span>&nbsp;Preço mínimo viável</span>
+    </div>
+    <div style="position:relative;height:340px;"><canvas id="credenc-chart" aria-label="Gráfico comparativo GEAP e Select por procedimento"></canvas></div>
+  </div>
+
+  <div class="note" style="margin-top:18px;">
+    💡 <strong>Dica:</strong> Atualize os custos na aba <em>Análise Principal</em> e volte aqui — a análise de credenciamento é recalculada automaticamente. Os valores GEAP são da CRN 06/05/2026 (tabela marcada). Os valores Select são dos pacotes negociados.
   </div>
 </div>
 
-<div class="footer">PROIMAGEM Exames e Consultas · Os dados inseridos e salvos ficam armazenados apenas no seu navegador local.</div>
-
-<div class="toast" id="toast">✅ Valores salvos com sucesso!</div>
+<div class="footer">PROIMAGEM Exames e Consultas · Ferramenta interna de análise de viabilidade · Dados salvos automaticamente neste dispositivo.</div>
 
 <script>
-const TAX  = 0.135;          // Lucro Presumido
-const HORA = 32.35;          // R$/h — técnico CLT
-const MIN  = HORA / 60;      // R$/min
+/* ════════════════ CONSTANTS ════════════════ */
+const TAX  = 0.135;
+const HORA = 32.35;
+const MIN  = HORA / 60;
+const SKEY = 'proimagem_v4';
+const FIELDS = ['mat','hm','co','ot'];
 
-// Valores atualizados conforme a tabela (PDF) enviada
-const defaultProcs = [
-  {name:'Histerossalpingografia',  ref:{hm:70,co:42,filme:7,material:890},dur:35,conv:[
+/* ════════════════ DATA ════════════════ */
+const procs = [
+  {name:'Histerossalpingografia',      ref:{hm:70,co:42,filme:7,material:890},dur:35,conv:[
     ['ASSEC/CEHOP',997.52],['ASSEM',1003.00],['CAPESAUDE',992.32],['CASEMBRAPA',1017.79],
     ['CASSE',1013.77],['CASSIND',687.23],['CODEVASF',1055.13],['FACHESF',998.90],
     ['FUSEX',1030.00],['PARTICULAR Cartão',700],['PARTICULAR PIX',600],['PETROBRAS',1001.49],
     ['PLAN ASSISTE',988.89],['SAÚDE CAIXA',1030.87],['SMS',859],['VALE',959.02],
-    ['GEAP', 760.00], ['SELECT', 650.00]
-  ]},
-  {name:'Urografia Excretora',     ref:{hm:70,co:42,filme:16,material:679},dur:45,conv:[
+    ['GEAP',750],['SELECT',650]]},
+  {name:'Urografia Excretora',         ref:{hm:70,co:42,filme:16,material:679},dur:45,conv:[
     ['ASSEC/CEHOP',792.68],['ASSEM',805.39],['CASEMBRAPA',819.52],['CASSE',882.54],
     ['CASSI',504.24],['CASSIND',350.50],['CODEVASF',859.06],['FACHESF',800.93],
     ['FUSEX',834.05],['PARTICULAR Cartão',350],['PARTICULAR PIX',320],['PETROBRAS',119.32],
     ['PLAN ASSISTE',784.90],['POSTAL SAÚDE',801.32],['SAÚDE CAIXA',828.25],['VALE',751.28],
-    ['GEAP', 400.00], ['SELECT', 380.00]
-  ]},
-  {name:'Uretrocistografia Miccional',ref:{hm:70,co:42,filme:12,material:641},dur:30,conv:[
+    ['GEAP',400],['SELECT',380]]},
+  {name:'Uretrocistografia Miccional', ref:{hm:70,co:42,filme:12,material:641},dur:30,conv:[
     ['ASSEC/CEHOP',752.92],['ASSEM',765.04],['CAPESAUDE',730.32],['CASEMBRAPA',756.62],
     ['CASSE',850.22],['CASSIND',332.60],['CODEVASF',800.95],['FACHESF',760.79],
     ['FUSEX',794.01],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',721.48],
     ['POSTAL SAÚDE',761.34],['SAÚDE CAIXA',764.93],['VALE',724.62],
-    ['GEAP', 400.00], ['SELECT', 390.00]
-  ]},
+    ['GEAP',450],['SELECT',390]]},
   {name:'Uretrocistografia Retrógrada',ref:{hm:70,co:42,filme:12,material:345},dur:25,conv:[
     ['ASSEC/CEHOP',456.53],['ASSEM',468.65],['CAPESAUDE',440.72],['CASEMBRAPA',467.02],
     ['CASSE',517.31],['CASSIND',326.07],['CODEVASF',511.35],['FACHESF',464.40],
     ['FUSEX',497.62],['PARTICULAR Cartão',400],['PARTICULAR PIX',350],['PLAN ASSISTE',431.88],
     ['POSTAL SAÚDE',464.95],['SAÚDE CAIXA',475.33],['VALE',439.02],
-    ['GEAP', 400.00], ['SELECT', 600.00]
-  ]},
+    ['GEAP',400],['SELECT',600]]},
   {name:'Uretrocist. Miccional Criança',ref:{hm:95,co:45,filme:12,material:641},dur:35,conv:[
     ['ASSEM',793.59],['CASEMBRAPA',789.44],['CASSE',879.75],['CASSIND',347.38],
     ['CODEVASF',831.22],['FACHESF',787.78],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
     ['PLAN ASSISTE',744.18],['SAÚDE CAIXA',799.01],['VALE',755.48],
-    ['GEAP', 450.00], ['SELECT', 298.00]
-  ]},
+    ['GEAP',400],['SELECT',298]]},
   {name:'Uretrocist. Retrógrada Criança',ref:{hm:95,co:45,filme:12,material:345},dur:30,conv:[
     ['ASSEM',497.20],['CASEMBRAPA',499.84],['CASSE',546.83],['CASSIND',347.38],
     ['CODEVASF',541.62],['FACHESF',491.39],['PARTICULAR Cartão',800],['PARTICULAR PIX',750],
     ['PLAN ASSISTE',454.58],['SAÚDE CAIXA',509.41],['VALE',469.88],
-    ['GEAP', 450.00], ['SELECT', 600.00]
-  ]},
-  {name:'Enema Opaco',ref:{hm:99,co:48,filme:22,material:166},dur:40,conv:[
+    ['SELECT',600]]},
+  {name:'Enema Opaco',                 ref:{hm:99,co:48,filme:22,material:166},dur:40,conv:[
     ['CASSE',335.55],['PARTICULAR Cartão',350],['PARTICULAR PIX',350],
-    ['GEAP', 450.00], ['SELECT', 400.00]
-  ]},
-  {name:'RX Esôfago-Estômago-Duodeno',ref:{hm:99,co:39,filme:17,material:59},dur:25,conv:[
+    ['GEAP',450],['SELECT',400]]},
+  {name:'RX Esôfago-Estômago-Duodeno', ref:{hm:99,co:39,filme:17,material:59},dur:25,conv:[
     ['ASSEC/CEHOP',300],['CASSE',214.88],['LIFE EMPRESARIAL',128.74],
     ['PARTICULAR Cartão',350],['PARTICULAR PIX',350],
-    ['GEAP', 450.00], ['SELECT', 390.00]
-  ]},
-  {name:'Esofagograma',ref:{hm:45,co:25,filme:7,material:30},dur:15,conv:[
+    ['GEAP',450],['SELECT',390]]},
+  {name:'Esofagograma',                ref:{hm:45,co:25,filme:7,material:30},dur:15,conv:[
     ['CASSE',106.43],['PARTICULAR Cartão',300],['PARTICULAR PIX',250],
-    ['GEAP', 300.00], ['SELECT', 290.00]
-  ]},
-  {name:'RX Trânsito Intestinal',ref:{hm:72,co:39,filme:17,material:30},dur:30,conv:[
+    ['GEAP',300],['SELECT',290]]},
+  {name:'RX Trânsito Intestinal',      ref:{hm:72,co:39,filme:17,material:30},dur:30,conv:[
     ['ASSEC/CEHOP',300],['CASSE',158.90],['PARTICULAR Cartão',350],
     ['PARTICULAR PIX',350],['PETROBRAS',155.85],
-    ['GEAP', 400.00], ['SELECT', 390.00]
-  ]},
-  {name:'Fistulografia',ref:{hm:51,co:35,filme:9,material:305},dur:25,conv:[
+    ['GEAP',450],['SELECT',390]]},
+  {name:'Fistulografia',               ref:{hm:51,co:35,filme:9,material:305},dur:25,conv:[
     ['FUSEX',400.75],['PARTICULAR Cartão',350],['PARTICULAR PIX',300],
-    ['PETROBRAS',377.52],['VALE',362.59]
-  ]},
-  {name:'Sialografia',ref:{hm:80,co:41,filme:8,material:0},dur:25,conv:[
-    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]
-  ]}
+    ['PETROBRAS',377.52],['VALE',362.59]]},
+  {name:'Sialografia',                 ref:{hm:80,co:41,filme:8,material:0},dur:25,conv:[
+    ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]]}
 ];
 
-// Carregar do localStorage ou usar o padrão
-let procs = [];
-const savedData = localStorage.getItem('proImagemData');
-if(savedData) {
-  procs = JSON.parse(savedData);
-  // Garante que os valores de convênio sejam sempre os mais recentes (importante para atualizar GEAP/Select sem perder os salvamentos do usuário)
-  procs.forEach((p, index) => {
-    if(defaultProcs[index]) {
-      p.conv = [...defaultProcs[index].conv];
-    }
-  });
-} else {
-  // Deep copy
-  procs = JSON.parse(JSON.stringify(defaultProcs));
+// Credenciamento mapping
+const credProcs = [
+  {name:'Histerossalpingografia',       idx:0, geap:750,  sel:650},
+  {name:'Urografia Excretora',          idx:1, geap:400,  sel:380},
+  {name:'Uretrocistografia Miccional',  idx:2, geap:450,  sel:390},
+  {name:'Uretrocistografia Retrógrada', idx:3, geap:400,  sel:600},
+  {name:'Uretrocist. Miccional Criança',idx:4, geap:400,  sel:298},
+  {name:'Uretrocist. Retrógrada Criança',idx:5,geap:null, sel:600},
+  {name:'Enema Opaco',                  idx:6, geap:450,  sel:400},
+  {name:'RX EED',                       idx:7, geap:450,  sel:390},
+  {name:'Esofagograma',                 idx:8, geap:300,  sel:290},
+  {name:'RX Trânsito Intestinal',       idx:9, geap:450,  sel:390},
+];
+
+/* ════════════════ STATE ════════════════ */
+let cur = 0;
+let myChart = null;
+let credChart = null;
+let savedInputs = {};
+const modes = {mat:'R$', hm:'R$', co:'R$', ot:'R$'};
+
+try { savedInputs = JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch(e) {}
+
+/* ════════════════ FORMAT ════════════════ */
+function fmt(v) {
+  if (!isFinite(v)) return '∞';
+  return 'R$ ' + Math.abs(v).toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+function fmtShort(v) {
+  if (!isFinite(v)) return '∞';
+  return 'R$' + v.toFixed(0);
 }
 
-let cur=0, myChart=null;
+/* ════════════════ SAVE / LOAD ════════════════ */
+function saveCurrentInputs() {
+  const p = procs[cur];
+  savedInputs[cur] = {
+    dur: parseFloat(document.getElementById('i-dur').value) || p.dur,
+    mat: {val: parseFloat(document.getElementById('i-mat').value) || 0, mode: modes.mat},
+    hm:  {val: parseFloat(document.getElementById('i-hm').value)  || 0, mode: modes.hm},
+    co:  {val: parseFloat(document.getElementById('i-co').value)  || 0, mode: modes.co},
+    ot:  {val: parseFloat(document.getElementById('i-ot').value)  || 0, mode: modes.ot},
+  };
+  try { localStorage.setItem(SKEY, JSON.stringify(savedInputs)); } catch(e) {}
+  flashSave();
+}
 
-const costPlugin={
-  id:'costLine',
-  afterDraw(chart){
-    const pm=getPrecoMinimo();
-    if(!pm) return;
-    const {ctx,chartArea:{top,bottom},scales:{x}}=chart;
-    const xp=x.getPixelForValue(pm);
+function loadInputsFor(i) {
+  const saved = savedInputs[i];
+  const p = procs[i];
+  const defs = {mat: p.ref.material, hm: p.ref.hm, co: p.ref.co, ot: p.ref.filme};
+  FIELDS.forEach(f => {
+    const d = saved ? saved[f] : {val: defs[f], mode: 'R$'};
+    setMode(f, d.mode, false);
+    document.getElementById('i-'+f).value = d.val;
+  });
+  document.getElementById('i-dur').value = saved ? saved.dur : p.dur;
+  FIELDS.forEach(f => updatePctCalc(f));
+}
+
+function flashSave() {
+  const el = document.getElementById('save-badge');
+  el.style.opacity = '1';
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.opacity = '0'; }, 1600);
+}
+
+/* ════════════════ MODE TOGGLE ════════════════ */
+function setMode(field, mode, triggerGo = true) {
+  modes[field] = mode;
+  const wrap = document.querySelector(`.mt[data-field="${field}"]`);
+  if (wrap) wrap.querySelectorAll('.mtb').forEach(b => b.classList.toggle('act', b.dataset.mode === mode));
+  const inp = document.getElementById('i-'+field);
+  if (inp) {
+    if (mode === '%') { inp.max = 100; inp.step = 0.5; }
+    else { inp.removeAttribute('max'); inp.step = field === 'mat' ? 10 : 5; }
+  }
+  const sfx = document.getElementById('sfx-'+field);
+  if (sfx) sfx.textContent = mode === '%' ? '%' : '';
+  updatePctCalc(field);
+  if (triggerGo) { saveCurrentInputs(); go(); }
+}
+
+function updatePctCalc(field) {
+  const el = document.getElementById('pct-'+field);
+  if (!el) return;
+  if (modes[field] === '%') {
+    const pct = parseFloat(document.getElementById('i-'+field).value) || 0;
+    const avg = getAvgConv();
+    el.textContent = '≈ ' + fmt(avg * pct / 100);
+    el.style.display = '';
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+function getAvgConv() {
+  const vals = procs[cur].conv.map(([,v]) => v);
+  return vals.length ? vals.reduce((a,b) => a+b,0) / vals.length : 500;
+}
+
+function onInp(field) {
+  if (field) updatePctCalc(field);
+  saveCurrentInputs();
+  go();
+}
+
+/* ════════════════ CALCULATIONS ════════════════ */
+function getTecCost(procIdx) {
+  const el = document.getElementById('i-dur');
+  const dur = procIdx === undefined
+    ? (parseFloat(el ? el.value : 0) || 0)
+    : ((savedInputs[procIdx] ? savedInputs[procIdx].dur : procs[procIdx].dur) || 0);
+  return dur * MIN;
+}
+
+// Get fixed costs and variable % for a given proc (undefined = current)
+function getCostParams(procIdx) {
+  let fixed = getTecCost(procIdx);
+  let varPct = TAX;
+  const p = procs[procIdx === undefined ? cur : procIdx];
+  const defs = {mat: p.ref.material, hm: p.ref.hm, co: p.ref.co, ot: p.ref.filme};
+  FIELDS.forEach(f => {
+    let val, mode;
+    if (procIdx === undefined) {
+      val = parseFloat(document.getElementById('i-'+f).value) || 0;
+      mode = modes[f];
+    } else {
+      const saved = savedInputs[procIdx];
+      val  = saved ? saved[f].val  : defs[f];
+      mode = saved ? saved[f].mode : 'R$';
+    }
+    if (mode === 'R$') fixed += val;
+    else varPct += val / 100;
+  });
+  return {fixed, varPct};
+}
+
+function getMinPrice(procIdx) {
+  const {fixed, varPct} = getCostParams(procIdx);
+  const denom = 1 - varPct;
+  return denom <= 0 ? Infinity : fixed / denom;
+}
+
+function getMargin(convVal, procIdx) {
+  const {fixed, varPct} = getCostParams(procIdx);
+  return convVal * (1 - varPct) - fixed;
+}
+
+/* ════════════════ PROC SELECTION ════════════════ */
+function sel(i) {
+  saveCurrentInputs();
+  cur = i;
+  document.querySelectorAll('.pb').forEach((b, idx) => b.classList.toggle('act', idx === i));
+  document.getElementById('cht-ttl').textContent = '📊 ' + procs[i].name + ' — comparativo por convênio';
+  loadInputsFor(i);
+  const p = procs[i];
+  const rt = p.ref.hm + p.ref.co + p.ref.filme + p.ref.material;
+  document.getElementById('l-ref').innerHTML =
+    `HM: <strong>R$${p.ref.hm}</strong> &nbsp;|&nbsp; CO: <strong>R$${p.ref.co}</strong> &nbsp;|&nbsp; Filme: <strong>R$${p.ref.filme}</strong> &nbsp;|&nbsp; Material: <strong>R$${p.ref.material}</strong><br>Total no sistema (sem técnico/imposto): <strong>${fmt(rt)}</strong>`;
+  go();
+}
+
+/* ════════════════ CHART PLUGIN ════════════════ */
+const costPlugin = {
+  id: 'costLine',
+  afterDraw(chart) {
+    const pm = getMinPrice();
+    if (!isFinite(pm)) return;
+    const {ctx, chartArea:{top,bottom}, scales:{x}} = chart;
+    const xp = x.getPixelForValue(pm);
     ctx.save();
-    ctx.beginPath();ctx.setLineDash([7,5]);
-    ctx.strokeStyle='#e8621a';ctx.lineWidth=2.5;
-    ctx.moveTo(xp,top);ctx.lineTo(xp,bottom);ctx.stroke();
-    ctx.setLineDash([]);ctx.fillStyle='#e8621a';
-    ctx.font='700 10px Inter,sans-serif';ctx.textAlign='left';
-    const lbl='Mín: R$'+pm.toFixed(0);
-    const tw=ctx.measureText(lbl).width;
-    const tx=(xp+tw+12>chart.chartArea.right)?xp-tw-8:xp+4;
-    ctx.fillText(lbl,tx,top+13);
+    ctx.beginPath(); ctx.setLineDash([7,5]);
+    ctx.strokeStyle = '#e8621a'; ctx.lineWidth = 2.5;
+    ctx.moveTo(xp, top); ctx.lineTo(xp, bottom); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#e8621a';
+    ctx.font = '700 10px Inter,sans-serif'; ctx.textAlign = 'left';
+    const lbl = 'Mín: ' + fmtShort(pm);
+    const tw = ctx.measureText(lbl).width;
+    const tx = (xp + tw + 12 > chart.chartArea.right) ? xp - tw - 8 : xp + 4;
+    ctx.fillText(lbl, tx, top + 13);
     ctx.restore();
   }
 };
 
-// UI TABS
-function switchTab(tabId, btn) {
-  document.querySelectorAll('.wrap').forEach(w => w.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
-  btn.classList.add('active');
-  
-  if(tabId === 'tab-novos') buildNovosTab();
-}
+/* ════════════════ MAIN GO ════════════════ */
+function go() {
+  const p = procs[cur];
+  const pm = getMinPrice();
+  const tec = getTecCost();
+  const {fixed, varPct} = getCostParams();
 
-// Inicializar botões de procedimento
-const bc=document.getElementById('btns');
-procs.forEach((p,i)=>{
-  const b=document.createElement('button');
-  b.className='pb'+(i===0?' act':'');
-  b.textContent=p.name;
-  b.onclick=()=>sel(i);
-  bc.appendChild(b);
-});
+  document.getElementById('l-tec').textContent   = fmt(tec);
+  document.getElementById('l-tec2').textContent  = fmt(tec);
+  document.getElementById('l-dir').textContent   = fmt(fixed - tec);
+  document.getElementById('l-varpct').textContent = ((varPct - TAX) * 100).toFixed(1) + '%';
+  document.getElementById('l-preco').textContent = isFinite(pm) ? fmt(pm) : '∞';
 
-function sel(i){
-  // Antes de trocar, ler os valores atuais da tela e gravar na variável temporária
-  updateCurrentProcFromInputs();
-  
-  cur=i;
-  document.querySelectorAll('.pb').forEach((b,idx)=>b.className='pb'+(idx===i?' act':''));
-  const p=procs[i];
-  
-  // Alimentar inputs
-  document.getElementById('i-mat').value=p.ref.material;
-  document.getElementById('i-hm').value=p.ref.hm;
-  document.getElementById('i-co').value=p.ref.co;
-  document.getElementById('i-ot').value=p.ref.filme;
-  document.getElementById('i-dur').value=p.dur;
-  document.getElementById('cht-ttl').textContent='📊 '+p.name+' — comparativo por convênio';
-  
-  go();
-}
+  const sorted = [...p.conv].sort((a,b) => b[1] - a[1]);
+  const labels = sorted.map(([k]) => k);
+  const vals   = sorted.map(([,v]) => v);
+  const ok     = vals.filter(v => v >= pm).length;
+  document.getElementById('l-ok').textContent = ok;
+  document.getElementById('l-nk').textContent = vals.length - ok;
 
-function updateCurrentProcFromInputs() {
-  if(!document.getElementById('i-mat').value) return; // Evita erro no primeiro load
-  procs[cur].ref.material = parseFloat(document.getElementById('i-mat').value) || 0;
-  procs[cur].ref.hm = parseFloat(document.getElementById('i-hm').value) || 0;
-  procs[cur].ref.co = parseFloat(document.getElementById('i-co').value) || 0;
-  procs[cur].ref.filme = parseFloat(document.getElementById('i-ot').value) || 0;
-  procs[cur].dur = parseFloat(document.getElementById('i-dur').value) || 0;
-}
+  const colors  = vals.map(v => v >= pm ? 'rgba(42,138,85,.82)' : 'rgba(199,50,50,.82)');
+  const hcolors = vals.map(v => v >= pm ? '#2a8a55' : '#c73232');
 
-function saveData() {
-  updateCurrentProcFromInputs();
-  localStorage.setItem('proImagemData', JSON.stringify(procs));
-  showToast();
-}
+  const h = Math.max(240, sorted.length * 40 + 70);
+  document.getElementById('cw').style.height = h + 'px';
 
-function resetToDefault() {
-  if(confirm("Tem certeza que deseja restaurar os valores originais da planilha para TODOS os exames? Isso apagará as edições salvas.")) {
-    localStorage.removeItem('proImagemData');
-    procs = JSON.parse(JSON.stringify(defaultProcs));
-    sel(cur);
-    showToast("Restaurado para os padrões!");
-  }
-}
-
-function showToast(msg = "✅ Valores salvos com sucesso!") {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-// Helpers Matemáticos
-function getDirectCosts(){
-  return ['i-mat','i-hm','i-co','i-ot']
-    .reduce((s,id)=>s+(parseFloat(document.getElementById(id).value)||0),0);
-}
-function getTecCost(){
-  const d=parseFloat(document.getElementById('i-dur').value)||0;
-  return d*MIN;
-}
-function getPrecoMinimo(){
-  return (getDirectCosts()+getTecCost())/(1-TAX);
-}
-function fmt(v){
-  if(isNaN(v)) return 'R$ –';
-  return 'R$ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
-}
-
-function go(){
-  const p=procs[cur];
-  const dir=getDirectCosts();
-  const tec=getTecCost();
-  const sub=dir+tec;
-  const pm=getPrecoMinimo();   // minimum price
-  const imp=pm*TAX;            // tax amount at minimum price
-
-  // Update percentages
-  const matVal = parseFloat(document.getElementById('i-mat').value)||0;
-  const hmVal = parseFloat(document.getElementById('i-hm').value)||0;
-  const coVal = parseFloat(document.getElementById('i-co').value)||0;
-  const otVal = parseFloat(document.getElementById('i-ot').value)||0;
-  
-  document.getElementById('pct-mat').textContent = dir > 0 ? Math.round((matVal/dir)*100)+'%' : '0%';
-  document.getElementById('pct-hm').textContent = dir > 0 ? Math.round((hmVal/dir)*100)+'%' : '0%';
-  document.getElementById('pct-co').textContent = dir > 0 ? Math.round((coVal/dir)*100)+'%' : '0%';
-  document.getElementById('pct-ot').textContent = dir > 0 ? Math.round((otVal/dir)*100)+'%' : '0%';
-
-  // Update panel
-  document.getElementById('l-tec').textContent=fmt(tec);
-  document.getElementById('l-tec2').textContent=fmt(tec);
-  document.getElementById('l-dir').textContent=fmt(dir);
-  document.getElementById('l-sub').textContent=fmt(sub);
-  document.getElementById('l-imp').textContent=fmt(imp);
-  document.getElementById('l-preco').textContent=fmt(pm);
-
-  // Chart
-  const sorted=[...p.conv].sort((a,b)=>b[1]-a[1]);
-  const labels=sorted.map(([k])=>k);
-  const vals=sorted.map(([,v])=>v);
-  const ok=vals.filter(v=>v>=pm).length;
-  document.getElementById('l-ok').textContent=ok;
-  document.getElementById('l-nk').textContent=vals.length-ok;
-
-  const colors=vals.map(v=>v>=pm?'rgba(42,138,85,.82)':'rgba(199,50,50,.82)');
-  const hcolors=vals.map(v=>v>=pm?'#2a8a55':'#c73232');
-
-  const h=Math.max(240,sorted.length*40+70);
-  document.getElementById('cw').style.height=h+'px';
-
-  const ctx=document.getElementById('mc').getContext('2d');
-  if(myChart) myChart.destroy();
-  myChart=new Chart(ctx,{
-    type:'bar',
-    plugins:[costPlugin],
-    data:{labels,datasets:[{
-      label:'Valor convênio',data:vals,
-      backgroundColor:colors,hoverBackgroundColor:hcolors,
-      borderRadius:4,indexAxis:'y',borderSkipped:false
+  const ctx = document.getElementById('mc').getContext('2d');
+  if (myChart) myChart.destroy();
+  myChart = new Chart(ctx, {
+    type: 'bar',
+    plugins: [costPlugin],
+    data: { labels, datasets: [{
+      label: 'Valor convênio', data: vals,
+      backgroundColor: colors, hoverBackgroundColor: hcolors,
+      borderRadius: 4, indexAxis: 'y', borderSkipped: false
     }]},
-    options:{
-      indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{display:false},
-        tooltip:{
-          backgroundColor:'rgba(18,48,94,.95)',
-          titleFont:{size:12,weight:'700'},bodyFont:{size:11},
-          padding:11,cornerRadius:8,
-          callbacks:{
-            title:(items)=>items[0].label,
-            label:(c)=>{
-              const v=c.raw;
-              const impV=v*TAX;
-              const liq=v*(1-TAX);
-              const marg=liq-sub;
-              const pct=sub>0?(marg/sub*100).toFixed(1):0;
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {display: false},
+        tooltip: {
+          backgroundColor: 'rgba(18,48,94,.95)',
+          titleFont: {size:12,weight:'700'}, bodyFont: {size:11},
+          padding: 11, cornerRadius: 8,
+          callbacks: {
+            title: items => items[0].label,
+            label: c => {
+              const v = c.raw;
+              const m = getMargin(v);
+              const pct = fixed > 0 ? (m / fixed * 100).toFixed(1) : 0;
               return [
                 ` Valor bruto:     R$ ${v.toFixed(2)}`,
-                ` Imposto (13,5%): −R$ ${impV.toFixed(2)}`,
-                ` Receita líquida: R$ ${liq.toFixed(2)}`,
-                ` Custo direto:    −R$ ${sub.toFixed(2)}`,
-                ` Margem:          ${marg>=0?'+':''}R$ ${marg.toFixed(2)} (${marg>=0?'+':''}${pct}%)`
+                ` Imposto (13,5%): −R$ ${(v * TAX).toFixed(2)}`,
+                ` Margem:          ${m >= 0 ? '+' : ''}R$ ${m.toFixed(2)} (${m >= 0 ? '+' : ''}${pct}%)`
               ];
             }
           }
         }
       },
-      scales:{
-        x:{ticks:{callback:v=>'R$'+v.toFixed(0),font:{size:10.5},color:'#5a6e88'},grid:{color:'rgba(18,48,94,.05)'},border:{display:false}},
-        y:{ticks:{font:{size:11},color:'#1a2a40'},grid:{display:false},border:{display:false}}
+      scales: {
+        x: {ticks:{callback:v=>'R$'+v.toFixed(0),font:{size:10.5},color:'#5a6e88'},grid:{color:'rgba(18,48,94,.05)'},border:{display:false}},
+        y: {ticks:{font:{size:11},color:'#1a2a40'},grid:{display:false},border:{display:false}}
       }
     }
   });
 
-  const tb=document.getElementById('tbody');
-  tb.innerHTML='';
-  sorted.forEach(([name,val])=>{
-    const impV=val*TAX;
-    const liq=val*(1-TAX);
-    const marg=liq-sub;
-    const pct=sub>0?(marg/sub*100):0;
-    const mc=marg>=0?'var(--ok)':'var(--no)';
-    
-    // Destaque visual para GEAP e SELECT
-    const isNew = (name === 'GEAP' || name === 'SELECT');
-    const nameStyle = isNew ? 'color: var(--orange); font-weight: 800;' : '';
-
-    const badge=marg<0
-      ?'<span class="badge b-no">Inviável</span>'
-      :pct<8?'<span class="badge b-wa">Margem estreita</span>'
-      :'<span class="badge b-ok">Viável</span>';
-    tb.innerHTML+=`<tr style="${isNew ? 'background: #fff8f4;' : ''}">
-      <td class="cn" style="${nameStyle}">${name} ${isNew ? '✨' : ''}</td>
+  // Table
+  const tb = document.getElementById('tbody');
+  tb.innerHTML = '';
+  sorted.forEach(([name, val]) => {
+    const impV = val * TAX;
+    const liq  = val * (1 - TAX);
+    const m    = getMargin(val);
+    const pct  = isFinite(pm) ? ((val - pm) / pm * 100) : 0;
+    const mc   = m >= 0 ? 'var(--ok)' : 'var(--no)';
+    const badge = m < 0
+      ? '<span class="badge b-no">Inviável</span>'
+      : pct < 8 ? '<span class="badge b-wa">Margem estreita</span>'
+      : '<span class="badge b-ok">Viável</span>';
+    const tag = name === 'GEAP' ? ' <span class="tag-geap">GEAP</span>'
+               : name === 'SELECT' ? ' <span class="tag-sel">Select</span>' : '';
+    tb.innerHTML += `<tr>
+      <td class="cn">${name}${tag}</td>
       <td style="font-weight:700;">${fmt(val)}</td>
       <td style="color:var(--no);">−${fmt(impV)}</td>
       <td style="font-weight:600;color:var(--blue);">${fmt(liq)}</td>
-      <td style="color:${mc};font-weight:700;">${marg>=0?'+':'−'}${fmt(Math.abs(marg))}</td>
+      <td style="color:${mc};font-weight:700;">${m >= 0 ? '+' : '−'}${fmt(Math.abs(m))}</td>
       <td>${badge}</td>
     </tr>`;
   });
 }
 
-function buildNovosTab() {
-  const tb = document.getElementById('tbody-novos');
+/* ════════════════ CREDENC TAB ════════════════ */
+function updateCredencTab() {
+  const geapVals  = credProcs.map(cp => cp.geap);
+  const selVals   = credProcs.map(cp => cp.sel);
+  const minPrices = credProcs.map(cp => getMinPrice(cp.idx));
+  const labels    = credProcs.map(cp => cp.name);
+
+  let gOk=0,gWa=0,gNo=0,sOk=0,sWa=0,sNo=0;
+
+  // Table
+  const tb = document.getElementById('credenc-tbody');
   tb.innerHTML = '';
-  
-  let geapOk = 0;
-  let selectOk = 0;
+  credProcs.forEach((cp, i) => {
+    const pm  = minPrices[i];
+    const gv  = cp.geap;
+    const sv  = cp.sel;
+    const gm  = gv !== null ? getMargin(gv, cp.idx) : null;
+    const sm  = sv !== null ? getMargin(sv, cp.idx) : null;
+    const gpct = (gv !== null && isFinite(pm)) ? (gv - pm) / pm * 100 : null;
+    const spct = (sv !== null && isFinite(pm)) ? (sv - pm) / pm * 100 : null;
 
-  procs.forEach(p => {
-    // Calcula o custo minimo desse procedimento com os dados salvos nele
-    const dir = p.ref.material + p.ref.hm + p.ref.co + p.ref.filme;
-    const tec = p.dur * MIN;
-    const pm = (dir + tec) / (1 - TAX);
+    // Count
+    if (gv !== null) {
+      if (gm >= 0 && gpct >= 8) gOk++;
+      else if (gm >= 0) gWa++;
+      else gNo++;
+    }
+    if (sv !== null) {
+      if (sm >= 0 && spct >= 8) sOk++;
+      else if (sm >= 0) sWa++;
+      else sNo++;
+    }
 
-    // Encontra os valores de GEAP e Select no array de convenios
-    const vGeap = p.conv.find(c => c[0] === 'GEAP')?.[1] || 0;
-    const vSelect = p.conv.find(c => c[0] === 'SELECT')?.[1] || 0;
+    const gClass = gm === null ? 'cell-na' : gm >= 0 ? 'cell-ok' : 'cell-no';
+    const sClass = sm === null ? 'cell-na' : sm >= 0 ? 'cell-ok' : 'cell-no';
 
-    // Avalia situação
-    const stGeap = vGeap >= pm;
-    const stSelect = vSelect >= pm;
-
-    if(stGeap) geapOk++;
-    if(stSelect) selectOk++;
-
-    const bGeap = stGeap ? '<span class="badge b-ok">Viável</span>' : '<span class="badge b-no">Inviável</span>';
-    const bSelect = stSelect ? '<span class="badge b-ok">Viável</span>' : '<span class="badge b-no">Inviável</span>';
+    // recommendation
+    let rec = '';
+    const both = gm !== null && sm !== null;
+    const eitherOk = (gm !== null && gm >= 0) || (sm !== null && sm >= 0);
+    if (!eitherOk) rec = '<span class="badge b-no">Negociar</span>';
+    else if (both && gm >= 0 && sm >= 0) rec = '<span class="badge b-ok">Ambos</span>';
+    else if (gm !== null && gm >= 0) rec = '<span class="badge b-ok">GEAP ✓</span>';
+    else if (sm !== null && sm >= 0)  rec = '<span class="badge b-ok">Select ✓</span>';
+    else rec = '<span class="badge b-wa">Analisar</span>';
 
     tb.innerHTML += `<tr>
-      <td class="cn">${p.name}</td>
-      <td style="font-weight:700; color:var(--text);">${fmt(pm)}</td>
-      <td style="font-weight:600; color:${stGeap ? 'var(--ok)' : 'var(--no)'}">${vGeap ? fmt(vGeap) : 'Sem proposta'}</td>
-      <td>${vGeap ? bGeap : '-'}</td>
-      <td style="font-weight:600; color:${stSelect ? 'var(--blue)' : 'var(--no)'}">${vSelect ? fmt(vSelect) : 'Sem proposta'}</td>
-      <td>${vSelect ? bSelect : '-'}</td>
+      <td class="cn">${cp.name}</td>
+      <td style="font-weight:700;">${isFinite(pm) ? fmt(pm) : '—'}</td>
+      <td>${gv !== null ? fmt(gv) : '<span class="cell-na">Não cobre</span>'}</td>
+      <td class="${gClass}">${gm !== null ? (gm >= 0 ? '+' : '−') + fmt(Math.abs(gm)) : '—'}</td>
+      <td>${sv !== null ? fmt(sv) : '<span class="cell-na">—</span>'}</td>
+      <td class="${sClass}">${sm !== null ? (sm >= 0 ? '+' : '−') + fmt(Math.abs(sm)) : '—'}</td>
+      <td style="text-align:center;">${rec}</td>
     </tr>`;
   });
 
-  document.getElementById('n-total').textContent = procs.length;
-  document.getElementById('n-geap').textContent = geapOk;
-  document.getElementById('n-select').textContent = selectOk;
+  // Summary cards
+  document.getElementById('geap-ok').textContent = gOk;
+  document.getElementById('geap-wa').textContent = gWa;
+  document.getElementById('geap-no').textContent = gNo;
+  document.getElementById('sel-ok').textContent  = sOk;
+  document.getElementById('sel-wa').textContent  = sWa;
+  document.getElementById('sel-no').textContent  = sNo;
+
+  // Chart
+  const geapColors  = credProcs.map((cp,i) => cp.geap !== null && cp.geap >= minPrices[i] ? '#1e5fa8' : '#7aaad4');
+  const selColors   = credProcs.map((cp,i) => cp.sel  !== null && cp.sel  >= minPrices[i] ? '#1a7a41' : '#80c898');
+
+  const ctx2 = document.getElementById('credenc-chart').getContext('2d');
+  if (credChart) credChart.destroy();
+  credChart = new Chart(ctx2, {
+    data: {
+      labels,
+      datasets: [
+        {type:'bar',  label:'GEAP',           data:geapVals, backgroundColor:geapColors, borderRadius:4, order:2},
+        {type:'bar',  label:'SELECT',          data:selVals,  backgroundColor:selColors,  borderRadius:4, order:3},
+        {type:'scatter',label:'Preço mínimo',  data:minPrices.map((v,i)=>({x:i,y:isFinite(v)?v:null})),
+         pointStyle:'rectRot', pointRadius:9, pointBackgroundColor:'#e8621a',
+         pointBorderColor:'#fff', pointBorderWidth:1.5, order:1, showLine:false},
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'rgba(18,48,94,.95)',
+          titleFont:{size:12,weight:'700'}, bodyFont:{size:11},
+          padding:10, cornerRadius:8,
+          callbacks:{
+            title: items => {
+              const i = items[0].dataIndex;
+              return credProcs[i] ? credProcs[i].name : '';
+            },
+            label: item => {
+              if (item.dataset.label === 'Preço mínimo') {
+                return ` Preço mínimo: ${isFinite(item.raw.y) ? fmt(item.raw.y) : '∞'}`;
+              }
+              const i = item.dataIndex;
+              const pm = minPrices[i];
+              const v  = item.raw;
+              if (v === null) return ` ${item.dataset.label}: —`;
+              const m = isFinite(pm) ? v - pm : null;
+              return [
+                ` ${item.dataset.label}: ${fmt(v)}`,
+                m !== null ? ` vs mínimo: ${m >= 0 ? '+' : ''}${fmt(m)}` : ''
+              ].filter(Boolean);
+            }
+          }
+        }
+      },
+      scales:{
+        x:{ticks:{font:{size:10.5},color:'#5a6e88',maxRotation:35},grid:{color:'rgba(18,48,94,.05)'},border:{display:false}},
+        y:{ticks:{callback:v=>'R$'+v.toFixed(0),font:{size:11}},grid:{color:'rgba(18,48,94,.05)'},border:{display:false}}
+      }
+    }
+  });
 }
 
-// Inicializa a ferramenta
+/* ════════════════ TAB SWITCH ════════════════ */
+function showTab(tab) {
+  document.getElementById('t-main').style.display     = tab === 'main'    ? '' : 'none';
+  document.getElementById('t-credenc').style.display  = tab === 'credenc' ? '' : 'none';
+  document.getElementById('btn-main').classList.toggle('act',    tab === 'main');
+  document.getElementById('btn-credenc').classList.toggle('act', tab === 'credenc');
+  if (tab === 'credenc') updateCredencTab();
+}
+
+/* ════════════════ INIT ════════════════ */
+const bc = document.getElementById('btns');
+procs.forEach((p, i) => {
+  const b = document.createElement('button');
+  b.className = 'pb' + (i === 0 ? ' act' : '');
+  b.textContent = p.name;
+  b.onclick = () => sel(i);
+  bc.appendChild(b);
+});
+
 sel(0);
 </script>
 </body>
