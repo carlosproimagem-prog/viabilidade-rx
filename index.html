@@ -558,6 +558,7 @@ let cur = 0;
 let myChart = null;
 let credChart = null;
 let savedInputs = {};
+let initialized = false;          // evita sobrescrever localStorage no carregamento inicial
 const modes = {mat:'R$', hm:'R$', co:'R$', ot:'R$'};
 
 try { savedInputs = JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch(e) {}
@@ -690,7 +691,7 @@ function getMargin(convVal, procIdx) {
 
 /* ════════════════ PROC SELECTION ════════════════ */
 function sel(i) {
-  saveCurrentInputs();
+  if (initialized) saveCurrentInputs();   // só salva após o carregamento inicial
   cur = i;
   document.querySelectorAll('.pb').forEach((b, idx) => b.classList.toggle('act', idx === i));
   document.getElementById('cht-ttl').textContent = '📊 ' + procs[i].name + ' — comparativo por convênio';
@@ -957,6 +958,7 @@ procs.forEach((p, i) => {
 });
 
 sel(0);
+initialized = true;   // a partir daqui qualquer troca de procedimento salva normalmente
 </script>
 </body>
 </html>
