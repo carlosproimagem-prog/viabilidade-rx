@@ -1179,9 +1179,11 @@ function showTab(tab) {
 /* ════════════════ FIREBASE SYNC ════════════════ */
 const FB_KEY = 'proimagem_firebase_url_v2';
 let db = null;
-let fbUrlStored = '';
+// 1. URL da Proimagem fixada nativamente
+let fbUrlStored = 'https://visiabilidade-default-rtdb.firebaseio.com';
 let syncListener = null;
 let isSyncingFromCloud = false;
+let isReadyToPush = false; // Trava de segurança contra exclusão acidental
 
 function showSyncStatus(status) {
   const el = document.getElementById('sync-status');
@@ -1199,7 +1201,7 @@ function showSyncStatus(status) {
 
 function openSyncModal() {
   document.getElementById('sync-modal').style.display = 'flex';
-  document.getElementById('fb-url-input').value = fbUrlStored || '';
+  document.getElementById('fb-url-input').value = fbUrlStored;
   updateFbStatusDetail();
 }
 function closeSyncModal() {
@@ -1210,23 +1212,18 @@ function updateFbStatusDetail() {
   const el = document.getElementById('fb-status-detail');
   if (!el) return;
   el.textContent = fbUrlStored
-    ? '✅ Conectado: ' + fbUrlStored.replace('https://','').split('.')[0]
+    ? '✅ Conectado automaticamente: ' + fbUrlStored.replace('https://','').split('.')[0]
     : '❌ Não configurado — usando armazenamento local';
 }
 
 function connectFirebase() {
-  const url = document.getElementById('fb-url-input').value.trim();
+  const url = fbUrlStored;
   const msg = document.getElementById('fb-msg');
-  if (!url || !url.includes('firebaseio.com')) {
-    msg.style.color = '#c72626';
-    msg.textContent = '⚠ URL inválida. Deve terminar em .firebaseio.com';
-    return;
-  }
+  
   msg.style.color = '#925500';
-  msg.textContent = '🔄 Testando conexão...';
+  msg.textContent = '🔄 Baixando dados da nuvem...';
   showSyncStatus('connecting');
 
-  // Disconnect previous listener
   if (syncListener && db) {
     try { db.ref('proimagem/custos').off(); } catch(e) {}
   }
@@ -1240,25 +1237,51 @@ function connectFirebase() {
     }
     db = firebase.database();
 
-    // Test write then listen
-    db.ref('proimagem/ping').set({ ts: Date.now() })
-      .then(() => {
-        fbUrlStored = url;
-        localStorage.setItem(FB_KEY, url);
-        msg.style.color = '#1a7a41';
-        msg.textContent = '✅ Conectado com sucesso! Sincronizando dados...';
-        showSyncStatus('connecting');
-        startListening();
-        updateFbStatusDetail();
-        // Upload current data to cloud
-        saveToFirebase();
-        setTimeout(closeSyncModal, 1800);
-      })
-      .catch(err => {
-        msg.style.color = '#c72626';
-        msg.textContent = '❌ Erro: ' + (err.message || 'Verifique as regras do banco de dados');
-        showSyncStatus('error');
-      });
+    // 2. PULL DA NUVEM: Baixa os dados obrigatoriamente ANTES de salvar
+    db.ref('proimagem/custos').once('value').then(snapshot => {
+      if (snapshot.exists()) {
+        const cloudData = snapshot.val();
+        isSyncingFromCloud = true;
+        
+        // Compatibilidade com estrutura antiga e nova
+        const isLegacy = !cloudData.main && !cloudData.part;
+        const mainData = isLegacy ? cloudData : cloudData.main;
+        
+        // Atualiza Aba Principal (Convênios)
+        if (mainData) {
+            Object.keys(mainData).forEach(k => { savedInputs[k] = mainData[k]; });
+            try { localStorage.setItem(SKEY, JSON.stringify(savedInputs)); } catch(e) {}
+            loadInputsFor(cur);
+            go();
+        }
+        // Atualiza Aba Particular (PIX/Cartão)
+        if (cloudData.part) {
+            savedInputsPart = cloudData.part;
+            try { localStorage.setItem(SKEY_PART, JSON.stringify(savedInputsPart)); } catch(e) {}
+            if (typeof loadInputsForPart === 'function') loadInputsForPart(curPart);
+            if (typeof goPartChart === 'function') { goPartChart(); updatePartTab(); }
+        }
+        
+        isSyncingFromCloud = false;
+      }
+      
+      // 3. Libera o salvamento no navegador
+      isReadyToPush = true; 
+      
+      msg.style.color = '#1a7a41';
+      msg.textContent = '✅ Sincronizado com sucesso!';
+      showSyncStatus('synced');
+      updateFbStatusDetail();
+      setTimeout(closeSyncModal, 1500);
+      
+      // 4. Liga o escutador em tempo real para a equipe
+      startListening(); 
+    }).catch(err => {
+      msg.style.color = '#c72626';
+      msg.textContent = '❌ Erro de download: ' + err.message;
+      showSyncStatus('error');
+    });
+
   } catch(e) {
     msg.style.color = '#c72626';
     msg.textContent = '❌ Erro ao inicializar: ' + e.message;
@@ -1268,19 +1291,28 @@ function connectFirebase() {
 
 function startListening() {
   if (!db) return;
-  // Listen for real-time changes from ANY user
   db.ref('proimagem/custos').on('value', snapshot => {
     showSyncStatus('synced');
     if (!snapshot.exists()) return;
     const cloudData = snapshot.val();
     if (!cloudData) return;
-    // Merge cloud data into local
+    
     isSyncingFromCloud = true;
-    Object.keys(cloudData).forEach(k => { savedInputs[k] = cloudData[k]; });
-    try { localStorage.setItem(SKEY, JSON.stringify(savedInputs)); } catch(e) {}
-    // Refresh current view
-    loadInputsFor(cur);
-    go();
+    const isLegacy = !cloudData.main && !cloudData.part;
+    const mainData = isLegacy ? cloudData : cloudData.main;
+
+    if (mainData) {
+        Object.keys(mainData).forEach(k => { savedInputs[k] = mainData[k]; });
+        try { localStorage.setItem(SKEY, JSON.stringify(savedInputs)); } catch(e) {}
+        loadInputsFor(cur);
+        go();
+    }
+    if (cloudData.part) {
+        savedInputsPart = cloudData.part;
+        try { localStorage.setItem(SKEY_PART, JSON.stringify(savedInputsPart)); } catch(e) {}
+        if (typeof loadInputsForPart === 'function') loadInputsForPart(curPart);
+        if (typeof goPartChart === 'function') { goPartChart(); updatePartTab(); }
+    }
     isSyncingFromCloud = false;
   }, err => {
     showSyncStatus('error');
@@ -1288,9 +1320,14 @@ function startListening() {
 }
 
 function saveToFirebase() {
-  if (!db || isSyncingFromCloud) return;
+  // A trava isReadyToPush impede que a tela limpa apague a nuvem
+  if (!db || isSyncingFromCloud || !isReadyToPush) return;
   try {
-    db.ref('proimagem/custos').set(savedInputs);
+    // Agora envia convênios e particulares estruturados juntos
+    db.ref('proimagem/custos').set({
+        main: savedInputs,
+        part: savedInputsPart || {}
+    });
   } catch(e) {}
 }
 
@@ -1300,31 +1337,20 @@ function disconnectFirebase() {
     try { firebase.apps.forEach(a => a.delete()); } catch(e) {}
   }
   db = null;
-  fbUrlStored = '';
-  localStorage.removeItem(FB_KEY);
+  isReadyToPush = false;
   showSyncStatus('local');
-  document.getElementById('fb-url-input').value = '';
-  document.getElementById('fb-msg').textContent = 'Desconectado. Dados mantidos localmente.';
-  document.getElementById('fb-msg').style.color = '#5a6e88';
+  document.getElementById('fb-msg').textContent = 'Desconectado.';
   updateFbStatusDetail();
 }
 
-// Auto-connect if URL was previously saved
-(function() {
-  const saved = localStorage.getItem(FB_KEY);
-  if (saved) {
-    fbUrlStored = saved;
-    document.getElementById('fb-url-input').value = saved;
-    showSyncStatus('connecting');
-    // Wait for Firebase SDK to load then connect
-    setTimeout(() => {
-      if (typeof firebase !== 'undefined') {
-        document.getElementById('fb-url-input').value = saved;
-        connectFirebase();
-      }
-    }, 800);
-  }
-})();
+// Conexão e carregamento automáticos
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    if (typeof firebase !== 'undefined') {
+      connectFirebase();
+    }
+  }, 500);
+});
 
 
 /* ════════════════ PARTICULAR TAB ════════════════ */
