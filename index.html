@@ -1173,7 +1173,7 @@ function showTab(tab) {
     document.getElementById('btn-'+t).classList.toggle('act', tab === t);
   });
   if (tab === 'credenc') updateCredencTab();
-  if (tab === 'part')    updatePartTab();
+  if (tab === 'part')  { goPartChart(); updatePartTab(); }
 }
 
 /* ════════════════ FIREBASE SYNC ════════════════ */
@@ -1619,8 +1619,25 @@ procs.forEach((p, i) => {
   bc.appendChild(b);
 });
 
+// Particular tab procedure buttons
+const bcPart = document.getElementById('btns-part');
+procs.forEach((p, i) => {
+  // Only add procedures that have Cartão or PIX values
+  const hasCart = p.conv.some(([n]) => n === 'PARTICULAR Cartão');
+  const hasPix  = p.conv.some(([n]) => n === 'PARTICULAR PIX');
+  if (!hasCart && !hasPix) return;
+  const b = document.createElement('button');
+  b.className = 'pb' + (i === 0 ? ' act' : '');
+  b.textContent = p.name;
+  b.onclick = () => selPart(i);
+  bcPart.appendChild(b);
+});
+
 sel(0);
-initialized = true;   // a partir daqui qualquer troca de procedimento salva normalmente
+initialized = true;
+
+selPart(0);
+partInitialized = true;
 </script>
 </body>
 </html>
