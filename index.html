@@ -1258,6 +1258,7 @@ function connectFirebase() {
         if (cloudData.part) {
             savedInputsPart = cloudData.part;
             try { localStorage.setItem(SKEY_PART, JSON.stringify(savedInputsPart)); } catch(e) {}
+            saveToFirebase();
             if (typeof loadInputsForPart === 'function') loadInputsForPart(curPart);
             if (typeof goPartChart === 'function') { goPartChart(); updatePartTab(); }
         }
@@ -1310,6 +1311,7 @@ function startListening() {
     if (cloudData.part) {
         savedInputsPart = cloudData.part;
         try { localStorage.setItem(SKEY_PART, JSON.stringify(savedInputsPart)); } catch(e) {}
+        saveToFirebase();
         if (typeof loadInputsForPart === 'function') loadInputsForPart(curPart);
         if (typeof goPartChart === 'function') { goPartChart(); updatePartTab(); }
     }
@@ -1376,6 +1378,7 @@ function saveCurrentInputsPart() {
     ot:  {val: parseFloat(document.getElementById('p-ot').value)  || 0, mode: partModes.ot},
   };
   try { localStorage.setItem(SKEY_PART, JSON.stringify(savedInputsPart)); } catch(e) {}
+  saveToFirebase();
   const badge = document.getElementById('save-badge-part');
   if (badge) { badge.style.opacity='1'; clearTimeout(badge._t); badge._t=setTimeout(()=>badge.style.opacity='0',1600); }
 }
