@@ -198,9 +198,16 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
 /* ── PARTICULAR SELECT ── */
 .part-select-wrap{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:0 2px 10px rgba(18,48,94,.06);}
 .part-select-wrap label{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#5a2ea0;white-space:nowrap;}
+.part-search-box{position:relative;flex:1.1;min-width:240px;}
+.part-search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:14px;color:#5a2ea0;pointer-events:none;}
+.part-search{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px 10px 34px;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--text);background:#fff;transition:border-color .15s,box-shadow .15s;}
+.part-search:focus{outline:none;border-color:#5a2ea0;box-shadow:0 0 0 3px rgba(90,46,160,.12);}
 .part-select{flex:1;min-width:260px;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--text);background:#fff;cursor:pointer;transition:border-color .15s,box-shadow .15s;}
 .part-select:focus{outline:none;border-color:#5a2ea0;box-shadow:0 0 0 3px rgba(90,46,160,.12);}
 .part-count{font-size:10.5px;font-weight:700;color:#5a2ea0;background:#f5f0ff;border:1px solid #ddcef8;border-radius:999px;padding:5px 10px;white-space:nowrap;}
+.part-hm-info{margin:-2px 0 8px 0;padding:8px 10px;border-radius:8px;background:#f5f0ff;border:1px solid #ddcef8;font-size:10.5px;color:#5a2ea0;line-height:1.55;font-weight:600;}
+.part-chart-scroll{position:relative;max-height:640px;overflow-y:auto;border:1px solid var(--border);border-radius:10px;background:#fff;padding:8px 8px 8px 0;}
+.part-chart-scroll canvas{display:block;}
 
 @media(max-width:780px){
   .layout{grid-template-columns:1fr;}
@@ -498,9 +505,13 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
     </div>
   </div>
 
-  <p class="sec-lbl" style="margin-top:4px;">Selecione o procedimento para configurar os custos</p>
+  <p class="sec-lbl" style="margin-top:4px;">Selecione ou pesquise o procedimento para configurar os custos</p>
   <div class="part-select-wrap">
-    <label for="select-part">Exame</label>
+    <label for="part-search">Exame</label>
+    <div class="part-search-box">
+      <span class="part-search-icon">🔎</span>
+      <input id="part-search" class="part-search" type="search" placeholder="Pesquisar exame... Ex: abdome, tireoide, doppler" oninput="applyPartSearch()" aria-label="Pesquisar exame particular">
+    </div>
     <select id="select-part" class="part-select" onchange="selPart(Number(this.value))" aria-label="Selecione um exame particular"></select>
     <span class="part-count" id="part-count">—</span>
   </div>
@@ -527,7 +538,7 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
         </div>
 
         <div class="cr" style="border-left:3px solid #7c4dcc;padding-left:8px;margin-left:-8px;border-radius:0 6px 6px 0;background:rgba(90,46,160,.05);">
-          <label style="color:#5a2ea0;font-weight:700;">Honorário médico ✦</label>
+          <label style="color:#5a2ea0;font-weight:700;">Honorário médico — HM do PDF ✦</label>
           <div class="mt" data-field-p="hm">
             <button class="mtb act" data-mode="R$" onclick="setModePart('hm','R$')">R$</button>
             <button class="mtb" data-mode="%" onclick="setModePart('hm','%')">%</button>
@@ -535,6 +546,7 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
           <div class="iw"><input type="number" id="p-hm" min="0" step="5" oninput="onInpPart('hm')"><span class="sfx" id="psfx-hm"></span></div>
           <span class="pct-eq" id="ppct-hm" style="display:none"></span>
         </div>
+        <div id="p-hm-pdf-info" class="part-hm-info">HM do PDF: selecione um exame para carregar os valores de Cartão e PIX.</div>
 
         <div class="cr">
           <label>Custo operacional</label>
@@ -641,14 +653,17 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
       <p>Custos configurados acima · Lucro Presumido 13,5%</p>
     </div>
     <div class="t-wrap">
-      <table id="part-table">
-        <colgroup><col style="width:26%"><col style="width:13%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:13%"></colgroup>
+      <table id="part-table" style="min-width:980px;">
+        <colgroup><col style="width:24%"><col style="width:9%"><col style="width:9%"><col style="width:10%"><col style="width:9%"><col style="width:10%"><col style="width:10%"><col style="width:9%"><col style="width:10%"><col style="width:12%"></colgroup>
         <thead>
           <tr>
             <th>Procedimento</th>
-            <th style="text-align:right;">Custo mínimo</th>
+            <th style="text-align:right;">HM Cart.</th>
+            <th style="text-align:right;">HM PIX</th>
+            <th style="text-align:right;">Mín. Cart.</th>
             <th style="text-align:right;">💳 Cartão</th>
             <th style="text-align:right;">Margem Cart.</th>
+            <th style="text-align:right;">Mín. PIX</th>
             <th style="text-align:right;">⚡ PIX</th>
             <th style="text-align:right;">Margem PIX</th>
             <th style="text-align:center;">Situação</th>
@@ -661,14 +676,15 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
 
   <!-- Overview chart -->
   <div class="card" style="padding:16px;margin-bottom:18px;">
-    <p style="font-size:13px;font-weight:600;margin-bottom:4px;">Visão geral — Cartão &amp; PIX vs. Preço mínimo por procedimento</p>
-    <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">♦ Marcadores laranja = preço mínimo com custos particulares · Barras acima = viável</p>
+    <p style="font-size:13px;font-weight:600;margin-bottom:4px;">Visão geral — Cartão &amp; PIX vs. preço mínimo por procedimento</p>
+    <p id="part-chart-helper" style="font-size:11px;color:var(--muted);margin-bottom:14px;">Gráfico horizontal com rolagem. Use a lupa acima para filtrar e visualizar melhor cada exame.</p>
     <div class="legend" style="margin-bottom:12px;">
       <span class="li"><span class="dot" style="background:#5a2ea0;"></span>Cartão</span>
       <span class="li"><span class="dot" style="background:#0e6fa8;"></span>PIX</span>
-      <span class="li"><span style="font-size:14px;line-height:1;">♦</span>&nbsp;Preço mínimo viável</span>
+      <span class="li"><span style="font-size:14px;line-height:1;color:#e8621a;">♦</span>&nbsp;Mín. Cartão</span>
+      <span class="li"><span style="font-size:14px;line-height:1;color:#0e6fa8;">♦</span>&nbsp;Mín. PIX</span>
     </div>
-    <div style="position:relative;height:360px;"><canvas id="part-chart" aria-label="Gráfico Particular Cartão e PIX por procedimento"></canvas></div>
+    <div class="part-chart-scroll"><div id="part-chart-box" style="position:relative;height:520px;"><canvas id="part-chart" aria-label="Gráfico Particular Cartão e PIX por procedimento"></canvas></div></div>
   </div>
 
   <div class="note">
@@ -7846,25 +7862,113 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /* ════════════════ PARTICULAR TAB ════════════════ */
 /* ════════════════ PARTICULAR TAB STATE ════════════════ */
-const SKEY_PART = 'proimagem_part_v2';
+const SKEY_PART = 'proimagem_part_v3';
 let savedInputsPart = {};
 const partModes = {mat:'R$', hm:'R$', co:'R$', ot:'R$'};
 let curPart = 0;
 let partInitialized = false;
 let partProcChart = null;
 let partChart = null;
+let partSearchTerm = '';
 
 try { savedInputsPart = JSON.parse(localStorage.getItem(SKEY_PART) || '{}'); } catch(e) {}
 
+function normPartTxt(v) {
+  return String(v || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+}
+
+function getPartConvValue(proc, convName) {
+  const item = proc.conv.find(([n]) => n === convName);
+  return item ? item[1] : null;
+}
+
+function getDefaultHmForPart(idx, convName = 'PARTICULAR Cartão') {
+  const p = particularProcs[idx];
+  const direct = getPartConvValue(p, convName);
+  const cart = getPartConvValue(p, 'PARTICULAR Cartão');
+  const pix = getPartConvValue(p, 'PARTICULAR PIX');
+  return direct ?? cart ?? pix ?? p.ref.hm ?? 0;
+}
+
+function getVisiblePartIndices() {
+  const q = normPartTxt(partSearchTerm);
+  return particularProcs.map((p, i) => ({p, i})).filter(({p}) => {
+    const hasPart = p.conv.some(([n]) => n === 'PARTICULAR Cartão' || n === 'PARTICULAR PIX');
+    if (!hasPart) return false;
+    if (!q) return true;
+    return normPartTxt(p.name).includes(q);
+  }).map(({i}) => i);
+}
+
+function updatePartHmPdfInfo(i) {
+  const el = document.getElementById('p-hm-pdf-info');
+  if (!el || i === null || i === undefined) return;
+  const cart = getDefaultHmForPart(i, 'PARTICULAR Cartão');
+  const pix = getDefaultHmForPart(i, 'PARTICULAR PIX');
+  el.textContent = `HM do PDF: 💳 Cartão ${fmt(cart)} · ⚡ PIX ${fmt(pix)}. O campo acima carrega Cartão como base; a tabela e os gráficos calculam o HM específico de cada convênio enquanto o HM não for editado manualmente.`;
+}
+
+function populatePartSelect(keepCurrent = true) {
+  const select = document.getElementById('select-part');
+  if (!select) return [];
+  const indices = getVisiblePartIndices();
+  select.innerHTML = '';
+  indices.forEach(i => {
+    const opt = document.createElement('option');
+    opt.value = String(i);
+    opt.textContent = particularProcs[i].name;
+    select.appendChild(opt);
+  });
+  const countEl = document.getElementById('part-count');
+  if (countEl) {
+    const total = particularProcs.filter(p => p.conv.some(([n]) => n === 'PARTICULAR Cartão' || n === 'PARTICULAR PIX')).length;
+    const hasSearch = normPartTxt(partSearchTerm).length > 0;
+    countEl.textContent = hasSearch ? `${indices.length} de ${total} exames` : `${indices.length} exames`;
+  }
+  if (!indices.length) {
+    select.disabled = true;
+    return indices;
+  }
+  select.disabled = false;
+  if (!keepCurrent || !indices.includes(curPart)) {
+    curPart = indices[0];
+  }
+  select.value = String(curPart);
+  return indices;
+}
+
+function applyPartSearch() {
+  const inp = document.getElementById('part-search');
+  partSearchTerm = inp ? inp.value : '';
+  const before = curPart;
+  const indices = populatePartSelect(true);
+  if (!indices.length) {
+    document.getElementById('part-cht-ttl').textContent = '📊 Nenhum exame encontrado';
+    const tb = document.getElementById('part-tbody');
+    if (tb) tb.innerHTML = '<tr><td colspan="10" style="text-align:center;color:var(--muted);padding:18px;">Nenhum exame encontrado para essa pesquisa.</td></tr>';
+    if (partChart) { partChart.destroy(); partChart = null; }
+    if (partProcChart) { partProcChart.destroy(); partProcChart = null; }
+    return;
+  }
+  if (curPart !== before) {
+    loadInputsForPart(curPart);
+    document.getElementById('part-cht-ttl').textContent = '📊 ' + particularProcs[curPart].name + ' — Cartão & PIX';
+    goPartChart();
+  }
+  updatePartTab();
+}
+
 /* — Save / Load particular — */
-function saveCurrentInputsPart() {
+function saveCurrentInputsPart(markHmManual = false) {
   const p = particularProcs[curPart];
+  const prev = savedInputsPart[curPart] || {};
   savedInputsPart[curPart] = {
     dur: parseFloat(document.getElementById('p-dur').value) || p.dur,
     mat: {val: parseFloat(document.getElementById('p-mat').value) || 0, mode: partModes.mat},
     hm:  {val: parseFloat(document.getElementById('p-hm').value)  || 0, mode: partModes.hm},
     co:  {val: parseFloat(document.getElementById('p-co').value)  || 0, mode: partModes.co},
     ot:  {val: parseFloat(document.getElementById('p-ot').value)  || 0, mode: partModes.ot},
+    hmManual: markHmManual || !!prev.hmManual
   };
   try { localStorage.setItem(SKEY_PART, JSON.stringify(savedInputsPart)); } catch(e) {}
   saveToFirebase();
@@ -7875,13 +7979,15 @@ function saveCurrentInputsPart() {
 function loadInputsForPart(i) {
   const saved = savedInputsPart[i];
   const p = particularProcs[i];
-  const defs = {mat: p.ref.material, hm: p.ref.hm, co: p.ref.co, ot: p.ref.filme};
+  const defs = {mat: p.ref.material, hm: getDefaultHmForPart(i, 'PARTICULAR Cartão'), co: p.ref.co, ot: p.ref.filme};
   FIELDS.forEach(f => {
-    const d = saved ? saved[f] : {val: defs[f], mode: 'R$'};
+    let d = saved ? saved[f] : {val: defs[f], mode: 'R$'};
+    if (f === 'hm' && (!saved || !saved.hmManual)) d = {val: defs.hm, mode: 'R$'};
     setModePart(f, d.mode, false);
     document.getElementById('p-'+f).value = d.val;
   });
   document.getElementById('p-dur').value = saved ? saved.dur : p.dur;
+  updatePartHmPdfInfo(i);
   FIELDS.forEach(f => updatePctCalcPart(f));
 }
 
@@ -7895,7 +8001,7 @@ function setModePart(field, mode, triggerGo = true) {
   const sfx = document.getElementById('psfx-'+field);
   if (sfx) sfx.textContent = mode==='%' ? '%' : '';
   updatePctCalcPart(field);
-  if (triggerGo) { saveCurrentInputsPart(); goPartChart(); updatePartTab(); }
+  if (triggerGo) { saveCurrentInputsPart(field === 'hm'); goPartChart(); updatePartTab(); }
 }
 
 function updatePctCalcPart(field) {
@@ -7912,42 +8018,47 @@ function updatePctCalcPart(field) {
 
 function onInpPart(field) {
   if (field) updatePctCalcPart(field);
-  saveCurrentInputsPart();
+  saveCurrentInputsPart(field === 'hm');
   goPartChart();
   updatePartTab();
 }
 
 /* — Cost calculation for particular tab — */
-function getCostParamsPart(procIdx) {
+function getCostParamsPart(procIdx, convName) {
   const isCurrentProc = procIdx === undefined || procIdx === curPart;
   const idx = procIdx === undefined ? curPart : procIdx;
   const p = particularProcs[idx];
-  const defs = {mat: p.ref.material, hm: p.ref.hm, co: p.ref.co, ot: p.ref.filme};
   const saved = savedInputsPart[idx];
-  let fixed = ((saved ? saved.dur : p.dur) || 0) * MIN;
+  const defs = {mat: p.ref.material, hm: getDefaultHmForPart(idx, convName || 'PARTICULAR Cartão'), co: p.ref.co, ot: p.ref.filme};
+  const durVal = isCurrentProc && document.getElementById('p-dur') ? (parseFloat(document.getElementById('p-dur').value) || p.dur) : ((saved ? saved.dur : p.dur) || 0);
+  let fixed = durVal * MIN;
   let varPct = TAX;
   FIELDS.forEach(f => {
     let val, mode;
-    if (isCurrentProc && document.getElementById('p-'+f)) {
+    const usePdfHmByConv = f === 'hm' && convName && (!saved || !saved.hmManual);
+    if (usePdfHmByConv) {
+      val = getDefaultHmForPart(idx, convName);
+      mode = 'R$';
+    } else if (isCurrentProc && document.getElementById('p-'+f)) {
       val  = parseFloat(document.getElementById('p-'+f).value) || 0;
       mode = partModes[f];
     } else {
-      val  = saved ? saved[f].val  : defs[f];
-      mode = saved ? saved[f].mode : 'R$';
+      val  = saved && saved[f] ? saved[f].val  : defs[f];
+      mode = saved && saved[f] ? saved[f].mode : 'R$';
     }
     if (mode==='R$') fixed += val; else varPct += val/100;
   });
   return {fixed, varPct};
 }
 
-function getMinPricePart(procIdx) {
-  const {fixed, varPct} = getCostParamsPart(procIdx);
+function getMinPricePart(procIdx, convName) {
+  const {fixed, varPct} = getCostParamsPart(procIdx, convName);
   const d = 1 - varPct;
   return d <= 0 ? Infinity : fixed / d;
 }
 
-function getMarginPart(convVal, procIdx) {
-  const {fixed, varPct} = getCostParamsPart(procIdx);
+function getMarginPart(convVal, procIdx, convName) {
+  const {fixed, varPct} = getCostParamsPart(procIdx, convName);
   return convVal * (1 - varPct) - fixed;
 }
 
@@ -7955,20 +8066,30 @@ function getMarginPart(convVal, procIdx) {
 const partCostPlugin = {
   id: 'partCostLine',
   afterDraw(chart) {
-    const pm = getMinPricePart();
-    if (!isFinite(pm)) return;
+    const minsRaw = [
+      {label:'Mín. Cartão', val:getMinPricePart(curPart, 'PARTICULAR Cartão'), color:'#e8621a'},
+      {label:'Mín. PIX', val:getMinPricePart(curPart, 'PARTICULAR PIX'), color:'#0e6fa8'}
+    ].filter(m => isFinite(m.val));
+    if (!minsRaw.length) return;
+    const mins = [];
+    minsRaw.forEach(m => {
+      const same = mins.find(x => Math.abs(x.val - m.val) < 0.01);
+      if (same) same.label = 'Mín. Cartão/PIX'; else mins.push(m);
+    });
     const {ctx, chartArea:{top,bottom}, scales:{x}} = chart;
-    const xp = x.getPixelForValue(pm);
     ctx.save();
-    ctx.beginPath(); ctx.setLineDash([7,5]);
-    ctx.strokeStyle='#e8621a'; ctx.lineWidth=2.5;
-    ctx.moveTo(xp,top); ctx.lineTo(xp,bottom); ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle='#e8621a'; ctx.font='700 10px Inter,sans-serif'; ctx.textAlign='left';
-    const lbl='Mín: '+fmtShort(pm);
-    const tw=ctx.measureText(lbl).width;
-    const tx=(xp+tw+12>chart.chartArea.right)?xp-tw-8:xp+4;
-    ctx.fillText(lbl,tx,top+13);
+    mins.forEach((m, idx) => {
+      const xp = x.getPixelForValue(m.val);
+      ctx.beginPath(); ctx.setLineDash([7,5]);
+      ctx.strokeStyle=m.color; ctx.lineWidth=2.5;
+      ctx.moveTo(xp,top); ctx.lineTo(xp,bottom); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle=m.color; ctx.font='700 10px Inter,sans-serif'; ctx.textAlign='left';
+      const lbl=m.label + ': ' + fmtShort(m.val);
+      const tw=ctx.measureText(lbl).width;
+      const tx=(xp+tw+12>chart.chartArea.right)?xp-tw-8:xp+4;
+      ctx.fillText(lbl,tx,top+13+(idx*14));
+    });
     ctx.restore();
   }
 };
@@ -7987,22 +8108,25 @@ function selPart(i) {
 
 function goPartChart() {
   const p = particularProcs[curPart];
-  const pm  = getMinPricePart();
+  if (!p) return;
+  const pmCart  = getMinPricePart(curPart, 'PARTICULAR Cartão');
+  const pmPix   = getMinPricePart(curPart, 'PARTICULAR PIX');
   const tec = (parseFloat(document.getElementById('p-dur').value)||0) * MIN;
-  const {fixed} = getCostParamsPart();
+  const fixedCart = getCostParamsPart(curPart, 'PARTICULAR Cartão').fixed;
+  const fixedPix  = getCostParamsPart(curPart, 'PARTICULAR PIX').fixed;
 
   document.getElementById('p-tec-val').textContent = fmt(tec);
   document.getElementById('p-tec2').textContent    = fmt(tec);
-  document.getElementById('p-dir').textContent     = fmt(fixed - tec);
-  document.getElementById('p-preco').textContent   = isFinite(pm) ? fmt(pm) : '∞';
+  document.getElementById('p-dir').textContent     = Math.abs(fixedCart - fixedPix) < 0.01 ? fmt(fixedCart - tec) : `Cartão ${fmt(fixedCart - tec)} · PIX ${fmt(fixedPix - tec)}`;
+  document.getElementById('p-preco').textContent   = Math.abs(pmCart - pmPix) < 0.01 ? fmt(pmCart) : `Cartão ${fmt(pmCart)} · PIX ${fmt(pmPix)}`;
 
-  const cart = (p.conv.find(([n]) => n==='PARTICULAR Cartão')||[])[1] || null;
-  const pix  = (p.conv.find(([n]) => n==='PARTICULAR PIX')  ||[])[1] || null;
-  if (!cart && !pix) return;
+  const cart = getPartConvValue(p, 'PARTICULAR Cartão');
+  const pix  = getPartConvValue(p, 'PARTICULAR PIX');
+  if (cart === null && pix === null) return;
 
   const labels = []; const vals = []; const colors = [];
-  if (cart !== null) { labels.push('💳 Cartão'); vals.push(cart); colors.push(cart>=pm?'rgba(90,46,160,.82)':'rgba(165,130,200,.82)'); }
-  if (pix  !== null) { labels.push('⚡ PIX');    vals.push(pix);  colors.push(pix >=pm?'rgba(14,111,168,.82)':'rgba(100,160,200,.82)'); }
+  if (cart !== null) { labels.push('💳 Cartão'); vals.push(cart); colors.push(cart>=pmCart?'rgba(90,46,160,.82)':'rgba(165,130,200,.82)'); }
+  if (pix  !== null) { labels.push('⚡ PIX');    vals.push(pix);  colors.push(pix >=pmPix?'rgba(14,111,168,.82)':'rgba(100,160,200,.82)'); }
 
   const ctx = document.getElementById('part-proc-chart').getContext('2d');
   if (partProcChart) partProcChart.destroy();
@@ -8023,8 +8147,10 @@ function goPartChart() {
           callbacks:{
             title: items => p.name,
             label: c => {
-              const v=c.raw, m=getMarginPart(v), pct=isFinite(pm)?(v-pm)/pm*100:0;
-              return [` Valor: ${fmt(v)}`, ` Margem: ${m>=0?'+':''}${fmt(m)} (${pct>=0?'+':''}${pct.toFixed(1)}%)`];
+              const convName = String(c.label).includes('Cartão') ? 'PARTICULAR Cartão' : 'PARTICULAR PIX';
+              const minConv = getMinPricePart(curPart, convName);
+              const v=c.raw, m=getMarginPart(v, curPart, convName), pct=isFinite(minConv)?(v-minConv)/minConv*100:0;
+              return [` Valor: ${fmt(v)}`, ` HM PDF: ${fmt(getDefaultHmForPart(curPart, convName))}`, ` Margem: ${m>=0?'+':''}${fmt(m)} (${pct>=0?'+':''}${pct.toFixed(1)}%)`];
             }
           }
         }
@@ -8038,23 +8164,31 @@ function goPartChart() {
 }
 
 function updatePartTab() {
-  const partProcs = particularProcs.map((p, idx) => {
-    const cart = (p.conv.find(([n]) => n==='PARTICULAR Cartão')||[])[1]||null;
-    const pix  = (p.conv.find(([n]) => n==='PARTICULAR PIX')  ||[])[1]||null;
+  const visible = getVisiblePartIndices();
+  const partProcs = visible.map(idx => {
+    const p = particularProcs[idx];
+    const cart = getPartConvValue(p, 'PARTICULAR Cartão');
+    const pix  = getPartConvValue(p, 'PARTICULAR PIX');
     return {name:p.name, idx, cart, pix};
   }).filter(p => p.cart!==null || p.pix!==null);
 
-  const minPrices = partProcs.map(p => getMinPricePart(p.idx));
+  const minCartPrices = partProcs.map(p => getMinPricePart(p.idx, 'PARTICULAR Cartão'));
+  const minPixPrices  = partProcs.map(p => getMinPricePart(p.idx, 'PARTICULAR PIX'));
   let cOk=0,cWa=0,cNo=0,pOk=0,pWa=0,pNo=0;
 
   const tb = document.getElementById('part-tbody');
   tb.innerHTML = '';
+  if (!partProcs.length) {
+    tb.innerHTML = '<tr><td colspan="10" style="text-align:center;color:var(--muted);padding:18px;">Nenhum exame encontrado para essa pesquisa.</td></tr>';
+  }
   partProcs.forEach((pp, i) => {
-    const pm=minPrices[i], cv=pp.cart, pv=pp.pix;
-    const cm  = cv!==null ? getMarginPart(cv, pp.idx) : null;
-    const pm2 = pv!==null ? getMarginPart(pv, pp.idx) : null;
-    const cpct = (cv!==null&&isFinite(pm))?(cv-pm)/pm*100:null;
-    const ppct = (pv!==null&&isFinite(pm))?(pv-pm)/pm*100:null;
+    const pmCart=minCartPrices[i], pmPix=minPixPrices[i], cv=pp.cart, pv=pp.pix;
+    const cm  = cv!==null ? getMarginPart(cv, pp.idx, 'PARTICULAR Cartão') : null;
+    const pm2 = pv!==null ? getMarginPart(pv, pp.idx, 'PARTICULAR PIX') : null;
+    const cpct = (cv!==null&&isFinite(pmCart))?(cv-pmCart)/pmCart*100:null;
+    const ppct = (pv!==null&&isFinite(pmPix))?(pv-pmPix)/pmPix*100:null;
+    const hmCart = getDefaultHmForPart(pp.idx, 'PARTICULAR Cartão');
+    const hmPix = getDefaultHmForPart(pp.idx, 'PARTICULAR PIX');
 
     if (cm!==null){cm>=0&&cpct>=8?cOk++:cm>=0?cWa++:cNo++;}
     if (pm2!==null){pm2>=0&&ppct>=8?pOk++:pm2>=0?pWa++:pNo++;}
@@ -8071,9 +8205,12 @@ function updatePartTab() {
     const isSelected = pp.idx === curPart;
     tb.innerHTML += `<tr style="${isSelected?'background:#f5f0ff;':''}">
       <td class="cn" style="${isSelected?'color:#5a2ea0;':''}">${pp.name}${isSelected?' ◀':''}</td>
-      <td style="font-weight:700;">${isFinite(pm)?fmt(pm):'—'}</td>
+      <td style="font-weight:700;">${fmt(hmCart)}</td>
+      <td style="font-weight:700;">${fmt(hmPix)}</td>
+      <td style="font-weight:700;">${isFinite(pmCart)?fmt(pmCart):'—'}</td>
       <td>${cv!==null?fmt(cv):'—'}</td>
       <td class="${cCl}">${cm!==null?(cm>=0?'+':'−')+fmt(Math.abs(cm)):'—'}</td>
+      <td style="font-weight:700;">${isFinite(pmPix)?fmt(pmPix):'—'}</td>
       <td>${pv!==null?fmt(pv):'—'}</td>
       <td class="${pCl}">${pm2!==null?(pm2>=0?'+':'−')+fmt(Math.abs(pm2)):'—'}</td>
       <td style="text-align:center;">${rec}</td>
@@ -8083,12 +8220,19 @@ function updatePartTab() {
   document.getElementById('cart-ok').textContent=cOk; document.getElementById('cart-wa').textContent=cWa; document.getElementById('cart-no').textContent=cNo;
   document.getElementById('pix-ok').textContent=pOk;  document.getElementById('pix-wa').textContent=pWa;  document.getElementById('pix-no').textContent=pNo;
 
-  // Overview chart
-  const labels     = partProcs.map(p => p.name.replace('Uretrocistografia','Uretrocisto.'));
+  // Overview chart — horizontal + scroll, filtered by the lupa
+  const labels     = partProcs.map(p => p.name.length > 44 ? p.name.slice(0, 43) + '…' : p.name);
   const cartVals   = partProcs.map(p => p.cart);
   const pixVals    = partProcs.map(p => p.pix);
-  const cartColors = partProcs.map((p,i) => p.cart!==null&&p.cart>=minPrices[i]?'#5a2ea0':'#b08ed4');
-  const pixColors  = partProcs.map((p,i) => p.pix!==null&&p.pix>=minPrices[i]?'#0e6fa8':'#7ab4d4');
+  const cartColors = partProcs.map((p,i) => p.cart!==null&&p.cart>=minCartPrices[i]?'#5a2ea0':'#b08ed4');
+  const pixColors  = partProcs.map((p,i) => p.pix!==null&&p.pix>=minPixPrices[i]?'#0e6fa8':'#7ab4d4');
+  const chartBox = document.getElementById('part-chart-box');
+  if (chartBox) chartBox.style.height = Math.max(420, partProcs.length * 34 + 90) + 'px';
+  const helper = document.getElementById('part-chart-helper');
+  if (helper) {
+    const q = normPartTxt(partSearchTerm);
+    helper.textContent = q ? `${partProcs.length} exame(s) filtrado(s). As barras mostram preço de venda; os marcadores mostram o preço mínimo calculado com HM do PDF para Cartão e PIX.` : `Mostrando ${partProcs.length} exames em gráfico horizontal com rolagem. Use a lupa para filtrar e comparar melhor.`;
+  }
 
   const ctx3 = document.getElementById('part-chart').getContext('2d');
   if (partChart) partChart.destroy();
@@ -8096,15 +8240,14 @@ function updatePartTab() {
     data: {
       labels,
       datasets: [
-        {type:'bar',  label:'Cartão',    data:cartVals,  backgroundColor:cartColors, borderRadius:4, order:2},
-        {type:'bar',  label:'PIX',       data:pixVals,   backgroundColor:pixColors,  borderRadius:4, order:3},
-        {type:'scatter', label:'Mínimo', data:minPrices.map((v,i)=>({x:i,y:isFinite(v)?v:null})),
-         pointStyle:'rectRot', pointRadius:9, pointBackgroundColor:'#e8621a',
-         pointBorderColor:'#fff', pointBorderWidth:1.5, order:1, showLine:false},
+        {type:'bar', label:'Cartão', data:cartVals, backgroundColor:cartColors, borderRadius:4, borderSkipped:false, barThickness:8, order:3},
+        {type:'bar', label:'PIX', data:pixVals, backgroundColor:pixColors, borderRadius:4, borderSkipped:false, barThickness:8, order:4},
+        {type:'scatter', label:'Mín. Cartão', data:minCartPrices.map((v,i)=>({x:isFinite(v)?v:null,y:labels[i]})), pointStyle:'rectRot', pointRadius:6, pointBackgroundColor:'#e8621a', pointBorderColor:'#fff', pointBorderWidth:1.5, order:1, showLine:false},
+        {type:'scatter', label:'Mín. PIX', data:minPixPrices.map((v,i)=>({x:isFinite(v)?v:null,y:labels[i]})), pointStyle:'rectRot', pointRadius:6, pointBackgroundColor:'#0e6fa8', pointBorderColor:'#fff', pointBorderWidth:1.5, order:2, showLine:false},
       ]
     },
     options:{
-      responsive:true, maintainAspectRatio:false,
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
       plugins:{
         legend:{display:false},
         tooltip:{
@@ -8112,18 +8255,22 @@ function updatePartTab() {
           callbacks:{
             title: items => partProcs[items[0].dataIndex]?.name||'',
             label: item => {
-              if(item.dataset.label==='Mínimo') return ` Preço mínimo: ${fmt(item.raw.y)}`;
-              const i=item.dataIndex, pm=minPrices[i], v=item.raw;
+              const i=item.dataIndex;
+              if(item.dataset.label==='Mín. Cartão') return ` Mín. Cartão: ${fmt(item.raw.x)}`;
+              if(item.dataset.label==='Mín. PIX') return ` Mín. PIX: ${fmt(item.raw.x)}`;
+              const convName = item.dataset.label === 'Cartão' ? 'PARTICULAR Cartão' : 'PARTICULAR PIX';
+              const minVal = convName === 'PARTICULAR Cartão' ? minCartPrices[i] : minPixPrices[i];
+              const v = item.raw;
               if(!v) return ` ${item.dataset.label}: —`;
-              const m=isFinite(pm)?v-pm:null;
-              return [` ${item.dataset.label}: ${fmt(v)}`, m!==null?` vs mínimo: ${m>=0?'+':''}${fmt(m)}`:''].filter(Boolean);
+              const m=isFinite(minVal)?v-minVal:null;
+              return [` ${item.dataset.label}: ${fmt(v)}`, ` HM PDF: ${fmt(getDefaultHmForPart(partProcs[i].idx, convName))}`, m!==null?` vs mínimo: ${m>=0?'+':''}${fmt(m)}`:''].filter(Boolean);
             }
           }
         }
       },
       scales:{
-        x:{ticks:{font:{size:10},color:'#5a6e88',maxRotation:30},grid:{color:'rgba(58,29,107,.05)'},border:{display:false}},
-        y:{ticks:{callback:v=>'R$'+v.toFixed(0),font:{size:11}},grid:{color:'rgba(58,29,107,.05)'},border:{display:false}}
+        x:{ticks:{callback:v=>'R$'+v.toFixed(0),font:{size:11},color:'#5a6e88'},grid:{color:'rgba(58,29,107,.06)'},border:{display:false}},
+        y:{ticks:{autoSkip:false,font:{size:9},color:'#1a2a40'},grid:{display:false},border:{display:false}}
       }
     }
   });
@@ -8139,29 +8286,14 @@ procs.forEach((p, i) => {
   bc.appendChild(b);
 });
 
-// Particular tab procedure dropdown
-const partSelectEl = document.getElementById('select-part');
-let firstPartIdx = null;
-let partOptionCount = 0;
-particularProcs.forEach((p, i) => {
-  // Only add procedures that have Cartão or PIX values
-  const hasCart = p.conv.some(([n]) => n === 'PARTICULAR Cartão');
-  const hasPix  = p.conv.some(([n]) => n === 'PARTICULAR PIX');
-  if (!hasCart && !hasPix) return;
-  if (firstPartIdx === null) firstPartIdx = i;
-  partOptionCount++;
-  const opt = document.createElement('option');
-  opt.value = String(i);
-  opt.textContent = p.name;
-  partSelectEl.appendChild(opt);
-});
-const partCountEl = document.getElementById('part-count');
-if (partCountEl) partCountEl.textContent = partOptionCount + (partOptionCount === 1 ? ' exame' : ' exames');
+// Particular tab procedure dropdown + search
+populatePartSelect(false);
+const firstPartIdx = getVisiblePartIndices()[0] ?? 0;
 
 sel(0);
 initialized = true;
 
-selPart(firstPartIdx ?? 0);
+selPart(firstPartIdx);
 partInitialized = true;
 </script>
 </body>
