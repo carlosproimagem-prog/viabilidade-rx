@@ -195,6 +195,13 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
 /* Footer */
 .footer{margin-top:22px;padding:14px 28px;border-top:1px solid var(--border);text-align:center;font-size:10px;color:var(--muted);background:var(--card);}
 
+/* ── PARTICULAR SELECT ── */
+.part-select-wrap{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:0 2px 10px rgba(18,48,94,.06);}
+.part-select-wrap label{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#5a2ea0;white-space:nowrap;}
+.part-select{flex:1;min-width:260px;border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--text);background:#fff;cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+.part-select:focus{outline:none;border-color:#5a2ea0;box-shadow:0 0 0 3px rgba(90,46,160,.12);}
+.part-count{font-size:10.5px;font-weight:700;color:#5a2ea0;background:#f5f0ff;border:1px solid #ddcef8;border-radius:999px;padding:5px 10px;white-space:nowrap;}
+
 @media(max-width:780px){
   .layout{grid-template-columns:1fr;}
   .wrap{padding:14px;}
@@ -492,7 +499,11 @@ td{padding:9px 14px;}td:not(:first-child){text-align:right;}td:last-child{text-a
   </div>
 
   <p class="sec-lbl" style="margin-top:4px;">Selecione o procedimento para configurar os custos</p>
-  <div class="proc-row" id="btns-part"></div>
+  <div class="part-select-wrap">
+    <label for="select-part">Exame</label>
+    <select id="select-part" class="part-select" onchange="selPart(Number(this.value))" aria-label="Selecione um exame particular"></select>
+    <span class="part-count" id="part-count">—</span>
+  </div>
 
   <div class="layout" style="margin-bottom:20px;">
 
@@ -767,8 +778,8 @@ const procs = [
 ];
 
 // Procedimentos particulares adicionados a partir do PDF 339 - Valores de Procedimento por Convênio.
-// `procs` continua intacto para Análise Principal/Credenciamento; aqui apenas a aba Particular recebe os novos exames.
-const particularProcs = procs.concat([
+// Mantido separado do array `procs` para não alterar Análise Principal nem Credenciamento.
+const particularProcs = [
   {
     "name": "BIOPSIA US — ANALISE DE PUNCAO",
     "ref": {
@@ -2666,6 +2677,26 @@ const particularProcs = procs.concat([
     ]
   },
   {
+    "name": "RX CONTRASTADO — ESÔFAGOGRAMA",
+    "ref": {
+      "hm": 45,
+      "co": 25,
+      "filme": 7,
+      "material": 30
+    },
+    "dur": 15,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
     "name": "RX CONTRASTADO — RX DE ESTÔMAGO- DUODENO",
     "ref": {
       "hm": 0,
@@ -2682,6 +2713,146 @@ const particularProcs = procs.concat([
       [
         "PARTICULAR PIX",
         280.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — RX DE ESÔFAGO- ESTÔMAGO-DUODENO",
+    "ref": {
+      "hm": 99,
+      "co": 39,
+      "filme": 17,
+      "material": 59
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — RX DE ESÔFAGO- ESTÔMAGO-DUODENO INFANTIL",
+    "ref": {
+      "hm": 99,
+      "co": 39,
+      "filme": 17,
+      "material": 59
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — RX DE TRÂNSITO INTESTINAL",
+    "ref": {
+      "hm": 72,
+      "co": 39,
+      "filme": 17,
+      "material": 30
+    },
+    "dur": 30,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — ENEMA OPACO",
+    "ref": {
+      "hm": 99,
+      "co": 48,
+      "filme": 22,
+      "material": 166
+    },
+    "dur": 40,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — ENEMA OPACO COM BOLSA DE COLOSTOMIA",
+    "ref": {
+      "hm": 99,
+      "co": 48,
+      "filme": 22,
+      "material": 166
+    },
+    "dur": 40,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        450.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — ENEMA OPACO INFANTIL",
+    "ref": {
+      "hm": 99,
+      "co": 48,
+      "filme": 22,
+      "material": 166
+    },
+    "dur": 40,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        640.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — UROGRAFIA EXCRETORA",
+    "ref": {
+      "hm": 70,
+      "co": 42,
+      "filme": 16,
+      "material": 679
+    },
+    "dur": 45,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        350.0
+      ],
+      [
+        "PARTICULAR PIX",
+        320.0
       ]
     ]
   },
@@ -2706,6 +2877,186 @@ const particularProcs = procs.concat([
     ]
   },
   {
+    "name": "RX CONTRASTADO — URETROCISTOGRAFIA MICCIONAL",
+    "ref": {
+      "hm": 70,
+      "co": 42,
+      "filme": 12,
+      "material": 641
+    },
+    "dur": 30,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — URETROCISTOGRAFIA RETRÓGRADA",
+    "ref": {
+      "hm": 70,
+      "co": 42,
+      "filme": 12,
+      "material": 345
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — URETROCISTOGRAFIA RETRÓGRADA E MICCIONAL",
+    "ref": {
+      "hm": 70,
+      "co": 42,
+      "filme": 12,
+      "material": 345
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        700.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — URETROCISTOGRAFIA MICCIONAL DE CRIANÇA",
+    "ref": {
+      "hm": 95,
+      "co": 45,
+      "filme": 12,
+      "material": 641
+    },
+    "dur": 35,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        800.0
+      ],
+      [
+        "PARTICULAR PIX",
+        750.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — URETROCISTOGRAFIA RETRÓGRADA DE CRIANÇA",
+    "ref": {
+      "hm": 95,
+      "co": 45,
+      "filme": 12,
+      "material": 345
+    },
+    "dur": 30,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        800.0
+      ],
+      [
+        "PARTICULAR PIX",
+        750.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — URETROCISTOGRAFIA RETRÓGRADA E MICCIONAL INFANTIL",
+    "ref": {
+      "hm": 70,
+      "co": 42,
+      "filme": 12,
+      "material": 345
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        1000.0
+      ],
+      [
+        "PARTICULAR PIX",
+        900.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — SIALOGRAFIA",
+    "ref": {
+      "hm": 80,
+      "co": 41,
+      "filme": 8,
+      "material": 0
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        360.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — HISTEROSSALPINGOGRAFIA",
+    "ref": {
+      "hm": 70,
+      "co": 42,
+      "filme": 7,
+      "material": 890
+    },
+    "dur": 35,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        700.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — FISTULOGRAFIA",
+    "ref": {
+      "hm": 51,
+      "co": 35,
+      "filme": 9,
+      "material": 305
+    },
+    "dur": 25,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        350.0
+      ],
+      [
+        "PARTICULAR PIX",
+        300.0
+      ]
+    ]
+  },
+  {
     "name": "RX CONTRASTADO — DACRIOCISTOGRAFIA",
     "ref": {
       "hm": 0,
@@ -2722,6 +3073,26 @@ const particularProcs = procs.concat([
       [
         "PARTICULAR PIX",
         600.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — ESÔFAGOGRAMA INFANTIL",
+    "ref": {
+      "hm": 45,
+      "co": 25,
+      "filme": 7,
+      "material": 30
+    },
+    "dur": 15,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
       ]
     ]
   },
@@ -6881,7 +7252,7 @@ const particularProcs = procs.concat([
       ]
     ]
   }
-]);
+];
 
 
 // Credenciamento mapping
@@ -7606,6 +7977,8 @@ function selPart(i) {
   if (partInitialized) saveCurrentInputsPart();
   curPart = i;
   document.querySelectorAll('#btns-part .pb').forEach((b,idx) => b.classList.toggle('act', idx===i));
+  const partSelect = document.getElementById('select-part');
+  if (partSelect && partSelect.value !== String(i)) partSelect.value = String(i);
   document.getElementById('part-cht-ttl').textContent = '📊 ' + particularProcs[i].name + ' — Cartão & PIX';
   loadInputsForPart(i);
   goPartChart();
@@ -7766,24 +8139,29 @@ procs.forEach((p, i) => {
   bc.appendChild(b);
 });
 
-// Particular tab procedure buttons
-const bcPart = document.getElementById('btns-part');
+// Particular tab procedure dropdown
+const partSelectEl = document.getElementById('select-part');
+let firstPartIdx = null;
+let partOptionCount = 0;
 particularProcs.forEach((p, i) => {
   // Only add procedures that have Cartão or PIX values
   const hasCart = p.conv.some(([n]) => n === 'PARTICULAR Cartão');
   const hasPix  = p.conv.some(([n]) => n === 'PARTICULAR PIX');
   if (!hasCart && !hasPix) return;
-  const b = document.createElement('button');
-  b.className = 'pb' + (i === 0 ? ' act' : '');
-  b.textContent = p.name;
-  b.onclick = () => selPart(i);
-  bcPart.appendChild(b);
+  if (firstPartIdx === null) firstPartIdx = i;
+  partOptionCount++;
+  const opt = document.createElement('option');
+  opt.value = String(i);
+  opt.textContent = p.name;
+  partSelectEl.appendChild(opt);
 });
+const partCountEl = document.getElementById('part-count');
+if (partCountEl) partCountEl.textContent = partOptionCount + (partOptionCount === 1 ? ' exame' : ' exames');
 
 sel(0);
 initialized = true;
 
-selPart(0);
+selPart(firstPartIdx ?? 0);
 partInitialized = true;
 </script>
 </body>
