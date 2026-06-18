@@ -766,6 +766,6124 @@ const procs = [
     ['FUSEX',129.58],['PARTICULAR Cartão',360],['PARTICULAR PIX',350]]}
 ];
 
+// Procedimentos particulares adicionados a partir do PDF 339 - Valores de Procedimento por Convênio.
+// `procs` continua intacto para Análise Principal/Credenciamento; aqui apenas a aba Particular recebe os novos exames.
+const particularProcs = procs.concat([
+  {
+    "name": "BIOPSIA US — ANALISE DE PUNCAO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "BIOPSIA US — DOSAGEM DE TIREOGLOBULINA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        150.0
+      ],
+      [
+        "PARTICULAR PIX",
+        140.0
+      ]
+    ]
+  },
+  {
+    "name": "CONSULTA — CONSULTA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        300.0
+      ]
+    ]
+  },
+  {
+    "name": "DENSITOMETRIA — DENSITOMETRIA OSSEA ( 1 SEGMENTO)",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "DENSITOMETRIA — DENSITOMETRIA OSSEA ( 2 SEGMENTOS)",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        200.0
+      ],
+      [
+        "PARTICULAR PIX",
+        180.0
+      ]
+    ]
+  },
+  {
+    "name": "DENSITOMETRIA — AVALIACAO CORPORAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        200.0
+      ],
+      [
+        "PARTICULAR PIX",
+        180.0
+      ]
+    ]
+  },
+  {
+    "name": "DENSITOMETRIA — RX - AVALIACAO DE FRATURAS VERTEBRAIS POR DXA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ELETROCARDIOGRAMA — ELETROCARDIOGRAMA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        40.0
+      ],
+      [
+        "PARTICULAR PIX",
+        30.0
+      ]
+    ]
+  },
+  {
+    "name": "HOLTER 24H — HOLTER 24 HORAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        140.0
+      ],
+      [
+        "PARTICULAR PIX",
+        130.0
+      ]
+    ]
+  },
+  {
+    "name": "MAMOGRAFIA — MAMOGRAFIA CONVENCIONAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "MAMOGRAFIA — MAMOGRAFIA DIGITAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "MAMOGRAFIA — MAMOGRAFIA COM MAGNIFICACAO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "MAPA 24H — MAPA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        140.0
+      ],
+      [
+        "PARTICULAR PIX",
+        130.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE CRÂNIO 2 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE CRÂNIO 3 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        55.0
+      ],
+      [
+        "PARTICULAR PIX",
+        50.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX CRÂNIO 4 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        65.0
+      ],
+      [
+        "PARTICULAR PIX",
+        60.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ORELHA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        55.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ORBITA BILATERAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX SEIOS PARANASAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX SELA TURCICA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX MAXILAR INFERIOR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX OSSOS DA FACE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX APOFISES ESTILOIDES (FACE)",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX MALAR (FACE)",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ZIGOMATICOS (FACE)",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO TEMPOROMANDIBULAR BILATERAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE ADENOIDES OU CAVUM",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COLUNA CERVICAL 3 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COLUNA CERVICAL 5 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        65.0
+      ],
+      [
+        "PARTICULAR PIX",
+        60.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COLUNA DORSAL 2 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COLUNA DORSAL 4 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        65.0
+      ],
+      [
+        "PARTICULAR PIX",
+        60.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX COLUNA LOMBOSACRA 3 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX COLUNA LOMBOSACRA 5 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        65.0
+      ],
+      [
+        "PARTICULAR PIX",
+        60.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX SACRO COCCIX",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COLUNA DORSO LOMBAR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        60.0
+      ],
+      [
+        "PARTICULAR PIX",
+        55.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — ESPINOGRAFIA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        150.0
+      ],
+      [
+        "PARTICULAR PIX",
+        140.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX INCIDENCIA ADICIONAL DE COLUNA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        25.0
+      ],
+      [
+        "PARTICULAR PIX",
+        20.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ESTERNO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO ESTERNOCLAVICULAR D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO ESTERNOCLAVICULAR E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX COSTELAS POR HEMITÓRAX",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE CLAVICULA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE CLAVICULA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE OMOPLATA OU ESCAPULA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE OMOPLATA OU ESCAPULA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO ACROMIOCLAVICULAR D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO ACROMIOCLAVICULAR E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO ESCAPULO UMERAL D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACAO ESCAPULO UMERAL E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX OMBRO D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX OMBRO E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE BRACO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE BRACO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COTOVELO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COTOVELO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE ANTEBRACO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE ANTEBRACO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX PUNHO D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX PUNHO E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE MAO DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE MAO ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX MAOS E PUNHO PARA IDADE OSSEA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX INCIDENCIA ADICIONAL DE MEMBRO SUPERIOR D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        25.0
+      ],
+      [
+        "PARTICULAR PIX",
+        20.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX INCIDENCIA ADICIONAL DE MEMBRO SUPERIOR E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        25.0
+      ],
+      [
+        "PARTICULAR PIX",
+        20.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE BACIA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX ARTICULACOES SACROILIACAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX QUADRIL D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX QUADRIL E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COXA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE COXA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE JOELHO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE JOELHO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE PATELA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE PATELA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX PERNA D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX PERNA E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX TORNOZELO D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX TORNOZELO E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE PE DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE PE ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE CALCANEO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE CALCANEO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — ESCANOMETRIA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        150.0
+      ],
+      [
+        "PARTICULAR PIX",
+        140.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX PANORAMICO DOS MMII",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        150.0
+      ],
+      [
+        "PARTICULAR PIX",
+        140.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX INCIDENCIA ADICIONAL DE MEMBRO INFERIOR D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        25.0
+      ],
+      [
+        "PARTICULAR PIX",
+        20.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX INCIDENCIA ADICIONAL DE MEMBRO INFERIOR E",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        25.0
+      ],
+      [
+        "PARTICULAR PIX",
+        20.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX TÓRAX 1 INCIDENCIA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        40.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX TÓRAX 2 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX TÓRAX 3 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        55.0
+      ],
+      [
+        "PARTICULAR PIX",
+        45.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX TÓRAX 4 INCIDENCIAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        65.0
+      ],
+      [
+        "PARTICULAR PIX",
+        50.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX CORACAO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX PESCOCO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE ABDOME SIMPLES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        45.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE ABDOME AGUDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        55.0
+      ],
+      [
+        "PARTICULAR PIX",
+        40.0
+      ]
+    ]
+  },
+  {
+    "name": "RAIO X — RX DE ESQUELETO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        320.0
+      ],
+      [
+        "PARTICULAR PIX",
+        300.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — RX DE ESTÔMAGO- DUODENO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        280.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — PIELOGRAFIA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        650.0
+      ],
+      [
+        "PARTICULAR PIX",
+        680.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — DACRIOCISTOGRAFIA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        550.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "RX CONTRASTADO — RX TRÂNSITO INTESTINAL COLONICO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — 40901858 - US TRANSVAGINAL PARA PESQUISA DE ENDOMETRIOSE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        640.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — PUNCAO BIOPSIA ASPIRATIVA DE TIREOIDE/CERVICAL ORIENTADA POR US",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        370.0
+      ],
+      [
+        "PARTICULAR PIX",
+        350.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE GLANDULAS SALIVARES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE GLANDULAS SALIVARES COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PARATIREOIDE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PARATIREOIDE COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO EXTRA CARDIACA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — ECODOPPLERCARDIOG RAMA TRANSTORACICO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MAMAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MAMAS COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME TOTAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME TOTAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME SUPERIOR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME SUPERIOR COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE RETROPERITONIO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME INFERIOR MASCULINO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOMEN INFERIOR MASCULINO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME INFERIOR FEMININO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ABDOME INFERIOR FEMININO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE FACE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        620.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DERMATOLOGICO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        270.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DERMATOLOGICO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        380.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE BOLSA ESCROTAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE BOLSA ESCROTAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CRÂNIO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PENIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PENIS COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TIREOIDE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TIREOIDE COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ANTEBRACO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ANTEBRACO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ANTEBRACO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ANTEBRACO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ARCOS COSTAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ARCOS COSTAIS COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE BRACO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE BRACO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE BRACO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE BRACO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CALCANEO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CALCANEO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CALCANEO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CALCANEO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CAVIDADE TORACICA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CLAVICULA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CLAVICULA DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CLAVICULA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE CLAVICULA ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COLUNA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COLUNA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COXA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COXA DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COXA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COXA ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ESTRUTURAS SUPERFICIAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE ESTRUTURAS SUPERFICIAIS COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MANDIBULA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MANDIBULA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE NERVOS PERIFERICOS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        690.0
+      ],
+      [
+        "PARTICULAR PIX",
+        640.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PANTURRILHA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PANTURRILHA DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PANTURRILHA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PANTURRILHA ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PAREDE ABDOMINAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PAREDE ABDOMINAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PARTES MOLES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PARTES MOLES COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PERNA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PERNA DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PERNA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PERNA ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PESCOCO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PESCOCO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO AXILAR DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO AXILAR DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO AXILAR ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO AXILAR ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO CERVICAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO CERVICAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO DORSAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO GLUTEA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO GLUTEA DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO GLUTEA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO GLUTEA ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO INGUINAL DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO INGUINAL DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO INGUINAL ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO INGUINAL ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO MOLAR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO MOLAR COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO PERIANAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO RETROAURICULAR DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO RETROAURICULAR ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO SACRAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO SACRAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO SUPRA UMBILICAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO SUPRA UMBILICAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO TORACICA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIAO TORACICA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE REGIOES AXILARES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        240.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE SUTURAS CRANIANAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE SUTURAS CRANIANAS COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TENDAO DE AQUILES DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TENDAO DE AQUILES DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TENDAO DE AQUILES ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TENDAO DE AQUILES ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US UNGUEAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        250.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COTOVELO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COTOVELO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COTOVELO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE COTOVELO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE DEDO DA MAO DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE DEDO DA MAO ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE JOELHO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE JOELHO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE JOELHO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE JOELHO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MAO DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MAO DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MAO ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE MAO ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE OMBRO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE OMBRO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE OMBRO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE OMBRO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PATELA DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PATELA DIREITA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PATELA ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PATELA ESQUERDA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PE DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PE DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PE ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PE ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PUNHO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PUNHO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PUNHO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PUNHO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE QUADRIL DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE QUADRIL DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE QUADRIL ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE QUADRIL ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TORNOZELO DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TORNOZELO DIREITO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TORNOZELO ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE TORNOZELO ESQUERDO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        280.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO COM TRANSLUCENCIA NUCAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        280.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICA MORFOLOGICA DO 1º TRIMESTRE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        280.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICA MORFOLOGICA DO 2º TRIMESTRE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        280.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO GEMELAR: CADA FETO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO GEMELAR COM DOPPLER: CADA FETO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        280.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO 1º TRIMESTRE (ENDOVAGINAL)",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSVAGINAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSVAGINAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSVAGINAL EM 3D",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSVAGINAL PARA CONTAGEM DE FOLICULOS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSVAGINAL PARA MAPEAMENTO DE MIOMA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSVAGINAL PARA CONTROLE DE OVULACAO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        510.0
+      ],
+      [
+        "PARTICULAR PIX",
+        450.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PROSTATA TRANSRETAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US TRANSFANTONELAR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE ARTERIAS TEMPORAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE CAROTIDAS E VERTEBRAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE SUBCLAVIAS E JUGULARES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER COLORIDO DE ORGAO OU ESTRUTURA ISOLADA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        130.0
+      ],
+      [
+        "PARTICULAR PIX",
+        120.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE AORTA ABDOMINAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        270.0
+      ],
+      [
+        "PARTICULAR PIX",
+        250.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE AORTA E ARTERIAS RENAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        250.0
+      ],
+      [
+        "PARTICULAR PIX",
+        220.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE AORTA E ILIACAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE ARTERIAS VISCERAIS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        270.0
+      ],
+      [
+        "PARTICULAR PIX",
+        220.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE VEIA CAVA INFERIOR E ILIACAS",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER DE VEIA CAVA SUPERIOR OU INFERIOR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        250.0
+      ],
+      [
+        "PARTICULAR PIX",
+        220.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER ARTERIAL DE MEMBRO SUPERIOR DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER ARTERIAL DE MEMBRO SUPERIOR ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER VENOSO DE MEMBRO SUPERIOR DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER VENOSO DE MEMBRO SUPERIOR ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER ARTERIAL DE MEMBRO INFERIOR DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER ARTERIAL DE MEMBRO INFERIOR ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER VENOSO DE MEMBRO INFERIOR DIREITO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER VENOSO DE MEMBRO INFERIOR ESQUERDO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        260.0
+      ],
+      [
+        "PARTICULAR PIX",
+        230.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US OBSTETRICO PERFIL BIOFISICO FETAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        300.0
+      ],
+      [
+        "PARTICULAR PIX",
+        280.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DOPPLER TRANSCRANIANO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        220.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PROSTATA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE PROSTATA COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE APARELHO URINARIO FEMININO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE APARELHO URINARIO FEMININO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE APARELHO URINARIO MASCULINO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US DE APARELHO URINARIO MASCULINO COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        170.0
+      ],
+      [
+        "PARTICULAR PIX",
+        150.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DERMATOLOGICO COM DOPPLER 2 REGIOES DIFERENTES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        570.0
+      ],
+      [
+        "PARTICULAR PIX",
+        550.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DERMATOLOGICO COM DOPPLER 3 REGIOES DIFERENTES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        620.0
+      ],
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — DERMATOLOGICO COM DOPPLER A PARTIR DE 4 REGIOES",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        720.0
+      ],
+      [
+        "PARTICULAR PIX",
+        700.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — NODULO ADICIONAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        110.0
+      ],
+      [
+        "PARTICULAR PIX",
+        100.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — PUNCAO BIOPSIA ASPIRATIVA DE MAMA ORIENTADA POR US",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        600.0
+      ],
+      [
+        "PARTICULAR PIX",
+        500.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — US PARA MAPEAMENTO DE GLUTEO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        580.0
+      ],
+      [
+        "PARTICULAR PIX",
+        550.0
+      ]
+    ]
+  },
+  {
+    "name": "ULTRASSONOGRAFIA — ELASTOGRAFIA HEPATICA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR PIX",
+        600.0
+      ]
+    ]
+  },
+  {
+    "name": "GARCIA — ULTRASSONOGRAFIA — US DE BOLSA ESCROTAL COM DOPPLER",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        450.0
+      ],
+      [
+        "PARTICULAR PIX",
+        430.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE ABDOME TOTAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        550.0
+      ],
+      [
+        "PARTICULAR PIX",
+        550.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE ABDOME SUPERIOR",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        450.0
+      ],
+      [
+        "PARTICULAR PIX",
+        450.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE ABDOME INFERIOR MASCULINO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE ABDOME INFERIOR FEMININO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE BOLSA ESCROTAL",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE TIREOIDE",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE REGIAO INGUINAL DIREITA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE REGIAO INGUINAL ESQUERDA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — DOPPLER COLORIDO DE ORGAO OU ESTRUTURA ISOLADA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        200.0
+      ],
+      [
+        "PARTICULAR PIX",
+        200.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE PROSTATA",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE APARELHO URINARIO FEMININO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  },
+  {
+    "name": "VAHLE — ULTRASSONOGRAFIA — US DE APARELHO URINARIO MASCULINO",
+    "ref": {
+      "hm": 0,
+      "co": 0,
+      "filme": 0,
+      "material": 0
+    },
+    "dur": 0,
+    "conv": [
+      [
+        "PARTICULAR Cartão",
+        400.0
+      ],
+      [
+        "PARTICULAR PIX",
+        400.0
+      ]
+    ]
+  }
+]);
+
+
 // Credenciamento mapping
 const credProcs = [
   {name:'Histerossalpingografia',       idx:0, geap:750,  sel:650},
@@ -1369,7 +7487,7 @@ try { savedInputsPart = JSON.parse(localStorage.getItem(SKEY_PART) || '{}'); } c
 
 /* — Save / Load particular — */
 function saveCurrentInputsPart() {
-  const p = procs[curPart];
+  const p = particularProcs[curPart];
   savedInputsPart[curPart] = {
     dur: parseFloat(document.getElementById('p-dur').value) || p.dur,
     mat: {val: parseFloat(document.getElementById('p-mat').value) || 0, mode: partModes.mat},
@@ -1385,7 +7503,7 @@ function saveCurrentInputsPart() {
 
 function loadInputsForPart(i) {
   const saved = savedInputsPart[i];
-  const p = procs[i];
+  const p = particularProcs[i];
   const defs = {mat: p.ref.material, hm: p.ref.hm, co: p.ref.co, ot: p.ref.filme};
   FIELDS.forEach(f => {
     const d = saved ? saved[f] : {val: defs[f], mode: 'R$'};
@@ -1414,7 +7532,7 @@ function updatePctCalcPart(field) {
   if (!el) return;
   if (partModes[field] === '%') {
     const pct = parseFloat(document.getElementById('p-'+field).value) || 0;
-    const vals = procs[curPart].conv.filter(([n]) => n==='PARTICULAR Cartão'||n==='PARTICULAR PIX').map(([,v])=>v);
+    const vals = particularProcs[curPart].conv.filter(([n]) => n==='PARTICULAR Cartão'||n==='PARTICULAR PIX').map(([,v])=>v);
     const avg = vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : 400;
     el.textContent = '≈ ' + fmt(avg * pct / 100);
     el.style.display = '';
@@ -1432,7 +7550,7 @@ function onInpPart(field) {
 function getCostParamsPart(procIdx) {
   const isCurrentProc = procIdx === undefined || procIdx === curPart;
   const idx = procIdx === undefined ? curPart : procIdx;
-  const p = procs[idx];
+  const p = particularProcs[idx];
   const defs = {mat: p.ref.material, hm: p.ref.hm, co: p.ref.co, ot: p.ref.filme};
   const saved = savedInputsPart[idx];
   let fixed = ((saved ? saved.dur : p.dur) || 0) * MIN;
@@ -1488,14 +7606,14 @@ function selPart(i) {
   if (partInitialized) saveCurrentInputsPart();
   curPart = i;
   document.querySelectorAll('#btns-part .pb').forEach((b,idx) => b.classList.toggle('act', idx===i));
-  document.getElementById('part-cht-ttl').textContent = '📊 ' + procs[i].name + ' — Cartão & PIX';
+  document.getElementById('part-cht-ttl').textContent = '📊 ' + particularProcs[i].name + ' — Cartão & PIX';
   loadInputsForPart(i);
   goPartChart();
   updatePartTab();
 }
 
 function goPartChart() {
-  const p = procs[curPart];
+  const p = particularProcs[curPart];
   const pm  = getMinPricePart();
   const tec = (parseFloat(document.getElementById('p-dur').value)||0) * MIN;
   const {fixed} = getCostParamsPart();
@@ -1547,7 +7665,7 @@ function goPartChart() {
 }
 
 function updatePartTab() {
-  const partProcs = procs.map((p, idx) => {
+  const partProcs = particularProcs.map((p, idx) => {
     const cart = (p.conv.find(([n]) => n==='PARTICULAR Cartão')||[])[1]||null;
     const pix  = (p.conv.find(([n]) => n==='PARTICULAR PIX')  ||[])[1]||null;
     return {name:p.name, idx, cart, pix};
@@ -1650,7 +7768,7 @@ procs.forEach((p, i) => {
 
 // Particular tab procedure buttons
 const bcPart = document.getElementById('btns-part');
-procs.forEach((p, i) => {
+particularProcs.forEach((p, i) => {
   // Only add procedures that have Cartão or PIX values
   const hasCart = p.conv.some(([n]) => n === 'PARTICULAR Cartão');
   const hasPix  = p.conv.some(([n]) => n === 'PARTICULAR PIX');
